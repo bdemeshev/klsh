@@ -1,0 +1,122 @@
+\documentclass{article}
+
+\usepackage[left=1cm,right=1cm,top=1.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+\Large{Краткая схема матбоя}
+\end{center}
+
+\vfill
+
+% Define block styles
+
+\tikzstyle{block} = [rectangle, draw, %fill=blue!20, 
+    %text width=10em, 
+    text centered, rounded corners, minimum height=4em,
+    node distance=6.5cm]
+\tikzstyle{line} = [draw, -latex']
+
+    
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (init) {$\mathcal{A}$ будет вызывать $\mathcal{B}$?};
+
+\node [block, above of=init, node distance= 3cm] (cap) {В конкурсе капитанов побеждает $\mathcal{A}$};    
+    
+    \node [block, right of=init,text width=7cm] (nomore_calls) 
+    {Далее во всех раундах: \par
+    $\mathcal{A}$ может только оппонировать, \par  
+    $\mathcal{B}$ может рассказать оставшиеся задачи };
+    \node [block, below of=init, node distance= 3cm] (accept) {$\mathcal{B}$ принимает вызов?};
+    \node [block, below of=accept, node distance= 3cm, text width=6cm] (ab) 
+           {$\mathcal{B}$ докладывает (не более 10 минут), \par
+           после доклада $\mathcal{A}$ задаёт вопросы};
+     \node [block, below of=ab, text width=5cm, node distance= 3cm](a_evaluate) {$\mathcal{A}$ признает решение $\mathcal{B}$ верным \par
+     (или частично верным)?};
+     \node [block, below of=a_evaluate, node distance= 3cm,text width=5cm](true) 
+     {$A+B+J=12$ \par
+     $B\geq 6$ \par 
+     Новый раунд, $\mathcal{B}$ вызывает};
+     \node [block, right of=a_evaluate, text width=5.2cm](j_evaluate) {$\mathcal{J}$ признает решение $\mathcal{B}$ верным \par
+     (или частично верным)?};
+     \node [block, right of=j_evaluate](a_own) {$\mathcal{A}$ представляет решение?};
+      \node [block, right of=ab, text width=4cm](f_change2) {Перемена ролей: \par
+      $\mathcal{A}$ докладывает, \par
+      $\mathcal{B}$ оппонирует};
+   \node [block, right of=f_change2, text width=5cm](f00)  {$A+B+J=12$ \par 
+     Новый раунд, $\mathcal{B}$ вызывает};
+ 
+
+     \node [block, right of=accept](a_knows) {$\mathcal{A}$ представляет решение? \par};
+     \node [block, right of=a_knows, text width=5cm](fail) 
+     {Некорректный вызов \par
+     $B=6$, $A=0$, $J=6$ \par 
+     Новый раунд, $\mathcal{A}$ вызывает};
+
+     \node [block, right of=true, text width=5cm](f_tf) {$A+B+J=12$ \par
+     $A\leq 6-B/2$\par 
+     Новый раунд, $\mathcal{B}$ вызывает};
+     
+     \node [block, right of=f_tf, text width=4cm](f_change1) {Перемена ролей: \par
+      $\mathcal{A}$ докладывает, \par
+      $\mathcal{B}$ оппонирует};
+
+     
+    %\node [block, left of=evaluate, node distance=3cm] (update) {update model};
+    %\node [decision, below of=evaluate] (decide) {is best candidate better?};
+    %\node [block, below of=decide, node distance=3cm] (stop) {stop};
+    % Draw edges
+     \path [line] (cap) --   (init);
+     \path [line] (init) --  node  {\Large{да}} (accept);
+    \path [line] (init) --  node  {\Large{нет}} (nomore_calls);
+
+     \path [line] (accept) --  node  {\Large{да}} (ab);
+     \path [line] (accept) --  node  {\Large{нет}} (a_knows);
+
+     \path [line] (ab) --  (a_evaluate);
+     
+     \path [line] (a_evaluate) -- node {\Large{да}}  (true);
+     \path [line] (a_evaluate) -- node {\Large{нет}}  (j_evaluate);
+
+    \path [line] (j_evaluate) -- node {\Large{да}}  (f_tf);
+     \path [line] (j_evaluate) -- node {\Large{нет}}  (a_own);
+      
+       \path [line] (a_own) -- node {\Large{да}}  (f_change1);
+     \path [line] (a_own) -- node {\Large{нет}}  (f00);
+  
+ 
+       \path [line] (a_knows) -- node {\Large{да}}  (f_change2);
+     \path [line] (a_knows) -- node {\Large{нет}}  (fail);
+  
+     
+    % \path [line] (identify) -- (evaluate);
+    % \path [line] (evaluate) -- (decide);
+    %\path [line] (decide) -| node [near start] {yes} (update);
+    %\path [line] (update) |- (identify);
+    %\path [line] (decide) -- node {no}(stop);
+   % \path [line,dashed] (expert) -- (init);
+    %\path [line,dashed] (system) -- (init);
+    %\path [line,dashed] (system) |- (evaluate);
+\end{tikzpicture}
+
+\vfill
+
+\begin{enumerate}
+\item Сокращения: $\mathcal{A}$ --- команда A, $\mathcal{B}$ --- команда B, $\mathcal{J}$ --- жюри
+\item В ходе доклада оппонент может задать вопросы с согласия докладчика
+\item Если в течение минуты после доклада не задан вопрос, то считается, что у оппонента нет вопросов
+\item У каждого игрока не более двух выходов к доске
+\item Команда имеет право на шесть тайм-аутов для обсуждения по 30 секунд
+\item Команда имеет право заменить докладчика или оппонента, потеряв за это два тайм-аута
+
+\end{enumerate}
+
+
+
+\end{document}
