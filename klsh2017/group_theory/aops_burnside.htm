@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://artofproblemsolving.com/wiki/index.php?title=Burnside%27s_Lemma -->
+<html class="svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script async="" src="https://www.google-analytics.com/analytics.js"></script><script>AoPS = {
+			start_time : new Date().getTime()
+		};</script>
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="initial-scale=1">
+
+
+		<link rel="apple-touch-icon" href="https://artofproblemsolving.com/assets/images/apple-touch-icon.png">
+
+		<title>Art of Problem Solving</title>
+
+
+		<link rel="stylesheet" href="./aops_burnside_files/main.css">
+
+
+		<script>
+		if (!window.console) console = {log: function() {}, dir: function() {}};
+		$$ = function( selector ) { return document.getElementById( selector ); }
+		</script>
+		<script src="./aops_burnside_files/jquery.min.js"></script>
+
+		
+<title>Burnside's Lemma - AoPSWiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Burnside's_Lemma","wgTitle":"Burnside's Lemma","wgCurRevisionId":27876,"wgRevisionId":27876,"wgArticleId":6969,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Group theory","Combinatorics"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Burnside's_Lemma","wgRelevantArticleId":6969,"wgRequestId":"62b3cad8069aa33b79210f78","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="./aops_burnside_files/load.php">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./aops_burnside_files/load(1).php">
+<script async="" src="./aops_burnside_files/load(2).php"></script>
+<meta name="generator" content="MediaWiki 1.27.1">
+<link rel="shortcut icon" href="https://artofproblemsolving.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://artofproblemsolving.com/wiki/opensearch_desc.php" title="AoPSWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://artofproblemsolving.com/wiki/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="AoPSWiki Atom feed" href="https://artofproblemsolving.com/wiki/index.php?title=Special:RecentChanges&amp;feed=atom">
+
+	<script src="./aops_burnside_files/load(3).php"></script><style type="text/css">:root topadblock, :root td[valign="top"] > .mainmenu[style="padding:10px 0 0 0 !important;"], :root input[onclick^="window.open('http://www.friendlyduck.com/"], :root input[onclick^="window.open('http://www.FriendlyDuck.com/"], :root img[alt^="Fuckbook"], :root iframe[src^="http://cdn1.adexprt.com/"], :root iframe[src^="http://ad.yieldmanager.com/"], :root iframe[id^="google_ads_iframe"], :root div[id^="proadszone-"], :root div[id^="mainads"], :root div[id^="lazyad-"], :root div[id^="google_dfp_"], :root div[id^="dmRosAdWrapper"], :root div[id^="div_ad_stack_"], :root div[id^="div-adtech-ad-"], :root div[id^="cns_ads_"], :root div[id^="ads300_250-widget"], :root iframe[src^="http://cdn2.adexprt.com/"], :root div[id^="ads300_100-widget"], :root div[id^="ads250_250-widget"], :root div[id^="adrotate_widgets-"], :root div[id^="ad_script_"], :root div[id^="ad-server-"], :root div[id^="acm-ad-tag-"], :root div[id^="MarketGid"], :root div[id^="ADV-SLOT-"], :root div[class^="proadszone-"], :root div[class$="dealnews"] > .dealnews, :root div > [class][onclick*=".updateAnalyticsEvents"], :root bottomadblock, :root aside[id^="div-gpt-ad"], :root a[target="_blank"][href^="http://api.taboola.com/"], :root a[style="display:block;width:300px;min-height:250px"][href^="http://li.cnet.com/click?"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href='http://staffpicks.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href='http://staffpicks.outbrain.com/network/redir?"][target="_blank"], :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href='/wp-content/embed-ad-content/"], :root iframe[src^="http://static.mozo.com.au/strips/"], :root a[href^="https://www.spyoff.com/"], :root a[href^="https://www.share-online.biz/affiliate/"], :root a[href^="https://www.privateinternetaccess.com/"], :root a[href^="https://www.oboom.com/ad/"], :root a[href^="https://www.googleadservices.com/pagead/aclk?"], :root a[href^="https://www.firstload.com/affiliate/"], :root a[href^="https://www.adskeeper.co.uk/"], :root a[href^="https://windscribe.com/promo/"], :root a[href^="https://trust.zone/go/r.php?RID="], :root div[class^="gemini-ad"], :root a[href^="https://torguard.net/aff.php"], :root div[id^="YFBMSN"], :root a[href^="https://secure.eveonline.com/ft/?aid="], :root a[href^="https://pubads.g.doubleclick.net/"], :root a[href^="https://go.ad2up.com/"], :root a[href^="https://farm.plista.com/pets"], :root a[href^="https://click.plista.com/pets"], :root a[href^="https://affiliates.bet-at-home.com/processing/"], :root a[href^="https://adhealers.com/"], :root a[href^="https://ad.atdmt.com/"], :root a[href^="http://xtgem.com/click?"], :root div[itemtype="http://schema.org/WPAdBlock"], :root a[href^="http://xads.zedo.com/"], :root a[href^="http://wxdownloadmanager.com/dl/"], :root a[href^="http://www1.clickdownloader.com/"], :root a[href^="http://www.zergnet.com/i/"], :root a[href^="http://www.usearchmedia.com/signup?"], :root a[href^="http://www.torntv-downloader.com/"], :root a[href^="http://www.tirerack.com/affiliates/"], :root a[href^="http://www.text-link-ads.com/"], :root div[id^="div_openx_ad_"], :root a[href^="http://www.streamate.com/exports/"], :root a[href^="http://www.sfippa.com/"], :root a[href^="http://www.xmediaserve.com/"], :root a[href^="http://www.sex.com/videos/?utm_"], :root a[href^="http://www.sex.com/?utm_"], :root a[href^="http://www.quick-torrent.com/download.html?aff"], :root #flowplayer > div[style="z-index: 208; position: absolute; width: 300px; height: 275px; left: 222.5px; top: 85px;"], :root a[href^="http://www.plus500.com/?id="], :root div[id^="google_ads_iframe_"], :root a[href^="http://www.affiliates1128.com/processing/"], :root a[href^="http://www.pheedo.com/"], :root a[href^="http://guideways.info/"], :root #\5f _nq__hh[style="display:block!important"], :root a[href^="http://www.on2url.com/app/adtrack.asp"], :root a[href^="http://www.myvpn.pro/"], :root a[href^="http://liversely.net/"], :root a[href^="http://www.my-dirty-hobby.com/?sub="], :root a[href^="http://www.download-provider.org/"], :root a[href^="http://www.installads.net/"], :root a[href^="http://www.incredimail.com/?id="], :root a[href^="http://tracking.toroadvertising.com/"], :root a[href^="http://www.graboid.com/affiliates/"], :root a[href^="http://www.gamebookers.com/cgi-bin/intro.cgi?"], :root a[href^="http://www.friendlyquacks.com/"], :root a[href^="http://cdn3.adbrau.com/"], :root a[href^="http://www.friendlyadvertisements.com/"], :root a[href^="http://ul.to/ref/"], :root a[href^="http://www.freefilesdownloader.com/"], :root a[href^="http://www.fpcTraffic2.com/blind/in.cgi?"], :root a[href^="http://www.fonts.com/BannerScript/"], :root a[href^="http://www.fleshlight.com/"], :root a[href^="http://www.mysuperpharm.com/"], :root a[href^="http://www.firstload.de/affiliate/"], :root a[href^="http://duckcash.eu/"], :root a[href^="http://www.firstload.com/affiliate/"], :root a[href*=".trust.zone"], :root a[href^="http://www.firstclass-download.com/"], :root a[href^="http://www.faceporn.net/free?"], :root a[href^="http://clicks.binarypromos.com/"], :root a[href^="http://www.downloadplayer1.com/"], :root a[href^="http://www.down1oads.com/"], :root a[href^="http://www.liutilities.com/"], :root a[href^="http://tracking.deltamediallc.com/"], :root a[href^="http://www.dl-provider.com/search/"], :root a[href^="http://www.cash-duck.com/"], :root a[href^="https://bs.serving-sys.com"], :root a[href^="https://atomidownload.com/"], :root a[href^="http://adserver.itsfogo.com/"], :root a[href^="http://adtransfer.net/"], :root a[href^="http://www.bet365.com/dl/~offer?affiliate="], :root a[href^="http://www.badoink.com/go.php?"], :root a[href^="http://ad-emea.doubleclick.net/"], :root a[href^="http://www.adskeeper.co.uk/"], :root div[id^="advads-"], :root a[href^="http://www.ringtonematcher.com/"], :root a[href^="http://www.adshost2.com/"], :root a[href^="http://www.adbrite.com/mb/commerce/purchase_form.php?"], :root a[href^="http://www.FriendlyDuck.com/AF_"], :root a[href^="http://www.brightwheel.info/"], :root a[href^="http://www.1clickdownloader.com/"], :root a[href^="http://www.123-reg.co.uk/affiliate2.cgi"], :root a[href^="http://prousa.work/"], :root a[href^="http://see-work.info/"], :root a[href^="http://websitedhoome.com/"], :root a[href^="http://www.paddypower.com/?AFF_ID="], :root a[href^="http://uploaded.net/ref/"], :root a[href^="http://track.adform.net/"], :root a[href^="http://t.wowtrk.com/"], :root a[href^="http://adprovider.adlure.net/"], :root a[href^="http://tezfiles.com/pr/"], :root a[href^="http://go.seomojo.com/tracking202/"], :root a[href^="http://www.revenuehits.com/"], :root a[href^="http://www.easydownloadnow.com/"], :root .mw > #rcnt > #center_col > #taw > .c, :root a[href^="http://taboola-"][href*="/redirect.php?app.type="], :root a[href^="http://t.mdn2015x3.com/"], :root a[href^="http://clickandjoinyourgirl.com/"], :root a[href^="http://webtrackerplus.com/"], :root a[href^="http://b.bestcompleteusa.info/"], :root a[href^="http://t.mdn2015x2.com/"], :root a[href^="http://sharesuper.info/"], :root a[href^="http://www.bet365.com/home/default.asp?affiliate="], :root a[href^="http://getlinksinaseconds.com/"], :root a[href^="http://secure.signup-way.com/"], :root a[href^="http://secure.signup-page.com/"], :root [onclick^="window.open('http://adultfriendfinder.com/search/"], :root a[href^="http://secure.hostgator.com/~affiliat/"], :root .ra[width="30%"][align="right"] + table[width="70%"][cellpadding="0"], :root a[href^="http://searchtabnew.com/"], :root a[href^="http://ryushare.com/affiliate.python"], :root a[href^="http://record.commissionking.com/"], :root a[href^="http://record.betsafe.com/"], :root a[href^="http://pubads.g.doubleclick.net/"], :root a[href^="http://www.epicgameads.com/"], :root a[href^="http://gca.sh/user/register?ref="], :root a[href^="http://promos.bwin.com/"], :root a[href^="https://www.FriendlyDuck.com/AF_"], :root a[href^="http://prochina.link/"], :root a[href^="http://z1.zedo.com/"], :root a[href^="http://pokershibes.com/index.php?ref="], :root a[href^="http://n217adserv.com/"], :root a[href^="http://mojofun.info/"], :root a[href^="http://mmo123.co/"], :root .plistaList > .itemLinkPET, :root a[href^="http://mgid.com/"], :root a[href^="http://marketgid.com"], :root a[href^="http://www.socialsex.com/"], :root a[href^="http://www.affbuzzads.com/affiliate/"], :root a[href*=".qertewrt.com/"], :root a[href^="http://lp.ncdownloader.com/"], :root a[href*=".adsrv.eacdn.com/"] > img, :root a[href^="http://lp.ilivid.com/"], :root #rhs_block .xpdopen > ._OKe > div > .mod > ._yYf, :root a[href^="http://lp.ezdownloadpro.info/"], :root a[href^="http://liversely.com/"], :root a[href^="http://latestdownloads.net/download.php?"], :root a[href^="http://keep2share.cc/pr/"], :root a[href^="http://k2s.cc/pr/"], :root a[href^="http://join3.bannedsextapes.com/track/"], :root a[href^="http://green.trafficinvest.com/"], :root a[href^="http://jobitem.org/"], :root a[href^="//adbit.co/?a=Advertise&"], :root a[href^="http://istri.it/?"], :root a[href^="https://dltags.com/"], :root a[href^="http://onclickads.net/"], :root a[href^="http://www.terraclicks.com/"], :root a[href^="http://www.coinducks.com/"], :root a[href^="http://internalredirect.site/"], :root a[href^="http://cdn.adstract.com/"], :root a[href^="http://hyperlinksecure.com/go/"], :root a[href^="http://greensmoke.com/"], :root a[href^="http://www.downloadthesefiles.com/"], :root a[href^="http://farm.plista.com/pets"], :root a[href^="http://mo8mwxi1.com/"], :root div[id^="block-views-topheader-ad-block-"], :root a[href^="http://go.oclaserver.com/"], :root .__y_elastic .__y_item, :root a[href^="http://go.mobisla.com/"], :root a[href^="http://go.ad2up.com/"], :root a[href^="http://www.duckssolutions.com/"], :root a[href^="http://games.ucoz.ru/"][target="_blank"], :root div[id^="div-gpt-ad"], :root a[href^="http://fusionads.net"], :root a[href^="http://us.marketgid.com"], :root a[href^="http://imads.integral-marketing.com/"], :root a[href^="http://freesoftwarelive.com/"], :root a[href^="http://adtrackone.eu/"], :root a[href^="http://finaljuyu.com/"], :root a[href^="http://tour.affbuzzads.com/"], :root a[href^="http://fileupnow.rocks/"], :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"], :root a[href^="http://www.roboform.com/php/land.php"], :root a[href^="http://fileloadr.com/"], :root a[href^="http://elitefuckbook.com/"], :root div[id^="ads300_600-widget"], :root a[href^="http://web.adblade.com/"], :root a[href^="http://elite-sex-finder.com/?"], :root a[href^="http://eclkmpsa.com/"], :root a[href^="http://dethao.com/"], :root a[href^="http://www.linkbucks.com/referral/"], :root a[href^="http://ddownload39.club/"], :root a[href^="http://www.moneyducks.com/"], :root a[href^="http://data.linoleictanzaniatitanic.com/"], :root a[href^="http://data.committeemenencyclopedicrepertory.info/"], :root a[href^="https://understandsolar.com/signup/?lead_source="][href*="&tracking_code="], :root a[href^="http://hdplugin.flashplayer-updates.com/"], :root a[href^="http://data.ad.yieldmanager.net/"], :root a[href^="http://www.babylon.com/welcome/index?affID"], :root a[href^="http://www.richducks.com/"], :root a[href^="http://campaign.bharatmatrimony.com/track/"], :root #content > #center > .dose > .dosesingle, :root a[href^="http://d2.zedo.com/"], :root a[href^="http://cdn.adsrvmedia.net/"], :root a[href^="http://cpaway.afftrack.com/"], :root a[href^="http://contractallsticker.net/"], :root a[href^="http://codec.codecm.com/"], :root div[id^="ads120_600-widget"], :root a[href^="http://clk.directrev.com/"], :root a[href^="http://refer.webhostingbuzz.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root a[href^="http://clickserv.sitescout.com/"], :root a[href^="http://clicks.guamwnvgashbkashawhgkhahshmashcas.pw/"], :root a[href^="https://dediseedbox.com/clients/aff.php?"], :root a[href^="http://www.wantstraffic.com/"], :root .lads[width="100%"][style="background:#FFF8DD"], :root a[href^="http://databass.info/"], :root a[href^="http://www.urmediazone.com/signup"], :root a[href^="http://ads.pheedo.com/"], :root a[href^="http://click.plista.com/pets"], :root a[href^="http://download-performance.com/"], :root .__ywvr .__y_item, :root a[href^="http://track.incognitovpn.com/"], :root a[href^="http://click.guamwnvgashbkashawhgkhahshmashcas.pw/"], :root a[href^="http://rekoverr.com/"], :root [lazy-ad="lefttop_banner"], :root a[href^="http://servicegetbook.net/"], :root a[href^="http://cinema.friendscout24.de?"], :root a[href^="http://360ads.go2cloud.org/"], :root a[href^="http://dftrck.com/"], :root a[href^="http://casino-x.com/?partner"], :root a[href^="http://www.clkads.com/adServe/"], :root a[href^="http://ads.expekt.com/affiliates/"], :root a[href^="http://callville.xyz/"], :root a[href^="http://serve.williamhill.com/promoRedirect?"], :root a[href^="http://feedads.g.doubleclick.net/"], :root a[href^="http://bs.serving-sys.com/"], :root a[href^="https://trklvs.com/"], :root a[href^="http://bestorican.com/"], :root a[href^="http://www.getyourguide.com/?partner_id="], :root a[href^="http://bcp.crwdcntrl.net/"], :root a[href^="http://install.securewebsiteaccess.com/"], :root .inlineNewsletterSubscription + .inlineNewsletterSubscription div[class$="_item"], :root a[href^="http://clkmon.com/adServe/"], :root a[href^="http://www.torntvdl.com/"], :root a[href^="http://at.atwola.com/"], :root ADS-RIGHT, :root a[href^="http://affiliates.score-affiliates.com/"], :root #rhs_block .mod > .luhb-div > div[data-async-type="updateHotelBookingModule"], :root a[href^="http://affiliate.glbtracker.com/"], :root a[href^="http://www.fducks.com/"], :root .icons-rss-feed + .icons-rss-feed div[class$="_item"], :root a[href^="http://aflrm.com/"], :root a[href^="http://partner.sbaffiliates.com/"], :root a[href^="http://affiliate.coral.co.uk/processing/"], :root a[href^="http://api.content.ad/"], :root a[href^="http://zevera.com/afi.html"], :root a[href^="http://adsrv.keycaptcha.com"], :root a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://www.mobileandinternetadvertising.com/"], :root a[href^="http://adserving.unibet.com/"], :root a[href^="http://chaturbate.com/affiliates/"], :root a[href^="http://adserving.liveuniversenetwork.com/"], :root a[href^="http://adserver.adtechus.com/"], :root a[href^="http://buysellads.com/"], :root a[href^="http://down1oads.com/"], :root #\5f _mom_ad_12, :root a[href^="http://ads.integral-marketing.com/"], :root a[href^="http://adserver.adtech.de/"], :root a[href^="http://ads.betfair.com/redirect.aspx?"], :root a[href^="http://ads.affbuzzads.com/"], :root a[href^="http://online.ladbrokes.com/promoRedirect?"], :root a[href^="http://ads.ad-center.com/"], :root a[href^="http://adrunnr.com/"], :root a[href^="https://www.dsct1.com/"], :root a[href^="http://amzn.to/"] > img[src^="data"], :root a[href^="http://www.liversely.net/"], :root a[href^="http://admingame.info/"], :root div[id^="q1-adset-"], :root a[href^="http://adfarm.mediaplex.com/"], :root #center_col > #taw > #tvcap > .rscontainer, :root a[href^="http://adf.ly/?id="], :root a[href^="http://goldmoney.com/?gmrefcode="], :root a[href^="http://adexprt.me/"], :root a[href^="http://www.flashx.tv/downloadthis"], :root a[href^="http://affiliates.pinnaclesports.com/processing/"], :root a[href^="http://www.menaon.com/installs/"], :root a[href^="http://www.sex.com/pics/?utm_"], :root a[href^="http://engine.newsmaxfeednetwork.com/"], :root a[href^="http://ad.yieldmanager.com/"], :root a[href^="http://ad.doubleclick.net/"], :root #resultspanel > #topads, :root a[href^="http://www.seekbang.com/cs/"], :root a[href^="http://bluehost.com/track/"], :root a[href^="http://www.drowle.com/"], :root a[href^="http://abc2.mobile-10.com/"], :root a[href^="http://srvpub.com/"], :root a[href^="http://a.adquantix.com/"], :root a[href^="http://NowDownloadAll.com"], :root a[href^="http://www.ducksnetwork.com/"], :root a[href^="http://3wr110.net/"], :root a[href^="//ads.ad-center.com/"], :root a[href^="http://1phads.com/"], :root #center_col > #resultStats + div[style="border:1px solid #dedede;margin-bottom:11px;padding:5px 7px 5px 6px"], :root a[href^="https://www.secureupload.eu/suprerefid="], :root a[href^="http://yads.zedo.com/"], :root #mbEnd[cellspacing="0"][cellpadding="0"], :root a[href^="http://adclick.g.doubleclick.net/"], :root a[href^="//t.MtagMonetizationA.com/"], :root #\5f _mom_ad_2, :root a[href^="http://ads.activtrades.com/"], :root a[href^="//api.ad-goi.com/"], :root a[href^="http://www.clickansave.net/"], :root A[href*="/AF_TA/"], :root a[href^="http://get.slickvpn.com/"], :root [onclick*="content.ad/"], :root a[href^="http://galleries.securewebsiteaccess.com/"], :root a[href^=" http://n47adshostnet.com/"], :root a[href^="http://linksnappy.com/?ref="], :root #main_col > #center_col div[style="font-size:14px;margin:0 4px;padding:1px 5px;background:#fff7ed"], :root a[href^="http://adtrack123.pl/"], :root .section-result[data-result-ad-type], :root script[src^="http://free-shoutbox.net/app/webroot/shoutbox/sb.php?shoutbox="] + #freeshoutbox_content, :root a[href^=" http://ads.ad-center.com/"], :root .GPMV2XEDA2 > .GPMV2XEDP1 > .GPMV2XEDJBB, :root a[href*="onclkds."], :root a[href^="http://www.idownloadplay.com/"], :root a[href^="//srv.buysellads.com/"], :root div[itemtype="http://www.schema.org/WPAdBlock"], :root .__zinit .__y_item, :root .ch[onclick="ga(this,event)"], :root a[href^="https://ad.doubleclick.net/"], :root a[href*="letsadvertisetogether.com"], :root a[href^="http://fsoft4down.com/"], :root a[href*="ad2upapp.com/"], :root .ob_container a[data-redirect^="http://paid.outbrain.com/network/redir?"], :root #mn #center_col > div > h2.spon:first-child, :root a[href*="=Adtracker"], :root a[href^="https://www.popads.net/users/"], :root a[href^="http://tracking.crazylead.com/"], :root a[href*="/cmd.php?ad="], :root a[href^="http://www.myfreepaysite.com/sfw_int.php?aid"], :root a[href^="http://galleries.pinballpublishernetwork.com/"], :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root a[href*=".adk2x.com/"], :root #\5f _admvnlb_modal_container, :root a[href^="http://www.duckcash.eu/"], :root a[href^="http://api.ringtonematcher.com/"], :root a[data-url^="http://paid.outbrain.com/network/redir?"] + .author, :root #MAIN.ShowTopic > .ad, :root a[href^="http://findersocket.com/"], :root a[href^="http://cdn3.adexprts.com/"], :root a[data-url^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://www.twinplan.com/AF_"], :root a[href^="http://n.admagnet.net/"], :root a[href^="http://connectlinking6.com/"], :root a[data-obtrack^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://bc.vc/?r="], :root a[href^="//www.mgid.com/"], :root a[href^="http://www.pinkvisualgames.com/?revid="], :root .__y_inner > .__y_item, :root .jobs-information-call-to-action + .jobs-information-call-to-action div[class$="_item"], :root AMP-AD, :root .widget-pane-section-result[data-result-ad-type], :root #center_col > #main > .dfrd > .mnr-c > .c._oc._zs, :root .trc_rbox_div .syndicatedItemUB, :root .ob_container .item-container-obpd, :root a[href^="http://centertrust.xyz/"], :root .trc_rbox_div .syndicatedItem, :root a[target="_blank"][onmousedown="this.href^='http://paid.outbrain.com/network/redir?"], :root #tads + div + .c, :root a[href^="http://www.accuserveadsystem.com/accuserve-go.php?"], :root a[href^="http://c.ketads.com/"], :root .trc_rbox .syndicatedItem, :root a[href^="http://pwrads.net/"], :root a[href*="friendlyduck.com"], :root #mn div[style="position:relative"] > #center_col > div > ._dPg, :root .rhsvw[style="background-color:#fff;margin:0 0 14px;padding-bottom:1px;padding-top:1px;"], :root a[href^="http://www.fbooksluts.com/"], :root a[href^="http://c.actiondesk.com/"], :root .ra[align="right"][width="30%"], :root .plista_widget_belowArticleRelaunch_item[data-type="pet"], :root #main-content > [style="padding:10px 0 0 0 !important;"], :root a[href^="http://www.webtrackerplus.com/"], :root .GJJKPX2N1 > .GJJKPX2M1 > .GJJKPX2P4, :root a[href^="http://ad.au.doubleclick.net/"], :root a[href^="http://record.sportsbetaffiliates.com.au/"], :root #topstuff > #tads, :root a[href^="http://www.1clickmoviedownloader.info/"], :root .mw > #rcnt > #center_col > #taw > #tvcap > .c, :root a[href^="http://affiliate.godaddy.com/"], :root #mn #center_col > div > h2.spon:first-child + ol:last-child, :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"], :root a[href^="http://www.downloadweb.org/"], :root .plistaList > .plista_widget_underArticle_item[data-type="pet"], :root #center_col > #res > #topstuff + #search > div > #ires > #rso > #flun, :root a[href^="http://adultfriendfinder.com/p/register.cgi?pid="], :root a[href^="http://www.yourfuckbook.com/?"], :root a[href^="http://ads.sprintrade.com/"], :root .GHOFUQ5BG2 > .GHOFUQ5BF2 > .GHOFUQ5BG5, :root a[href^="http://ad-apac.doubleclick.net/"], :root .gbfwa > div[class$="_item"], :root a[href^="http://prochina.space/"], :root a[href^="http://www.uniblue.com/cm/"], :root a[data-redirect^="http://click.plista.com/pets"], :root #rhs_block > script + .c._oc._Ve.rhsvw, :root .rscontainer > .ellip, :root a[data-redirect^="this.href='http://paid.outbrain.com/network/redir?"], :root a[href^="http://stateresolver.link/"], :root .__ywl .__y_item, :root a[href^="http://www.myfreepaysite.com/sfw.php?aid"], :root a[href^="http://www.ireel.com/signup?ref"], :root #center_col > #resultStats + #tads, :root .__yinit .__y_item, :root [ad-id^="googlead"], :root a[href^="http://adlev.neodatagroup.com/"], :root .ra[align="left"][width="30%"], :root a[href^="https://trackjs.com/?utm_source"], :root AFS-AD, :root a[href^="http://server.cpmstar.com/click.aspx?poolid="], :root #cnt #center_col > #res > #topstuff > .ts, :root iframe[id^="google_ads_frame"], :root a[href^="http://www.dealcent.com/register.php?affid="], :root #cnt #center_col > #taw > #tvcap > .c._oc._Lp, :root .trc_rbox_div a[target="_blank"][href^="http://tab"], :root .GKJYXHBF2 > .GKJYXHBE2 > .GKJYXHBH5, :root #rhs_block .mod > .gws-local-hotels__booking-module, :root a[href^="http://banners.victor.com/processing/"], :root a[href*="googleme.eu"], :root .mod > ._jH + .rscontainer, :root .GFYY1SVD2 > .GFYY1SVC2 > .GFYY1SVF5, :root #rhswrapper > #rhssection[border="0"][bgcolor="#ffffff"], :root .Mpopup + #Mad > #MadZone, :root a[href^="http://www.TwinPlan.com/AF_"], :root a[href^="http://landingpagegenius.com/"], :root a[href^="http://www.streamtunerhd.com/signup?"], :root #ssmiwdiv[jsdisplay], :root #center_col > div[style="font-size:14px;margin-right:0;min-height:5px"] > div[style="font-size:14px;margin:0 4px;padding:1px 5px;background:#fff8e7"], :root a[href^="http://paid.outbrain.com/network/redir?"], :root #ads > .dose > .dosesingle, :root a[href^="http://easydownload4you.com/"], :root #rhs_block > #mbEnd, :root #center_col > #\5f Emc, :root a[href^="http://papi.mynativeplatform.com:80/pub2/"], :root div[id^="dfp-ad-"], :root .GB3L-QEDGY .GB3L-QEDF- > .GB3L-QEDE-, :root .rc-cta[data-target], :root a[href^="http://hd-plugins.com/download/"], :root #rhs_block > .ts[cellspacing="0"][cellpadding="0"][style="padding:0"], :root .GFYY1SVE2 > .GFYY1SVD2 > .GFYY1SVG5, :root #flowplayer > div[style="position: absolute; width: 300px; height: 275px; left: 222.5px; top: 85px; z-index: 999;"], :root a[href^="http://www.pinkvisualpad.com/?revid="], :root a[href^="http://www.greenmangaming.com/?tap_a="], :root a[href^="http://www.bet365.com/home/?affiliate"], :root #center_col > #resultStats + div + #res + #tads, :root .nrelate .nr_partner, :root a[href^="http://bonusfapturbo.nmvsite.com/"], :root a[href^="http://www.sexgangsters.com/?pid="], :root a[href^="http://www.amazon.co.uk/exec/obidos/external-search?"], :root #mn div[style="position:relative"] > #center_col > ._Ak, :root a[href^="http://www.adxpansion.com"], :root div[id^="dfp-slot-"], :root .l-container > #fishtank, :root a[href*="/adrotate-out.php?"], :root a[href^="http://wgpartner.com/"], :root #center_col > #resultStats + #tads + #res + #tads, :root a[href^="http://campaign.bharatmatrimony.com/cbstrack/"], :root .trc_related_container div[data-item-syndicated="true"], :root a[href^="http://t.mdn2015x1.com/"], :root .trc_rbox_border_elm .syndicatedItem, :root a[href^="http://dwn.pushtraffic.net/"], :root a[href$="/vghd.shtml"], :root #rhs_block > ol > .rhsvw > .kp-blk > .xpdopen > ._OKe > ol > ._DJe > .luhb-div, :root p[id^="div-gpt-ad-"], :root #assetsListings[style="display: block;"], :root #header + #content > #left > #rlblock_left, :root a[href*="emprestimo.eu"], :root #content > #right > .dose > .dosesingle { display: none !important; }</style></head>
+		<body class="production mediawiki ltr sitedir-ltr ns-0 ns-subject page-Burnside_s_Lemma rootpage-Burnside_s_Lemma skin-aops action-view resources" data-twttr-rendered="true">
+		<div id="page-wrapper">
+			<!-- search:off -->
+
+			<div id="header-wrapper" class="no-select">
+				<div id="header">
+				
+					<!-- The blue bar at top -->
+					<div id="top-bar" class="bluebar-wrapper">
+						<div class="bluebar">
+							<div id="header-popin" style="opacity: 0;">
+								<a href="https://artofproblemsolving.com/company/staff">About</a>
+								<a href="https://artofproblemsolving.com/company/careers">Careers</a>
+								<a href="https://artofproblemsolving.com/contact">Contact</a>
+							</div>
+							<a href="https://artofproblemsolving.com/" class="mobile-title"></a>
+														<div class="item no-select" style="margin-right:6px;color:white">
+								<a style="color:white" href="https://artofproblemsolving.com/user/login?redirect=/wiki/index.php?title=Burnside%27s_Lemma">Log In / Join</a>
+							</div>
+
+							
+							
+														
+
+						</div>
+
+					</div>
+
+
+					<div id="mobile-menu-items" class="clearfix">
+						<a href="https://artofproblemsolving.com/school" class="menu-item school-background-color">School</a>
+						<a href="https://artofproblemsolving.com/store" class="menu-item store-background-color">Store</a>
+						<a data-cmty="" href="https://artofproblemsolving.com/community" class="menu-item community-background-color">Community</a>
+						<a href="https://artofproblemsolving.com/resources" class="menu-item resources-background-color">Resources</a>
+					</div>
+
+
+					<!-- The white area where main menu options appear -->
+					<div class="menubar-wrapper">
+						<div class="menubar">
+							<a id="main-logo" class="banner" href="http://aops.com/"></a>
+
+							<div style="margin-left:230px;vertical-align:bottom;">
+
+								<div class="header-menu school"><span><a href="https://artofproblemsolving.com/school"></a></span><div class="label school-background-color"></div>
+									<div class="pointer"></div>
+									<div id="school-dropdown" class="dropdown-menu">
+																														<a href="https://artofproblemsolving.com/school/how-school-works">How Classes Work</a>
+										<a href="https://artofproblemsolving.com/school/catalog">Course Catalog</a>
+										<a href="https://artofproblemsolving.com/school/schedule">Class Schedule</a>
+										<a href="https://artofproblemsolving.com/school/recommendations">Recommendations</a>
+										<a href="https://artofproblemsolving.com/school/woot">WOOT Courses</a>
+										<a href="https://artofproblemsolving.com/school/mathjams">Math Jams</a>
+																														
+									</div>
+								</div>
+
+								<div class="header-menu store"><span><a href="https://artofproblemsolving.com/store"></a></span><div class="label store-background-color"></div>
+									<div class="pointer"></div>
+									<div id="store-dropdown" class="dropdown-menu">
+																				<a href="https://artofproblemsolving.com/store/list/aops-curriculum">AoPS Curriculum</a>
+										<a href="https://artofproblemsolving.com/store/list/beast-academy">Beast Academy</a>
+										<a href="https://artofproblemsolving.com/store/online">Online Books</a>
+										<a href="https://artofproblemsolving.com/store/recommendations">Recommendations</a>
+										<a href="https://artofproblemsolving.com/store/list/other-products">Other Books &amp; Gear</a>
+										<a href="https://artofproblemsolving.com/store/list/all-products">All Products</a>
+										<a href="https://artofproblemsolving.com/store/gift-certificates">Gift Certificates</a>
+																			</div>
+								</div>
+
+								<div class="header-menu community"><span><a data-cmty="" href="https://artofproblemsolving.com/community"></a></span><div class="label community-background-color"></div>
+									<div class="pointer"></div>
+									<div id="community-dropdown" class="dropdown-menu">
+																				<a data-cmty="" href="https://artofproblemsolving.com/community">Forums</a>
+										<a data-cmty="" href="https://artofproblemsolving.com/community/c13_contests">Contests</a>
+										<a data-cmty="" href="https://artofproblemsolving.com/community/search">Search</a>
+										<a data-cmty="" href="https://artofproblemsolving.com/community/faq">Help</a>
+																													</div>
+								</div>
+
+								<div class="header-menu resources"><span><a href="https://artofproblemsolving.com/resources"></a></span><div class="label resources-background-color"></div>
+									<div class="pointer"></div>
+									<div id="resources-dropdown" class="dropdown-menu">
+										<a href="https://artofproblemsolving.com/alcumus">Alcumus</a>
+										<a href="https://artofproblemsolving.com/polymath/mitprimes2016">MIT PRIMES/AoPS CrowdMath</a>
+										<a href="https://artofproblemsolving.com/videos">Videos</a>
+										<a href="https://artofproblemsolving.com/ftw">For the Win!</a>
+										<a href="https://artofproblemsolving.com/mathcounts_trainer">MATHCOUNTS Trainer</a>
+										<a href="https://artofproblemsolving.com/reaper">Reaper</a>
+										<a href="https://artofproblemsolving.com/greedcontrol">Greed Control</a>
+										<a href="https://artofproblemsolving.com/articles">Articles</a>
+										<a href="https://artofproblemsolving.com/wiki">AoPS Wiki</a>
+										<a href="https://artofproblemsolving.com/texer">TeXeR</a>
+																			</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="extra">
+						<div style="height:5px;background-color:#e2e2e2"></div>
+						<div class="extra-bottom"></div>
+					</div>
+				</div> 
+
+				<noscript>&lt;div class="infobar"&gt;JavaScript is not enabled. JavaScript is required to fully utilize the site.&lt;/div&gt;</noscript>
+
+
+				<div id="breadcrumbs-wrapper">
+					<div id="submenu-icon"><i class="aops-font bars"></i></div>
+					<div id="breadcrumbs">
+												<div class="title-wrapper"><div class="title"><a href="https://artofproblemsolving.com/wiki">AoPS Wiki</a></div></div>
+												<div class="crumb-wrapper">
+																							<span class="crumb crumb-1">
+																	<a href="https://artofproblemsolving.com/resources">Resources</a>
+																</span>
+																								<i class="aops-font aops-angle-double-right"></i>
+																<span class="crumb crumb-2">
+																	<a href="https://artofproblemsolving.com/wiki">Aops Wiki</a>
+																</span>
+																								<i class="aops-font aops-angle-double-right"></i>
+																<span class="crumb crumb-3">
+																	Burnside's Lemma																</span>
+													</div>
+					</div>
+				</div>
+			</div>
+			<!-- /search:off -->
+
+<div id="main-content" class="left-navigation" style="min-height: 460px;">
+	<div id="side-column-wrapper" style="min-height: 460px;">
+		<div id="side-column">
+						<div id="content-actions" class="menu open">
+				<div class="submenu">
+					<h1>Page</h1>
+					<div class="submenu-wrapper">
+						<span id="ca-nstab-main" class="selected"><a href="https://artofproblemsolving.com/wiki/index.php?title=Burnside%27s_Lemma" title="View the content page " accesskey="c">Article</a></span><span id="ca-talk" class="new"><a href="https://artofproblemsolving.com/wiki/index.php?title=Talk:Burnside%27s_Lemma&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page " accesskey="t">Discussion</a></span><span id="ca-viewsource"><a href="https://artofproblemsolving.com/wiki/index.php?title=Burnside%27s_Lemma&amp;action=edit" title="This page is protected.
+You can view its source " accesskey="e">View source</a></span><span id="ca-history"><a href="https://artofproblemsolving.com/wiki/index.php?title=Burnside%27s_Lemma&amp;action=history" title="Past revisions of this page " accesskey="h">History</a></span>					</div>
+				</div>
+			</div>
+			<div id="toolbox" class="menu open">
+				<div class="submenu">
+					<h1>Toolbox</h1>
+					<div class="submenu-wrapper">
+						<span id="n-recentchanges"><a href="https://artofproblemsolving.com/wiki/index.php?title=Special:RecentChanges" title="A list of recent changes in the wiki " accesskey="r">Recent changes</a></span><span id="n-randompage"><a href="https://artofproblemsolving.com/wiki/index.php?title=Special:Random" title="Load a random page " accesskey="x">Random page</a></span><span id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></span><span id="t-whatlinkshere"><a href="https://artofproblemsolving.com/wiki/index.php?title=Special:WhatLinksHere/Burnside%27s_Lemma" title="A list of all wiki pages that link here " accesskey="j">What links here</a></span><span id="t-specialpages"><a href="https://artofproblemsolving.com/wiki/index.php?title=Special:SpecialPages" title="A list of all special pages " accesskey="q">Special pages</a></span>					</div>
+				</div>
+			</div>
+						
+			<div id="search" class="menu open">
+				<h1>Search</h1>
+				<div class="submenu-wrapper" style="margin-bottom:5px;">
+					<form action="https://artofproblemsolving.com/wiki/index.php" id="searchform" class="mw-search">
+						<input type="hidden" name="title" value="Special:Search">
+						<input type="search" name="search" placeholder="Search" value="" accesskey="f" id="searchInput">
+						<div style="margin:0 5px 5px 5px;text-align:right;"><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="btn btn-primary searchButton"></div>
+					</form>
+				</div>
+			</div>
+
+			<!--
+			<div class="menu open">
+				<h1>Note</h1>
+				<div class="submenu-wrapper" style="padding:10px;color:#444;">
+					Please do not discuss the 2015 AMC 8 Competition on any website until November 25th.
+				</div>
+			</div>
+			-->
+		</div>
+	</div>
+
+	<div id="main-column" style="margin-top:10px">
+				<div id="mw-js-message" style="display:none;"></div>
+		<h1 id="firstHeading" class="firstHeading">Burnside's Lemma</h1>
+		
+						
+		<div class="mw-body">
+													
+			<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>Burnside's Lemma</b> is a <a href="https://artofproblemsolving.com/wiki/index.php?title=Combinatorics" title="Combinatorics">combinatorial</a> result in <a href="https://artofproblemsolving.com/wiki/index.php?title=Group_theory" title="Group theory">group theory</a> that is useful for counting the <a href="https://artofproblemsolving.com/wiki/index.php?title=Orbit" title="Orbit">orbits</a> of a <a href="https://artofproblemsolving.com/wiki/index.php?title=Set" title="Set">set</a> on which a <a href="https://artofproblemsolving.com/wiki/index.php?title=Group" title="Group">group</a> <a href="https://artofproblemsolving.com/wiki/index.php?title=Group_action" title="Group action">acts</a>.  The lemma was apparently first stated by Cauchy in 1845.  Hence it is also called the <b>Cauchy-Frobenius Lemma</b>, or <b>the lemma that is not Burnside's</b>.  The lemma was (mistakenly) attributed to Burnside because he quoted and proved in his 1897 book <i>Theory of groups of finite order</i> without attribution, apparently because he thought it was sufficiently well known.
+</p>
+<h2><span class="mw-headline" id="Statement">Statement</span></h2>
+<p>Let <img src="./aops_burnside_files/6e28ce12d49d39f160d5a0ef54077fc98e4b9d2b.png" class="latex" alt="$G$" width="14" height="12"> be a <a href="https://artofproblemsolving.com/wiki/index.php?title=Group" title="Group">group</a> acting on a <a href="https://artofproblemsolving.com/wiki/index.php?title=Set" title="Set">set</a> <img src="./aops_burnside_files/ad28c83c99a8fd0dd2e2e594c9d02ee532765a0a.png" class="latex" alt="$S$" width="12" height="12">.  For <img src="./aops_burnside_files/a5ca9d06ef4d8dd5300d59b693fedcf14b75120d.png" class="latex" alt="$\alpha \in G$" style="vertical-align: -1px" width="48" height="13">, let <img src="./aops_burnside_files/86d23343c677428e1c6e8d77f4750c9091628ec6.png" class="latex" alt="$\text{fix}(\alpha)$" style="vertical-align: -4px" width="42" height="18"> denote the set of <a href="https://artofproblemsolving.com/wiki/index.php?title=Fixed_point" title="Fixed point">fixed points</a> of <img src="./aops_burnside_files/10f32377ac67d94f764f12a15ea987e88c85d3e1.png" class="latex" alt="$\alpha$" width="11" height="8">.  Then
+<img src="./aops_burnside_files/bf9602a5fdaa617bab7bc7f7fb60272ebf26f1f1.png" class="latexcenter" alt="\[\lvert G \rvert \cdot \lvert S/G \rvert = \sum_{\alpha \in G} \lvert \text{fix}(\alpha) \rvert .\]" width="189" height="39">
+</p><p><i>Proof.</i>  The quantity <img src="./aops_burnside_files/8fb5a18f8d9966389e492305cbb3a807d0f7b43e.png" class="latex" alt="$\sum_{\alpha \in G} \lvert \text{fix}(\alpha) \rvert$" style="vertical-align: -21px" width="79" height="39"> enumerates the ordered pairs <img src="./aops_burnside_files/506c61e67e491b06ba6ce890feeeb4edb5ae6bc3.png" class="latex" alt="$(\alpha,x) \in G\times S$" style="vertical-align: -4px" width="115" height="18"> for which <img src="./aops_burnside_files/f8071b90f2bac826990e84eda73944dc0f1afba6.png" class="latex" alt="$\alpha(x)=x$" style="vertical-align: -4px" width="70" height="18">.  Hence
+<img src="./aops_burnside_files/f98eb8843ccf4be55aef291c3da2bae2639a7a2d.png" class="latexcenter" alt="\[\sum_{\alpha \in G} \lvert \text{fix}(\alpha) \rvert = \lvert \{ (\alpha,x) \in G \times S | \alpha(x) = x \} \rvert = \sum_{x \in S} \lvert \text{stab}(x) \rvert = \sum_{H \in S/G} \sum_{x\in H} \lvert \text{stab}(x) \rvert ,\]" width="602" height="41">
+where <img src="./aops_burnside_files/43d4f294a614ef487ab707f3a6da4f11067d5f94.png" class="latex" alt="$\text{stab}(x)$" style="vertical-align: -4px" width="53" height="18"> denotes the <a href="https://artofproblemsolving.com/wiki/index.php?title=Stabilizer" title="Stabilizer">stabilizer</a> of <img src="./aops_burnside_files/26eeb5258ca5099acf8fe96b2a1049c48c89a5e6.png" class="latex" alt="$x$" width="10" height="8">.
+</p><p>Without loss of generality, let <img src="./aops_burnside_files/6e28ce12d49d39f160d5a0ef54077fc98e4b9d2b.png" class="latex" alt="$G$" width="14" height="12"> operate on <img src="./aops_burnside_files/ad28c83c99a8fd0dd2e2e594c9d02ee532765a0a.png" class="latex" alt="$S$" width="12" height="12"> from the left.  Now, if <img src="./aops_burnside_files/b6400c6fe3f1ed70e5afd387a9686cdc3fa09531.png" class="latex" alt="$x,y$" style="vertical-align: -3px" width="27" height="11"> are elements of the same <a href="https://artofproblemsolving.com/wiki/index.php?title=Orbit" title="Orbit">orbit</a>, and <img src="./aops_burnside_files/311cabda3a9b09f0dde217303ca9d1cd9201dcf6.png" class="latex" alt="$g$" style="vertical-align: -3px" width="9" height="11"> is an element of <img src="./aops_burnside_files/6e28ce12d49d39f160d5a0ef54077fc98e4b9d2b.png" class="latex" alt="$G$" width="14" height="12"> such that <img src="./aops_burnside_files/b841159e3b30ed78e934667c791f54cd3ad27789.png" class="latex" alt="$g(x)=y$" style="vertical-align: -4px" width="67" height="18">, then the mapping <img src="./aops_burnside_files/9c8819ece6204978ce3cfb89d8c8e45eacc952d4.png" class="latex" alt="$\alpha \mapsto g \alpha g^{-1}$" style="vertical-align: -3px" width="86" height="18"> is a <a href="https://artofproblemsolving.com/wiki/index.php?title=Bijection" title="Bijection">bijection</a> from <img src="./aops_burnside_files/43d4f294a614ef487ab707f3a6da4f11067d5f94.png" class="latex" alt="$\text{stab}(x)$" style="vertical-align: -4px" width="53" height="18"> onto <img src="./aops_burnside_files/72c2e2a52f0b7eabb10b345f7ae676673d209f41.png" class="latex" alt="$\text{stab}(y)$" style="vertical-align: -4px" width="52" height="18">.  It then follows from the <a href="https://artofproblemsolving.com/wiki/index.php?title=Orbit-stabilizer_theorem" title="Orbit-stabilizer theorem">orbit-stabilizer theorem</a> that for any <img src="./aops_burnside_files/34857b3ba74ce5cd8607f3ebd23e9015908ada71.png" class="latex" alt="$i$" width="5" height="12"> in an orbit <img src="./aops_burnside_files/b1902d279ba37d60bdce4e0e987b7cd19d48974e.png" class="latex" alt="$H$" width="16" height="12"> of <img src="./aops_burnside_files/ad28c83c99a8fd0dd2e2e594c9d02ee532765a0a.png" class="latex" alt="$S$" width="12" height="12">,
+<img src="./aops_burnside_files/ea3eb27d869535f9213eb79050cedb605ab6de3f.png" class="latexcenter" alt="\[\sum_{x\in H} \lvert \text{stab}(x) \rvert = \sum_{x\in H} \lvert \text{stab}(i) \rvert = \lvert \text{orb}(i) \rvert \cdot \lvert \text{stab}(i) \rvert = \lvert G \rvert .\]" width="412" height="39">
+Therefore
+<img src="./aops_burnside_files/93abaf57d2d8d7ede20cfc4002dc0695917594ef.png" class="latexcenter" alt="\[\sum_{\alpha \in G} \lvert \text{fix}(\alpha) \rvert = \sum_{H \in S/G} \sum_{x\in H} \lvert \text{stab}(x) \rvert = \sum_{H \in S/G} \lvert G \rvert = \lvert G \rvert \cdot \lvert S/G \rvert,\]" width="453" height="41">
+as desired.  <img src="./aops_burnside_files/3bbb9e25e5be095e317771a9c5d00877ee9c8012.png" class="latex" alt="$\blacksquare$" width="13" height="12">
+</p>
+<h2><span class="mw-headline" id="Application">Application</span></h2>
+<p>The theorem is primarily of use when <img src="./aops_burnside_files/6e28ce12d49d39f160d5a0ef54077fc98e4b9d2b.png" class="latex" alt="$G$" width="14" height="12"> and <img src="./aops_burnside_files/ad28c83c99a8fd0dd2e2e594c9d02ee532765a0a.png" class="latex" alt="$S$" width="12" height="12"> are <a href="https://artofproblemsolving.com/wiki/index.php?title=Finite" title="Finite">finite</a>.  Here, it is useful for counting the orbits of <img src="./aops_burnside_files/ad28c83c99a8fd0dd2e2e594c9d02ee532765a0a.png" class="latex" alt="$S$" width="12" height="12">.  This can be useful when one wishes to know the number of distinct objects of some sort up to a certain class of <a href="https://artofproblemsolving.com/wiki/index.php?title=Symmetry" title="Symmetry">symmetry</a>.
+</p><p>For instance, the lemma can be used to count the number of non-<a href="https://artofproblemsolving.com/wiki/index.php?title=Isomorphic" title="Isomorphic" class="mw-redirect">isomorphic</a> <a href="https://artofproblemsolving.com/wiki/index.php?title=Graph_(graph_theory)" title="Graph (graph theory)">graphs</a> on <img src="./aops_burnside_files/174fadd07fd54c9afe288e96558c92e0c1da733a.png" class="latex" alt="$n$" width="10" height="8"> vertices.  As an example, we count the number of non-isomorphic graphs on 4 vertices.
+</p><p>Consider the action <a href="https://artofproblemsolving.com/wiki/index.php?title=Symmetric_group" title="Symmetric group">symmetric group</a> on the four vertices induced on their graphs.  Two graphs are isomorphic if and only if they lie in the same orbit.  The elements of this symmetric group and the number of fixed points they have are as follows:
+</p>
+<ul><li> The identity, <img src="./aops_burnside_files/a3a59bb1293ee3f6dec19de4019a7178874219ae.png" class="latex" alt="$e$" width="8" height="8">.  Every graph is a fixed point of this; there are <img src="./aops_burnside_files/54216aeffa0fa278199cd3ceeb64cc8400c4a8cd.png" class="latex" alt="$\binom{4}{2}$" style="vertical-align: -22px" width="33" height="53"> possible edges, so <img src="./aops_burnside_files/a42c3d113fa13cf2ade45bc9f47f6873f96e5ca1.png" class="latex" alt="$\text{fix}(e) = 2^{\binom{4}{2}} = 2^6 = 64$" style="vertical-align: -4px" width="177" height="24">.</li>
+<li> The two-<a href="https://artofproblemsolving.com/wiki/index.php?title=Cycle" title="Cycle" class="mw-redirect">cycles</a>, of which there are <img src="./aops_burnside_files/5c9b68a04fadb4cbe90954c537de424c1519ef51.png" class="latex" alt="$\binom{4}{2}=6$" style="vertical-align: -22px" width="70" height="53">.  If a graph is invariant under a two-cycle <img src="./aops_burnside_files/496c5ac9a7c5d4aba6eefa9546065fac88c6d00e.png" class="latex" alt="$(ab)$" style="vertical-align: -4px" width="30" height="18">, then vertices <img src="./aops_burnside_files/3372c1cb6d68cf97c2d231acc0b47b95a9ed04cc.png" class="latex" alt="$c$" width="8" height="8"> and <img src="./aops_burnside_files/c7d457e388298246adb06c587bccd419ea67f7e8.png" class="latex" alt="$a$" width="9" height="8"> are connected if and only if vertices <img src="./aops_burnside_files/3372c1cb6d68cf97c2d231acc0b47b95a9ed04cc.png" class="latex" alt="$c$" width="8" height="8"> and <img src="./aops_burnside_files/8136a7ef6a03334a7246df9097e5bcc31ba33fd2.png" class="latex" alt="$b$" width="8" height="12"> are connected.  It follows that there are <img src="./aops_burnside_files/9e1f5e040971d759315de587019474e74d046ef5.png" class="latex" alt="$2^{1+ \binom{3}{2}} = 2^4 = 16$" style="vertical-align: 0px" width="129" height="20"> fixed points here.</li>
+<li> Compositions of two disjoint two-cycles, of which there are 3.  In this case, we have 16 fixed points.</li>
+<li> Three-cycles, of which there are 8.  Here, either the three cycling vertices are connected, or they are not; and the fixed vertex is either connected to the others, or it is not.  This gives 4 fixed points for each three-cycle.</li>
+<li> Permutations with exactly one orbit, i.e., <a href="https://artofproblemsolving.com/wiki/index.php?title=Derangement" title="Derangement">derangements</a> other than compositions of disjoint two-cycles.  There are 6 of these.  Here we have 4 fixed points.</li></ul>
+<p>It then follows that the number of non-isomorphic graphs on 4 vertices is
+<img src="./aops_burnside_files/31484adfd249e1b174bd25bdce5aa08f507a3ab0.png" class="latexcenter" alt="\[\frac{1}{\lvert S_4 \rvert} \sum_{\sigma \in S_4} \lvert \text{fix}(\sigma) \rvert = \frac{1}{24} ( 1\cdot 64 + 6\cdot 16 + 3 \cdot 16 + 8 \cdot 4 + 6 \cdot 4) = 11.\]" width="476" height="46">
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a href="https://artofproblemsolving.com/wiki/index.php?title=P%C3%B3lya_Enumeration_Theorem&amp;action=edit&amp;redlink=1" class="new" title="Pólya Enumeration Theorem (page does not exist)">Pólya Enumeration Theorem</a></li>
+<li> <a href="https://artofproblemsolving.com/wiki/index.php?title=Orbit-stabilizer_theorem" title="Orbit-stabilizer theorem">Orbit-stabilizer theorem</a></li>
+<li> <a href="https://artofproblemsolving.com/wiki/index.php?title=Orbit" title="Orbit">Orbit</a></li>
+<li> <a href="https://artofproblemsolving.com/wiki/index.php?title=Stabilizer" title="Stabilizer">Stabilizer</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20170727022518
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.040 seconds
+Real time usage: 0.039 seconds
+Preprocessor visited node count: 389/1000000
+Preprocessor generated node count: 856/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:6969-0!*!0!!*!*!* and timestamp 20170727022518 and revision id 27876
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://artofproblemsolving.com/wiki/index.php?title=Burnside%27s_Lemma&amp;oldid=27876">http://artofproblemsolving.com/wiki/index.php?title=Burnside%27s_Lemma&amp;oldid=27876</a>"</div>
+
+				
+							<div class="catlinks"><div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://artofproblemsolving.com/wiki/index.php?title=Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="https://artofproblemsolving.com/wiki/index.php?title=Category:Group_theory" title="Category:Group theory">Group theory</a></li><li><a href="https://artofproblemsolving.com/wiki/index.php?title=Category:Combinatorics" title="Category:Combinatorics">Combinatorics</a></li></ul></div></div></div>
+							
+				
+					</div>
+		
+		
+	</div>
+</div>
+<!-- search:off -->
+			<div class="clearfix"></div>
+
+
+			<div id="the-end-1" class="clearfix no-print">
+				<div class="container clearfix">
+					<div class="col-wasc">
+						<div></div>
+						ACS WASC<br>ACCREDITED<br>SCHOOL
+					</div>
+
+					<div class="col-about">
+						<h2>About</h2>
+						<a class="link" href="https://artofproblemsolving.com/company/staff">Our Team</a>
+						<a class="link" href="https://artofproblemsolving.com/company/history">Our History</a>
+						<a class="link" href="https://artofproblemsolving.com/company/careers">Jobs</a>
+					</div>
+
+					<div class="col-info">
+						<h2 style="left:-1px;">Site Info</h2>
+						<a class="link" href="https://artofproblemsolving.com/company/tos">Terms</a>
+						<a class="link" href="https://artofproblemsolving.com/company/privacy">Privacy</a>
+						<a class="link" href="https://artofproblemsolving.com/contact">Contact Us</a>
+					</div>
+
+					<div class="col-help">
+						<h2>Help</h2>
+						<a class="link" href="https://artofproblemsolving.com/school/recommendations">School</a>
+						<a class="link" href="https://artofproblemsolving.com/store/recommendations">Books</a>
+						<a class="link" href="https://artofproblemsolving.com/community/faq">Community</a>
+					</div>
+
+					<div class="stay-connected">
+
+						<a target="_blank" href="http://www.facebook.com/home.php?#/pages/Art-of-Problem-Solving/322689570276"><div class="social-icon facebook-icon"></div></a>
+						<a target="_blank" href="http://twitter.com/AoPSNews"><div class="social-icon twitter-icon"></div></a>
+
+						<h2>Stay Connected</h2>
+						<div class="copy">
+							<a href="https://artofproblemsolving.com/mailinglist">Subscribe</a> to get news and<br>
+							updates from AoPS, or <a href="https://artofproblemsolving.com/contact">Contact Us</a>.
+						</div>
+						<form method="post" action="https://artofproblemsolving.com/mailinglist">
+							<input type="email" class="email" placeholder="Enter e-mail address" name="subscribe-email">
+							<input type="hidden" name="new-books" value="on">
+							<input type="hidden" name="classes" value="on">
+							<input type="hidden" name="mathjams" value="on">
+							<input type="submit" class="btn" value="Subscribe">
+						</form>
+					</div>
+					<a class="beast" href="http://beastacademy.com/"></a>
+				</div>
+			</div>
+
+			<div id="the-end-2" class="no-print">
+				<div class="container clearfix">
+					<div class="copy">
+						<span>
+						© 2017<br>
+						AoPS Incorporated
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div id="small-footer-wrapper">
+				<div id="small-footer-panel">
+					<span class="copyright">
+						© 2017 Art of Problem Solving
+					</span>
+					<a href="https://artofproblemsolving.com/company/tos">Terms</a>
+					<a href="https://artofproblemsolving.com/company/privacy">Privacy</a>
+					<a href="https://artofproblemsolving.com/contact">Contact Us</a>
+					<a href="https://artofproblemsolving.com/company/staff">About Us</a>
+				</div>
+			</div>
+
+			<!--<div id="login-mask"></div>-->
+						<div id="login-form">
+
+				<div class="error">
+					Invalid username
+				</div>
+
+				<div class="info">
+					Login to AoPS
+				</div>
+				<form>
+					<div class="form-group">
+						<div>
+							<label>Username:</label>
+						</div>
+						<div>
+							<input name="username" class="form-control" id="login-username" type="text" placeholder="Enter username or email address" autocapitalize="off">
+						</div>
+					</div>
+					<div class="form-group">
+						<div>
+							<label>Password:</label>
+						</div>
+						<div>
+							<input name="password" class="form-control" id="login-password" type="hidden" placeholder="Enter password" autocomplete="off">
+						</div>
+					</div>
+				</form>
+				<div class="form-group">
+					<div>
+					</div>
+					<div>
+						<button class="btn btn-primary" id="login-button" href="#">Login</button>
+						<button class="btn" id="login-cancel-button" href="#">Cancel</button>
+						<span style="padding-left:20px;" id="login-message"></span>
+						<div style="margin-top:5px;">
+							<label style="display:block;float:left;padding-right:10px;white-space:nowrap;line-height:1em;font-weight:normal">
+								<input type="checkbox" name="stay-logged-in" id="login-stay-logged-in" style="vertical-align:middle;margin:0;">
+								<span style="vertical-align:middle">Stay logged in</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<!--
+				<div class="form-group">
+					<div>
+					</div>
+					<div>
+						<a id="login-facebook" href="#">Login with Facebook</a>
+					</div>
+				</div>
+				-->
+
+				<div id="login-form-links">
+					<p>
+						<a href="https://artofproblemsolving.com/user/register.php">Create a new account</a>
+					</p>
+					<p>
+						<a href="https://artofproblemsolving.com/user/resend-activation.php">Lost your activation email?</a>
+					</p>
+					<p>
+						<a href="https://artofproblemsolving.com/user/reset-pw.php">Forgot your password or username?</a>
+					</p>
+				</div>
+			</div>
+					</div>
+		<div id="print-footer" class="printer">Copyright © 2017 Art of Problem Solving</div>
+
+
+		<script src="./aops_burnside_files/common-combined.js"></script>
+		<script>_.mixin(_.str.exports());</script>
+
+
+
+				<script>
+			AoPS.bootstrap_data = [];
+			AoPS.bd = AoPS.bootstrap_data; // Alias!
+		</script>
+
+		<script src="./aops_burnside_files/aops.js"></script>
+				<script src="./aops_burnside_files/ui.js"></script>
+
+				
+				
+		
+		<!-- /search:off -->
+
+	
+
+</body></html>

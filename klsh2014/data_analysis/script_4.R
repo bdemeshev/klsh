@@ -60,17 +60,38 @@ cars[c(1,5,7),c(3,4,9,10)]
 qplot(data=cars,x=kph,y=m,
       xlab="Скорость машины (км/ч)",
       ylab="Длина тормозного пути (м)") +
-  geom_line(aes(y=pr1),colour="black")+
-  geom_line(aes(y=pr2),colour="green")+
-  geom_line(aes(y=pr3),colour="blue")+
-  geom_line(aes(y=pr4),colour="red")
+  geom_line(aes(y=pr1),colour="blue") +
+  geom_line(aes(y=pr4),colour="red") 
   
-
 deviance(m1)
 deviance(m2)
 deviance(m3)
 deviance(m4)
 
+cars$kph3 <- cars$kph^3
+cars$kph4 <- cars$kph^4
+cars$kph5 <- cars$kph^5
+cars$kph6 <- cars$kph^6
 
+m6 <- lm(data=cars,m~poly(kph,18))
+deviance(m6)
+cars$pr6 <- predict(m6)
 
+qplot(data=cars,x=kph,y=m,
+      xlab="Скорость машины (км/ч)",
+      ylab="Длина тормозного пути (м)") +
+  geom_line(aes(y=pr6),colour="red") 
+
+new <- data.frame(kph = c(60,120))
+new$kph2 <- new$kph^2
+predict(m4,newdata = new)
+predict(m6,newdata = new)
+
+cars[51,] <- NA
+tail(cars)
+cars$kph[51] <- 60
+
+require("plyr")
+big <- rbind.fill(cars,new)
+tail(big)
 

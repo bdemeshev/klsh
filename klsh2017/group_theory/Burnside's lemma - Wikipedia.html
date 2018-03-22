@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Burnside's lemma - Wikipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Burnside's_lemma","wgTitle":"Burnside's lemma","wgCurRevisionId":736348982,"wgRevisionId":736348982,"wgArticleId":251900,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["All articles with unsourced statements","Articles with unsourced statements from May 2015","Lemmas","Group theory"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Burnside's_lemma","wgRelevantArticleId":251900,"wgRequestId":"WL4BSwpAIDoAADC7HVgAAAAI","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{}},"wgStableRevisionId":null,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgPopupsShouldSendModuleToUser":false,"wgPopupsConflictsWithNavPopupGadget":false,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":true},"wgRelatedArticles":null,"wgRelatedArticlesBetaFeatureEnabled":false,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgWikibaseItemId":"Q1330377","wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.math.styles":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["ext.cite.a11y","ext.math.scripts","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.legacy.wikibits","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.uls.interface","ext.quicksurveys.init","ext.centralNotice.geoIP","ext.centralNotice.startUp","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.math.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/w/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.29.0-wmf.14"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/0/02/Face_colored_cube.png"/>
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Burnside%27s_lemma"/>
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Burnside%27s_lemma&amp;action=edit"/>
+<link rel="edit" title="Edit this page" href="/w/index.php?title=Burnside%27s_lemma&amp;action=edit"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Burnside%27s_lemma"/>
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Burnside_s_lemma rootpage-Burnside_s_lemma skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Burnside's lemma</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>Burnside's lemma</b>, sometimes also called <b>Burnside's counting theorem</b>, the <b>Cauchy–Frobenius lemma</b> or the <b>orbit-counting theorem</b>, is a result in <a href="/wiki/Group_theory" title="Group theory">group theory</a> which is often useful in taking account of <a href="/wiki/Symmetry" title="Symmetry">symmetry</a> when counting mathematical objects. Its various eponyms are based on <a href="/wiki/William_Burnside" title="William Burnside">William Burnside</a>, <a href="/wiki/George_P%C3%B3lya" title="George Pólya">George Pólya</a>, <a href="/wiki/Augustin_Louis_Cauchy" class="mw-redirect" title="Augustin Louis Cauchy">Augustin Louis Cauchy</a>, and <a href="/wiki/Ferdinand_Georg_Frobenius" title="Ferdinand Georg Frobenius">Ferdinand Georg Frobenius</a>. The result is not due to Burnside himself, who merely quotes it in his book 'On the Theory of Groups of Finite Order', attributing it instead to <a href="#CITEREFFrobenius1887">Frobenius (1887)</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup></p>
+<p>In the following, let <i>G</i> be a <a href="/wiki/Finite_set" title="Finite set">finite</a> <a href="/wiki/Group_(mathematics)" title="Group (mathematics)">group</a> that <a href="/wiki/Group_action" title="Group action">acts</a> on a <a href="/wiki/Set_(mathematics)" title="Set (mathematics)">set</a> <i>X</i>. For each <i>g</i> in <i>G</i> let <i>X<sup>g</sup></i> denote the set of <a href="/wiki/Element_(mathematics)" title="Element (mathematics)">elements</a> in <i>X</i> that are <a href="/wiki/Fixed_point_(mathematics)" title="Fixed point (mathematics)">fixed by</a> <i>g</i> (also said to be left <a href="/wiki/Invariant_(mathematics)" title="Invariant (mathematics)">invariant</a> by <i>g</i>), i.e. <i>X<sup>g</sup></i> = { <i>x</i> ∈ <i>X</i> | <i>g</i>.<i>x</i> = <i>x</i> }. Burnside's lemma asserts the following formula for the number of <a href="/wiki/Orbit_(group_theory)" class="mw-redirect" title="Orbit (group theory)">orbits</a>, denoted |<i>X</i>/<i>G</i>|:<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup></p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mi>X</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo>/</mo>
+        </mrow>
+        <mi>G</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mi>G</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <munder>
+          <mo>&#x2211;<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>g</mi>
+            <mo>&#x2208;<!-- ∈ --></mo>
+            <mi>G</mi>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <msup>
+          <mi>X</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>g</mi>
+          </mrow>
+        </msup>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle |X/G|={\frac {1}{|G|}}\sum _{g\in G}|X^{g}|.}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/06ae038708ecaa187f9fb273f2f2555239a85c68" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.505ex; width:22.56ex; height:6.843ex;" alt="|X/G|={\frac  {1}{|G|}}\sum _{{g\in G}}|X^{g}|." /></span></dd>
+</dl>
+<p>Thus the number of orbits (a <a href="/wiki/Natural_number" title="Natural number">natural number</a> or <a href="/wiki/Extended_real_number_line" title="Extended real number line">+∞</a>) is equal to the <a href="/wiki/Mean" title="Mean">average</a> number of points fixed by an element of <i>G</i> (which is also a natural number or infinity). If <i>G</i> is infinite, the division by |<i>G</i>| may not be well-defined; in this case the following statement in <a href="/wiki/Cardinal_arithmetic" class="mw-redirect" title="Cardinal arithmetic">cardinal arithmetic</a> holds:</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mi>G</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mi>X</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo>/</mo>
+        </mrow>
+        <mi>G</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>=</mo>
+        <munder>
+          <mo>&#x2211;<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>g</mi>
+            <mo>&#x2208;<!-- ∈ --></mo>
+            <mi>G</mi>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <msup>
+          <mi>X</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>g</mi>
+          </mrow>
+        </msup>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle |G||X/G|=\sum _{g\in G}|X^{g}|.}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a9f0ead7558761dce667963c535e2f4ac459fcf8" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.505ex; width:21.336ex; height:6.009ex;" alt="|G||X/G|=\sum _{{g\in G}}|X^{g}|." /></span></dd>
+</dl>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Example_application"><span class="tocnumber">1</span> <span class="toctext">Example application</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Proof"><span class="tocnumber">2</span> <span class="toctext">Proof</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#History:_the_lemma_that_is_not_Burnside.27s"><span class="tocnumber">3</span> <span class="toctext">History: the lemma that is not Burnside's</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Notes"><span class="tocnumber">5</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Example_application">Example application</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Burnside%27s_lemma&amp;action=edit&amp;section=1" title="Edit section: Example application">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The number of rotationally distinct colourings of the faces of a <a href="/wiki/Cube_(geometry)" class="mw-redirect" title="Cube (geometry)">cube</a> using three colours can be determined from this formula as follows.</p>
+<p>Let <i>X</i> be the set of 3<sup>6</sup> possible face colour combinations that can be applied to a cube in one particular orientation, and let the rotation group <i>G</i> of the cube act on <i>X</i> in the natural manner. Then two elements of <i>X</i> belong to the same orbit precisely when one is simply a rotation of the other. The number of rotationally distinct colourings is thus the same as the number of orbits and can be found by counting the sizes of the <a href="/wiki/Fixed_set" class="mw-redirect" title="Fixed set">fixed sets</a> for the 24 elements of <i>G</i>.</p>
+<div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="/wiki/File:Face_colored_cube.png" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/0/02/Face_colored_cube.png/220px-Face_colored_cube.png" width="220" height="220" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/0/02/Face_colored_cube.png/330px-Face_colored_cube.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/02/Face_colored_cube.png/440px-Face_colored_cube.png 2x" data-file-width="1000" data-file-height="1000" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:Face_colored_cube.png" class="internal" title="Enlarge"></a></div>
+Cube with coloured faces</div>
+</div>
+</div>
+<ul>
+<li>one identity element which leaves all 3<sup>6</sup> elements of <i>X</i> unchanged</li>
+<li>six 90-degree face rotations, each of which leaves 3<sup>3</sup> of the elements of <i>X</i> unchanged</li>
+<li>three 180-degree face rotations, each of which leaves 3<sup>4</sup> of the elements of <i>X</i> unchanged</li>
+<li>eight 120-degree vertex rotations, each of which leaves 3<sup>2</sup> of the elements of <i>X</i> unchanged</li>
+<li>six 180-degree edge rotations, each of which leaves 3<sup>3</sup> of the elements of <i>X</i> unchanged</li>
+</ul>
+<p>A detailed examination of these automorphisms may be found <a href="/wiki/Cycle_index#The_cycle_index_of_the_face_permutations_of_a_cube" title="Cycle index">here</a>.</p>
+<p>The average fix size is thus</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mn>24</mn>
+          </mfrac>
+        </mrow>
+        <mrow>
+          <mo>(</mo>
+          <msup>
+            <mn>3</mn>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>6</mn>
+            </mrow>
+          </msup>
+          <mo>+</mo>
+          <mn>6</mn>
+          <mo>&#x22C5;<!-- ⋅ --></mo>
+          <msup>
+            <mn>3</mn>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>3</mn>
+            </mrow>
+          </msup>
+          <mo>+</mo>
+          <mn>3</mn>
+          <mo>&#x22C5;<!-- ⋅ --></mo>
+          <msup>
+            <mn>3</mn>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>4</mn>
+            </mrow>
+          </msup>
+          <mo>+</mo>
+          <mn>8</mn>
+          <mo>&#x22C5;<!-- ⋅ --></mo>
+          <msup>
+            <mn>3</mn>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>2</mn>
+            </mrow>
+          </msup>
+          <mo>+</mo>
+          <mn>6</mn>
+          <mo>&#x22C5;<!-- ⋅ --></mo>
+          <msup>
+            <mn>3</mn>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>3</mn>
+            </mrow>
+          </msup>
+          <mo>)</mo>
+        </mrow>
+        <mo>=</mo>
+        <mn>57.</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {1}{24}}\left(3^{6}+6\cdot 3^{3}+3\cdot 3^{4}+8\cdot 3^{2}+6\cdot 3^{3}\right)=57.}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ed608dd0b4c100af8fdd387b288ac49ddea90c92" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.838ex; width:45.858ex; height:5.176ex;" alt="{\frac  {1}{24}}\left(3^{6}+6\cdot 3^{3}+3\cdot 3^{4}+8\cdot 3^{2}+6\cdot 3^{3}\right)=57." /></span></dd>
+</dl>
+<p>Hence there are 57 rotationally distinct colourings of the faces of a cube in three colours. In general, the number of rotationally distinct colorings of the faces of a cube in <i>n</i> colors is given by</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mn>24</mn>
+          </mfrac>
+        </mrow>
+        <mrow>
+          <mo>(</mo>
+          <msup>
+            <mi>n</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>6</mn>
+            </mrow>
+          </msup>
+          <mo>+</mo>
+          <mn>3</mn>
+          <msup>
+            <mi>n</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>4</mn>
+            </mrow>
+          </msup>
+          <mo>+</mo>
+          <mn>12</mn>
+          <msup>
+            <mi>n</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>3</mn>
+            </mrow>
+          </msup>
+          <mo>+</mo>
+          <mn>8</mn>
+          <msup>
+            <mi>n</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>2</mn>
+            </mrow>
+          </msup>
+          <mo>)</mo>
+        </mrow>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {1}{24}}\left(n^{6}+3n^{4}+12n^{3}+8n^{2}\right).}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/aa6c401fcc84c8ef7d3d1bfb57f86a72052b035e" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.838ex; width:29.876ex; height:5.176ex;" alt="{\frac  {1}{24}}\left(n^{6}+3n^{4}+12n^{3}+8n^{2}\right)." /></span></dd>
+</dl>
+<h2><span class="mw-headline" id="Proof">Proof</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Burnside%27s_lemma&amp;action=edit&amp;section=2" title="Edit section: Proof">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The first step in the proof of the lemma is to re-express the sum over the group elements <i>g</i>&#160;∈&#160;<i>G</i> as an equivalent sum over the set elements <i>x</i>&#160;∈&#160;<i>X</i>:</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <munder>
+          <mo>&#x2211;<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>g</mi>
+            <mo>&#x2208;<!-- ∈ --></mo>
+            <mi>G</mi>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <msup>
+          <mi>X</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>g</mi>
+          </mrow>
+        </msup>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo fence="false" stretchy="false">{</mo>
+        <mo stretchy="false">(</mo>
+        <mi>g</mi>
+        <mo>,</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>&#x2208;<!-- ∈ --></mo>
+        <mi>G</mi>
+        <mo>&#x00D7;<!-- × --></mo>
+        <mi>X</mi>
+        <mo>&#x2223;<!-- ∣ --></mo>
+        <mi>g</mi>
+        <mo>.</mo>
+        <mi>x</mi>
+        <mo>=</mo>
+        <mi>x</mi>
+        <mo fence="false" stretchy="false">}</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>=</mo>
+        <munder>
+          <mo>&#x2211;<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>&#x2208;<!-- ∈ --></mo>
+            <mi>X</mi>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <msub>
+          <mi>G</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+          </mrow>
+        </msub>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \sum _{g\in G}|X^{g}|=|\{(g,x)\in G\times X\mid g.x=x\}|=\sum _{x\in X}|G_{x}|.}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/eaff69b70fcbc3921c0fee8905a75e2bd35887ed" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.505ex; width:51.595ex; height:6.009ex;" alt="\sum _{{g\in G}}|X^{g}|=|\{(g,x)\in G\times X\mid g.x=x\}|=\sum _{{x\in X}}|G_{x}|." /></span></dd>
+</dl>
+<p>(Here <i>X<sup>g</sup></i>&#160;=&#160;{<i>x</i>&#160;∈&#160;<i>X</i>&#160;|&#160;<i>g.x</i>&#160;=&#160;<i>x</i>} is the subset of all points of <i>X</i> fixed by <i>g</i>&#160;∈&#160;<i>G</i>, whereas <i>G<sub>x</sub></i>&#160;=&#160;{<i>g</i>&#160;∈&#160;<i>G</i>&#160;|&#160;<i>g.x</i>&#160;=&#160;<i>x</i>} is the <a href="/wiki/Orbit-stabilizer_theorem#Orbits_and_stabilizers" class="mw-redirect" title="Orbit-stabilizer theorem">stabilizer subgroup</a> of G that fixes the point <i>x</i>&#160;∈&#160;<i>X</i>.)</p>
+<p>The <a href="/wiki/Orbit-stabilizer_theorem#Orbits_and_stabilizers" class="mw-redirect" title="Orbit-stabilizer theorem">orbit-stabilizer theorem</a> says that there is a natural <a href="/wiki/Bijection" title="Bijection">bijection</a> for each <i>x</i>&#160;∈&#160;<i>X</i> between the orbit of <i>x</i>, <i>G.x</i>&#160;=&#160;{<i>g.x</i>&#160;|&#160;<i>g</i>&#160;∈&#160;<i>G</i>}&#160;⊆&#160;<i>X</i>, and the set of left cosets <i>G/G<sub>x</sub></i> of its stabilizer subgroup <i>G<sub>x</sub></i>. With <a href="/wiki/Lagrange%27s_theorem_(group_theory)" title="Lagrange's theorem (group theory)">Lagrange's theorem</a> this implies</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mi>G</mi>
+        <mo>.</mo>
+        <mi>x</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>=</mo>
+        <mo stretchy="false">[</mo>
+        <mi>G</mi>
+        <mspace width="thinmathspace" />
+        <mo>:</mo>
+        <mspace width="thinmathspace" />
+        <msub>
+          <mi>G</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">]</mo>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mi>G</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo>/</mo>
+        </mrow>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <msub>
+          <mi>G</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+          </mrow>
+        </msub>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle |G.x|=[G\,:\,G_{x}]=|G|/|G_{x}|.}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/148c2d7e338e073ce3e639dce13ab03461744dce" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:29.958ex; height:2.843ex;" alt="|G.x|=[G\,:\,G_{x}]=|G|/|G_{x}|." /></span></dd>
+</dl>
+<p>Our sum over the set <i>X</i> may therefore be rewritten as</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <munder>
+          <mo>&#x2211;<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>&#x2208;<!-- ∈ --></mo>
+            <mi>X</mi>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <msub>
+          <mi>G</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+          </mrow>
+        </msub>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>=</mo>
+        <munder>
+          <mo>&#x2211;<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>&#x2208;<!-- ∈ --></mo>
+            <mi>X</mi>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mi>G</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+            </mrow>
+            <mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mi>G</mi>
+              <mo>.</mo>
+              <mi>x</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mi>G</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <munder>
+          <mo>&#x2211;<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>&#x2208;<!-- ∈ --></mo>
+            <mi>X</mi>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mi>G</mi>
+              <mo>.</mo>
+              <mi>x</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \sum _{x\in X}|G_{x}|=\sum _{x\in X}{\frac {|G|}{|G.x|}}=|G|\sum _{x\in X}{\frac {1}{|G.x|}}.}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ca118ade91f9568b23b916fb6ad0d24614ccde29" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.171ex; width:39.028ex; height:7.009ex;" alt="\sum _{{x\in X}}|G_{x}|=\sum _{{x\in X}}{\frac  {|G|}{|G.x|}}=|G|\sum _{{x\in X}}{\frac  {1}{|G.x|}}." /></span></dd>
+</dl>
+<p>Finally, notice that <i>X</i> is the disjoint union of all its orbits in <i>X/G</i>, which means the sum over <i>X</i> may be broken up into separate sums over each individual orbit.</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <munder>
+          <mo>&#x2211;<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>&#x2208;<!-- ∈ --></mo>
+            <mi>X</mi>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mi>G</mi>
+              <mo>.</mo>
+              <mi>x</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mo>=</mo>
+        <munder>
+          <mo>&#x2211;<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>A</mi>
+            <mo>&#x2208;<!-- ∈ --></mo>
+            <mi>X</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mo>/</mo>
+            </mrow>
+            <mi>G</mi>
+          </mrow>
+        </munder>
+        <munder>
+          <mo>&#x2211;<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>&#x2208;<!-- ∈ --></mo>
+            <mi>A</mi>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+              <mi>A</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">|</mo>
+              </mrow>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mo>=</mo>
+        <munder>
+          <mo>&#x2211;<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>A</mi>
+            <mo>&#x2208;<!-- ∈ --></mo>
+            <mi>X</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mo>/</mo>
+            </mrow>
+            <mi>G</mi>
+          </mrow>
+        </munder>
+        <mn>1</mn>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mi>X</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo>/</mo>
+        </mrow>
+        <mi>G</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \sum _{x\in X}{\frac {1}{|G.x|}}=\sum _{A\in X/G}\sum _{x\in A}{\frac {1}{|A|}}=\sum _{A\in X/G}1=|X/G|.}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/08b95ffc59d084614ea0b3d8797e82f3221eacac" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.671ex; width:47.88ex; height:7.009ex;" alt="\sum _{{x\in X}}{\frac  {1}{|G.x|}}=\sum _{{A\in X/G}}\sum _{{x\in A}}{\frac  {1}{|A|}}=\sum _{{A\in X/G}}1=|X/G|." /></span></dd>
+</dl>
+<p>Putting everything together gives the desired result:</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <munder>
+          <mo>&#x2211;<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>g</mi>
+            <mo>&#x2208;<!-- ∈ --></mo>
+            <mi>G</mi>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <msup>
+          <mi>X</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>g</mi>
+          </mrow>
+        </msup>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mi>G</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>&#x22C5;<!-- ⋅ --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mi>X</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo>/</mo>
+        </mrow>
+        <mi>G</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \sum _{g\in G}|X^{g}|=|G|\cdot |X/G|.}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e2c2a3b46af4a51d3d73867fae263cc1b9fbf790" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.505ex; width:23.026ex; height:6.009ex;" alt="\sum _{{g\in G}}|X^{g}|=|G|\cdot |X/G|." /></span></dd>
+</dl>
+<p>This proof is essentially also the proof of the <a href="/wiki/Class_equation" class="mw-redirect" title="Class equation">class equation</a> formula, simply by taking the action of <i>G</i> on itself (<i>X</i> = <i>G</i>) to be by conjugation, <i>g</i>.<i>x</i> = <i>gxg</i><sup>−1</sup>, in which case <i>G</i><sub><i>x</i></sub> instantiates to the centralizer of <i>x</i> in <i>G</i>.</p>
+<h2><span class="mw-headline" id="History:_the_lemma_that_is_not_Burnside.27s">History: the lemma that is not Burnside's</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Burnside%27s_lemma&amp;action=edit&amp;section=3" title="Edit section: History: the lemma that is not Burnside's">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><a href="/wiki/William_Burnside" title="William Burnside">William Burnside</a> stated and proved this lemma, attributing it to <a href="#CITEREFFrobenius1887">Frobenius 1887</a>, in his 1897 book on finite groups. But, even prior to Frobenius, the formula was known to <a href="/wiki/Cauchy" class="mw-redirect" title="Cauchy">Cauchy</a> in 1845. In fact, the lemma was apparently so well known that Burnside simply omitted to attribute it to Cauchy. Consequently, this lemma is sometimes referred to as <b>the lemma that is not Burnside's</b><sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[3]</a></sup> (see also <a href="/wiki/Stigler%27s_law_of_eponymy" title="Stigler's law of eponymy">Stigler's law of eponymy</a>). This is less ambiguous than it may seem: Burnside contributed many lemmas to this field.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (May 2015)">citation needed</span></a></i>]</sup></p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Burnside%27s_lemma&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="/wiki/P%C3%B3lya_enumeration_theorem" title="Pólya enumeration theorem">Pólya enumeration theorem</a></li>
+</ul>
+<h2><span class="mw-headline" id="Notes">Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Burnside%27s_lemma&amp;action=edit&amp;section=5" title="Edit section: Notes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><a href="#CITEREFBurnside1897">Burnside 1897</a>, §119</span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><a href="#CITEREFRotman1995">Rotman 1995</a>, Chapter 3</span></li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><a href="#CITEREFNeumann1979">Neumann 1979</a></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Burnside%27s_lemma&amp;action=edit&amp;section=6" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li>Burnside, William (1897) <i><a rel="nofollow" class="external text" href="http://www.gutenberg.org/ebooks/40395">Theory of Groups of Finite Order</a></i>, <a href="/wiki/Cambridge_University_Press" title="Cambridge University Press">Cambridge University Press</a>, at <a href="/wiki/Project_Gutenberg" title="Project Gutenberg">Project Gutenberg</a> and <a rel="nofollow" class="external text" href="https://archive.org/details/theorygroupsfin00burngoog">here</a> at <a href="/wiki/Archive.org" class="mw-redirect" title="Archive.org">Archive.org</a>. (This is the first edition; the introduction to the second edition contains Burnside's famous <i>volte face</i> regarding the utility of <a href="/wiki/Representation_theory" title="Representation theory">representation theory</a>.)</li>
+<li><cite id="CITEREFFrobenius1887" class="citation"><a href="/wiki/Ferdinand_Georg_Frobenius" title="Ferdinand Georg Frobenius">Frobenius, Ferdinand Georg</a> (1887), "Ueber die Congruenz nach einem aus zwei endlichen Gruppen gebildeten Doppelmodul", <i>Crelle</i>, <b>CI</b>: 288</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABurnside%27s+lemma&amp;rft.atitle=Ueber+die+Congruenz+nach+einem+aus+zwei+endlichen+Gruppen+gebildeten+Doppelmodul&amp;rft.aufirst=Ferdinand+Georg&amp;rft.aulast=Frobenius&amp;rft.date=1887&amp;rft.genre=article&amp;rft.jtitle=Crelle&amp;rft.pages=288&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=CI" class="Z3988"><span style="display:none;">&#160;</span></span>.</li>
+<li><cite id="CITEREFNeumann1979" class="citation"><a href="/wiki/Peter_M._Neumann" title="Peter M. Neumann">Neumann, Peter M.</a> (1979), "A lemma that is not Burnside's", <i>The Mathematical Scientist</i>, <b>4</b> (2): 133–141, <a href="/wiki/International_Standard_Serial_Number" title="International Standard Serial Number">ISSN</a>&#160;<a rel="nofollow" class="external text" href="//www.worldcat.org/issn/0312-3685">0312-3685</a>, <a href="/wiki/Mathematical_Reviews" title="Mathematical Reviews">MR</a>&#160;<a rel="nofollow" class="external text" href="//www.ams.org/mathscinet-getitem?mr=562002">562002</a></cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABurnside%27s+lemma&amp;rft.atitle=A+lemma+that+is+not+Burnside%27s&amp;rft.aufirst=Peter+M.&amp;rft.aulast=Neumann&amp;rft.date=1979&amp;rft.genre=article&amp;rft_id=%2F%2Fwww.ams.org%2Fmathscinet-getitem%3Fmr%3D562002&amp;rft.issn=0312-3685&amp;rft.issue=2&amp;rft.jtitle=The+Mathematical+Scientist&amp;rft.pages=133-141&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=4" class="Z3988"><span style="display:none;">&#160;</span></span>.</li>
+<li><cite id="CITEREFRotman1995" class="citation">Rotman, Joseph (1995), <i>An introduction to the theory of groups</i>, Springer-Verlag, <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-387-94285-8" title="Special:BookSources/0-387-94285-8">0-387-94285-8</a></cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABurnside%27s+lemma&amp;rft.aufirst=Joseph&amp;rft.aulast=Rotman&amp;rft.btitle=An+introduction+to+the+theory+of+groups&amp;rft.date=1995&amp;rft.genre=book&amp;rft.isbn=0-387-94285-8&amp;rft.pub=Springer-Verlag&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span>.</li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1258
+Cached time: 20170228171302
+Cache expiry: 2592000
+Dynamic content: false
+CPU time usage: 0.096 seconds
+Real time usage: 0.168 seconds
+Preprocessor visited node count: 483/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 8973/2097152 bytes
+Template argument size: 467/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 1/500
+Lua time usage: 0.040/10.000 seconds
+Lua memory usage: 2.21 MB/50 MB
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  104.326      1 -total
+ 38.02%   39.668      1 Template:Cn
+ 34.10%   35.579      1 Template:Fix
+ 33.99%   35.464      3 Template:Citation
+ 19.95%   20.815      2 Template:Category_handler
+ 16.80%   17.522      1 Template:Harvtxt
+ 11.90%   12.418      1 Template:Harvard_citation/core
+ 11.81%   12.322      1 Template:Delink
+  6.03%    6.295      1 Template:Reflist
+  4.70%    4.904      4 Template:Harvnb
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:251900-0!*!0!!en!4!*!math=5 and timestamp 20170228171302 and revision id 736348982
+ -->
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Burnside%27s_lemma&amp;oldid=736348982">https://en.wikipedia.org/w/index.php?title=Burnside%27s_lemma&amp;oldid=736348982</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Lemmas" title="Category:Lemmas">Lemmas</a></li><li><a href="/wiki/Category:Group_theory" title="Category:Group theory">Group theory</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></li><li><a href="/wiki/Category:Articles_with_unsourced_statements_from_May_2015" title="Category:Articles with unsourced statements from May 2015">Articles with unsourced statements from May 2015</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Burnside%27s+lemma" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Burnside%27s+lemma" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Burnside%27s_lemma"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="/wiki/Talk:Burnside%27s_lemma"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/Burnside%27s_lemma" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="/w/index.php?title=Burnside%27s_lemma&amp;action=edit"  title="Edit this page [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=Burnside%27s_lemma&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search Wikipedia" title="Search Wikipedia [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="//shop.wikimedia.org" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Burnside%27s_lemma" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Burnside%27s_lemma" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="/w/index.php?title=Burnside%27s_lemma&amp;oldid=736348982" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/w/index.php?title=Burnside%27s_lemma&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Q1330377" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Burnside%27s_lemma&amp;id=736348982" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Burnside%27s+lemma">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Burnside%27s+lemma&amp;returnto=Burnside%27s+lemma&amp;oldid=736348982&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Burnside%27s_lemma&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-fa"><a href="https://fa.wikipedia.org/wiki/%D9%84%D9%85_%D8%A8%D8%B1%D9%86%D8%B3%D8%A7%DB%8C%D8%AF" title="لم برنساید – Persian" lang="fa" hreflang="fa" class="interlanguage-link-target">فارسی</a></li><li class="interlanguage-link interwiki-ko"><a href="https://ko.wikipedia.org/wiki/%EB%B2%88%EC%82%AC%EC%9D%B4%EB%93%9C_%EB%B3%B4%EC%A1%B0%EC%A0%95%EB%A6%AC" title="번사이드 보조정리 – Korean" lang="ko" hreflang="ko" class="interlanguage-link-target">한국어</a></li><li class="interlanguage-link interwiki-he"><a href="https://he.wikipedia.org/wiki/%D7%94%D7%9C%D7%9E%D7%94_%D7%A9%D7%9C_%D7%91%D7%A8%D7%A0%D7%A1%D7%99%D7%99%D7%93" title="הלמה של ברנסייד – Hebrew" lang="he" hreflang="he" class="interlanguage-link-target">עברית</a></li><li class="interlanguage-link interwiki-nl"><a href="https://nl.wikipedia.org/wiki/Lemma_van_Burnside" title="Lemma van Burnside – Dutch" lang="nl" hreflang="nl" class="interlanguage-link-target">Nederlands</a></li><li class="interlanguage-link interwiki-ja"><a href="https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%BC%E3%83%B3%E3%82%B5%E3%82%A4%E3%83%89%E3%81%AE%E8%A3%9C%E9%A1%8C" title="バーンサイドの補題 – Japanese" lang="ja" hreflang="ja" class="interlanguage-link-target">日本語</a></li><li class="interlanguage-link interwiki-ro"><a href="https://ro.wikipedia.org/wiki/Lema_lui_Burnside" title="Lema lui Burnside – Romanian" lang="ro" hreflang="ro" class="interlanguage-link-target">Română</a></li><li class="interlanguage-link interwiki-ru"><a href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BC%D0%BC%D0%B0_%D0%91%D1%91%D1%80%D0%BD%D1%81%D0%B0%D0%B9%D0%B4%D0%B0" title="Лемма Бёрнсайда – Russian" lang="ru" hreflang="ru" class="interlanguage-link-target">Русский</a></li><li class="interlanguage-link interwiki-sv"><a href="https://sv.wikipedia.org/wiki/Burnsides_lemma" title="Burnsides lemma – Swedish" lang="sv" hreflang="sv" class="interlanguage-link-target">Svenska</a></li><li class="interlanguage-link interwiki-ta"><a href="https://ta.wikipedia.org/wiki/%E0%AE%AA%E0%AE%B0%E0%AF%8D%E0%AE%A9%E0%AF%8D%E0%AE%B8%E0%AF%88%E0%AE%9F%E0%AF%8D-%E0%AE%83%E0%AE%AA%E0%AF%8D%E0%AE%B0%E0%AF%8A%E0%AE%AA%E0%AF%80%E0%AE%A9%E0%AE%BF%E0%AE%AF%E0%AE%B8%E0%AF%8D_%E0%AE%95%E0%AF%8A%E0%AE%B1%E0%AF%8D%E0%AE%95%E0%AF%8B%E0%AE%B3%E0%AF%8D" title="பர்ன்ஸைட்-ஃப்ரொபீனியஸ் கொற்கோள் – Tamil" lang="ta" hreflang="ta" class="interlanguage-link-target">தமிழ்</a></li><li class="interlanguage-link interwiki-uk"><a href="https://uk.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BC%D0%B0_%D0%91%D0%B5%D1%80%D0%BD%D1%81%D0%B0%D0%B9%D0%B4%D0%B0" title="Лема Бернсайда – Ukrainian" lang="uk" hreflang="uk" class="interlanguage-link-target">Українська</a></li><li class="interlanguage-link interwiki-vi"><a href="https://vi.wikipedia.org/wiki/B%E1%BB%95_%C4%91%E1%BB%81_Burnside" title="Bổ đề Burnside – Vietnamese" lang="vi" hreflang="vi" class="interlanguage-link-target">Tiếng Việt</a></li><li class="interlanguage-link interwiki-zh"><a href="https://zh.wikipedia.org/wiki/%E4%BC%AF%E6%81%A9%E8%B5%9B%E5%BE%B7%E5%BC%95%E7%90%86" title="伯恩赛德引理 – Chinese" lang="zh" hreflang="zh" class="interlanguage-link-target">中文</a></li>					</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Q1330377#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 26 August 2016, at 21:30.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=Burnside%27s_lemma&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.096","walltime":"0.168","ppvisitednodes":{"value":483,"limit":1000000},"ppgeneratednodes":{"value":0,"limit":1500000},"postexpandincludesize":{"value":8973,"limit":2097152},"templateargumentsize":{"value":467,"limit":2097152},"expansiondepth":{"value":11,"limit":40},"expensivefunctioncount":{"value":1,"limit":500},"entityaccesscount":{"value":0,"limit":400},"timingprofile":["100.00%  104.326      1 -total"," 38.02%   39.668      1 Template:Cn"," 34.10%   35.579      1 Template:Fix"," 33.99%   35.464      3 Template:Citation"," 19.95%   20.815      2 Template:Category_handler"," 16.80%   17.522      1 Template:Harvtxt"," 11.90%   12.418      1 Template:Harvard_citation/core"," 11.81%   12.322      1 Template:Delink","  6.03%    6.295      1 Template:Reflist","  4.70%    4.904      4 Template:Harvnb"]},"scribunto":{"limitreport-timeusage":{"value":"0.040","limit":"10.000"},"limitreport-memusage":{"value":2320840,"limit":52428800}},"cachereport":{"origin":"mw1258","timestamp":"20170228171302","ttl":2592000,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":59,"wgHostname":"mw1188"});});</script>
+	</body>
+</html>

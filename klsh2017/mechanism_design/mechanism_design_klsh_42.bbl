@@ -1,0 +1,93 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{none/global/}
+    \entry{shen2017veroiatnost}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d9d57d5b5d84d7d3c0366bb896f2eb09}{%
+           family={Шень},
+           familyi={Ш\bibinitperiod},
+           given={Александр},
+           giveni={А\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Litres}%
+      }
+      \strng{namehash}{d9d57d5b5d84d7d3c0366bb896f2eb09}
+      \strng{fullhash}{d9d57d5b5d84d7d3c0366bb896f2eb09}
+      \strng{authornamehash}{d9d57d5b5d84d7d3c0366bb896f2eb09}
+      \strng{authorfullhash}{d9d57d5b5d84d7d3c0366bb896f2eb09}
+      \field{sortinit}{1}
+      \field{sortinithash}{53e85f4cf497d2a4e1d51786552bcbf1}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Вероятность: примеры и задачи}
+      \field{year}{2017}
+    \endentry
+    \entry{shen2007igri}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d9d57d5b5d84d7d3c0366bb896f2eb09}{%
+           family={Шень},
+           familyi={Ш\bibinitperiod},
+           given={Александр},
+           giveni={А\bibinitperiod}}}%
+      }
+      \strng{namehash}{d9d57d5b5d84d7d3c0366bb896f2eb09}
+      \strng{fullhash}{d9d57d5b5d84d7d3c0366bb896f2eb09}
+      \strng{authornamehash}{d9d57d5b5d84d7d3c0366bb896f2eb09}
+      \strng{authorfullhash}{d9d57d5b5d84d7d3c0366bb896f2eb09}
+      \field{sortinit}{2}
+      \field{sortinithash}{8343b463aacf48517c044b4d2c9c45ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Игры и стратегия с точки зрения математики}
+      \field{year}{2007}
+    \endentry
+    \entry{brams2002delim}{book}{}
+      \name{author}{2}{}{%
+        {{hash=6126a2079e5748a3344b21601acef92b}{%
+           family={Брамс},
+           familyi={Б\bibinitperiod},
+           given={С},
+           giveni={С\bibinitperiod}}}%
+        {{hash=eb4eeef64cac80723aa9b5705ce53e89}{%
+           family={Тейлор},
+           familyi={Т\bibinitperiod},
+           given={А},
+           giveni={А\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {М., Синтег}%
+      }
+      \strng{namehash}{d18073eb1536b4bd7ba492fbf2c80598}
+      \strng{fullhash}{d18073eb1536b4bd7ba492fbf2c80598}
+      \strng{authornamehash}{d18073eb1536b4bd7ba492fbf2c80598}
+      \strng{authorfullhash}{d18073eb1536b4bd7ba492fbf2c80598}
+      \field{sortinit}{3}
+      \field{sortinithash}{7e21a31d9ef6ddc352701d4fa590bfbc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Делим по справедливости}
+      \field{year}{2002}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

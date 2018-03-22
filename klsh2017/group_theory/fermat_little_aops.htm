@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem -->
+<html class="svg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script async="" src="https://www.google-analytics.com/analytics.js"></script><script>AoPS = {
+			start_time : new Date().getTime()
+		};</script>
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="initial-scale=1">
+
+
+		<link rel="apple-touch-icon" href="https://artofproblemsolving.com/assets/images/apple-touch-icon.png">
+
+		<title>Art of Problem Solving</title>
+
+
+		<link rel="stylesheet" href="./fermat_little_aops_files/main.css">
+
+
+		<script>
+		if (!window.console) console = {log: function() {}, dir: function() {}};
+		$$ = function( selector ) { return document.getElementById( selector ); }
+		</script>
+		<script src="./fermat_little_aops_files/jquery.min.js"></script>
+
+		
+<title>Fermat's Little Theorem - AoPSWiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Fermat's_Little_Theorem","wgTitle":"Fermat's Little Theorem","wgCurRevisionId":85359,"wgRevisionId":85359,"wgArticleId":1697,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Number theory","Theorems"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Fermat's_Little_Theorem","wgRelevantArticleId":1697,"wgRequestId":"088ce09dc222abe1fe8b5ada","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="./fermat_little_aops_files/load.php">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./fermat_little_aops_files/load(1).php">
+<script async="" src="./fermat_little_aops_files/load(2).php"></script>
+<meta name="generator" content="MediaWiki 1.27.1">
+<link rel="shortcut icon" href="https://artofproblemsolving.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://artofproblemsolving.com/wiki/opensearch_desc.php" title="AoPSWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://artofproblemsolving.com/wiki/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="AoPSWiki Atom feed" href="https://artofproblemsolving.com/wiki/index.php?title=Special:RecentChanges&amp;feed=atom">
+
+	<style type="text/css">:root topadblock, :root td[valign="top"] > .mainmenu[style="padding:10px 0 0 0 !important;"], :root input[onclick^="window.open('http://www.FriendlyDuck.com/AF_"], :root img[alt^="Fuckbook"], :root iframe[src^="http://cdn1.adexprt.com/"], :root iframe[src^="http://ad.yieldmanager.com/"], :root iframe[id^="google_ads_iframe"], :root div[id^="proadszone-"], :root div[id^="mainads"], :root div[id^="lazyad-"], :root div[id^="google_dfp_"], :root div[id^="dmRosAdWrapper"], :root div[id^="div_ad_stack_"], :root div[id^="div-adtech-ad-"], :root div[id^="cns_ads_"], :root div[id^="ads300_250-widget"], :root iframe[src^="http://cdn2.adexprt.com/"], :root div[id^="ads300_100-widget"], :root div[id^="ads250_250-widget"], :root div[id^="adrotate_widgets-"], :root div[id^="ad_script_"], :root div[id^="ad-server-"], :root div[id^="acm-ad-tag-"], :root div[id^="MarketGid"], :root div[id^="ADV-SLOT-"], :root div[class^="proadszone-"], :root div[class$="dealnews"] > .dealnews, :root div > [class][onclick*=".updateAnalyticsEvents"], :root bottomadblock, :root aside[id^="div-gpt-ad"], :root a[target="_blank"][href^="http://api.taboola.com/"], :root a[style="display:block;width:300px;min-height:250px"][href^="http://li.cnet.com/click?"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href='http://staffpicks.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href='http://staffpicks.outbrain.com/network/redir?"][target="_blank"], :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href='/wp-content/embed-ad-content/"], :root iframe[src^="http://static.mozo.com.au/strips/"], :root a[href^="https://www.spyoff.com/"], :root a[href^="https://www.share-online.biz/affiliate/"], :root a[href^="https://www.oboom.com/ad/"], :root a[href^="https://www.googleadservices.com/pagead/aclk?"], :root a[href^="https://www.firstload.com/affiliate/"], :root a[href^="https://www.adskeeper.co.uk/"], :root a[href^="https://trust.zone/go/r.php?RID="], :root div[class^="gemini-ad"], :root a[href^="https://torguard.net/aff.php"], :root div[id^="YFBMSN"], :root a[href^="https://secure.eveonline.com/ft/?aid="], :root a[href^="https://pubads.g.doubleclick.net/"], :root a[href^="https://go.ad2up.com/"], :root a[href^="https://farm.plista.com/pets"], :root a[href^="https://click.plista.com/pets"], :root a[href^="https://affiliates.bet-at-home.com/processing/"], :root a[href^="https://adhealers.com/"], :root a[href^="https://ad.atdmt.com/"], :root a[href^="http://xtgem.com/click?"], :root div[itemtype="http://schema.org/WPAdBlock"], :root a[href^="http://xads.zedo.com/"], :root a[href^="http://wxdownloadmanager.com/dl/"], :root a[href^="http://www1.clickdownloader.com/"], :root a[href^="http://www.zergnet.com/i/"], :root a[href^="http://www.usearchmedia.com/signup?"], :root a[href^="http://www.torntv-downloader.com/"], :root a[href^="http://www.tirerack.com/affiliates/"], :root a[href^="http://www.text-link-ads.com/"], :root div[id^="div_openx_ad_"], :root a[href^="http://www.streamate.com/exports/"], :root a[href^="http://www.sfippa.com/"], :root a[href^="http://bluehost.com/track/"], :root a[href^="http://www.seekbang.com/cs/"], :root a[href^="http://www.quick-torrent.com/download.html?aff"], :root #flowplayer > div[style="z-index: 208; position: absolute; width: 300px; height: 275px; left: 222.5px; top: 85px;"], :root a[href^="http://www.plus500.com/?id="], :root div[id^="google_ads_iframe_"], :root a[href^="http://www.affiliates1128.com/processing/"], :root a[href^="http://www.pheedo.com/"], :root a[href^="http://guideways.info/"], :root #\5f _nq__hh[style="display:block!important"], :root a[href^="http://www.on2url.com/app/adtrack.asp"], :root a[href^="http://www.myvpn.pro/"], :root a[href^="http://liversely.net/"], :root a[href^="http://www.my-dirty-hobby.com/?sub="], :root a[href^="http://www.download-provider.org/"], :root a[href^="http://www.installads.net/"], :root a[href^="http://www.incredimail.com/?id="], :root a[href^="http://tracking.toroadvertising.com/"], :root a[href^="http://www.graboid.com/affiliates/"], :root a[href^="http://www.gamebookers.com/cgi-bin/intro.cgi?"], :root a[href^="http://www.friendlyquacks.com/"], :root a[href^="http://cdn3.adbrau.com/"], :root a[href^="http://www.friendlyadvertisements.com/"], :root a[href^="http://ul.to/ref/"], :root a[href^="http://www.freefilesdownloader.com/"], :root a[href^="http://www.fpcTraffic2.com/blind/in.cgi?"], :root a[href^="http://www.fonts.com/BannerScript/"], :root a[href^="http://www.fleshlight.com/"], :root a[href^="http://www.mysuperpharm.com/"], :root a[href^="http://www.firstload.de/affiliate/"], :root a[href^="http://www.firstload.com/affiliate/"], :root a[href*=".trust.zone"], :root a[href^="http://www.firstclass-download.com/"], :root a[href^="http://www.faceporn.net/free?"], :root a[href^="http://clicks.binarypromos.com/"], :root a[href^="http://www.downloadplayer1.com/"], :root a[href^="http://www.down1oads.com/"], :root a[href^="http://www.liutilities.com/"], :root a[href^="http://tracking.deltamediallc.com/"], :root a[href^="http://www.dl-provider.com/search/"], :root a[href^="http://www.coinducks.com/AF_"], :root a[href^="https://bs.serving-sys.com"], :root a[href^="https://atomidownload.com/"], :root a[href^="http://adserver.itsfogo.com/"], :root a[href^="http://adtransfer.net/"], :root a[href^="http://www.bet365.com/dl/~offer?affiliate="], :root a[href^="http://www.badoink.com/go.php?"], :root div[id^="advads-"], :root a[href^="http://www.ringtonematcher.com/"], :root a[href^="http://www.adshost2.com/"], :root a[href^="http://www.adbrite.com/mb/commerce/purchase_form.php?"], :root a[href^="http://www.FriendlyDuck.com/AF_"], :root a[href^="http://www.brightwheel.info/"], :root a[href^="http://www.1clickdownloader.com/"], :root a[href^="http://www.123-reg.co.uk/affiliate2.cgi"], :root a[href^="http://prousa.work/"], :root a[href^="http://see-work.info/"], :root a[href^="http://websitedhoome.com/"], :root a[href^="http://www.paddypower.com/?AFF_ID="], :root a[href^="http://uploaded.net/ref/"], :root a[href^="http://track.adform.net/"], :root a[href^="http://t.wowtrk.com/"], :root a[href^="http://adprovider.adlure.net/"], :root a[href^="http://tezfiles.com/pr/"], :root a[href^="http://go.seomojo.com/tracking202/"], :root a[href^="http://www.revenuehits.com/"], :root a[href^="http://www.easydownloadnow.com/"], :root .mw > #rcnt > #center_col > #taw > .c, :root a[href^="http://taboola-"][href*="/redirect.php?app.type="], :root a[href^="http://t.mdn2015x3.com/"], :root a[href^="http://clickandjoinyourgirl.com/"], :root a[href^="http://webtrackerplus.com/"], :root a[href^="http://b.bestcompleteusa.info/"], :root a[href^="http://t.mdn2015x2.com/"], :root a[href^="http://sharesuper.info/"], :root a[href^="http://www.bet365.com/home/default.asp?affiliate="], :root a[href^="http://getlinksinaseconds.com/"], :root a[href^="http://secure.signup-way.com/"], :root a[href^="http://secure.signup-page.com/"], :root [onclick^="window.open('http://adultfriendfinder.com/search/"], :root a[href^="http://secure.hostgator.com/~affiliat/"], :root .ra[width="30%"][align="right"] + table[width="70%"][cellpadding="0"], :root a[href^="http://searchtabnew.com/"], :root a[href^="http://ryushare.com/affiliate.python"], :root a[href^="http://record.commissionking.com/"], :root a[href^="http://record.betsafe.com/"], :root a[href^="http://pubads.g.doubleclick.net/"], :root a[href^="http://www.epicgameads.com/"], :root a[href^="http://gca.sh/user/register?ref="], :root a[href^="http://promos.bwin.com/"], :root a[href^="https://www.FriendlyDuck.com/AF_"], :root a[href^="http://prochina.link/"], :root a[href^="http://z1.zedo.com/"], :root a[href^="http://pokershibes.com/index.php?ref="], :root a[href^="http://n217adserv.com/"], :root a[href^="http://mojofun.info/"], :root a[href^="http://mmo123.co/"], :root .plistaList > .itemLinkPET, :root a[href^="http://mgid.com/"], :root a[href^="http://marketgid.com"], :root a[href^="http://www.socialsex.com/"], :root a[href^="http://www.affbuzzads.com/affiliate/"], :root a[href*=".qertewrt.com/"], :root a[href^="http://lp.ncdownloader.com/"], :root a[href*=".adsrv.eacdn.com/"] > img, :root a[href^="http://lp.ilivid.com/"], :root #rhs_block .xpdopen > ._OKe > div > .mod > ._yYf, :root a[href^="http://lp.ezdownloadpro.info/"], :root a[href^="http://liversely.com/"], :root a[href^="http://latestdownloads.net/download.php?"], :root a[href^="http://keep2share.cc/pr/"], :root a[href^="http://k2s.cc/pr/"], :root a[href^="http://join3.bannedsextapes.com/track/"], :root a[href^="http://green.trafficinvest.com/"], :root a[href^="http://jobitem.org/"], :root a[href^="//adbit.co/?a=Advertise&"], :root a[href^="http://istri.it/?"], :root a[href^="https://dltags.com/"], :root a[href^="http://onclickads.net/"], :root a[href^="http://www.terraclicks.com/"], :root a[href^="http://internalredirect.site/"], :root a[href^="http://cdn.adstract.com/"], :root a[href^="http://hyperlinksecure.com/go/"], :root a[href^="http://engine.newsmaxfeednetwork.com/"], :root a[href^="http://www.sex.com/pics/?utm_"], :root a[href^="http://greensmoke.com/"], :root a[href^="http://www.downloadthesefiles.com/"], :root a[href^="http://farm.plista.com/pets"], :root a[href^="http://mo8mwxi1.com/"], :root div[id^="block-views-topheader-ad-block-"], :root a[href^="http://go.oclaserver.com/"], :root .__y_elastic .__y_item, :root a[href^="http://go.mobisla.com/"], :root a[href^="http://go.ad2up.com/"], :root a[href^="http://games.ucoz.ru/"][target="_blank"], :root div[id^="div-gpt-ad"], :root a[href^="http://fusionads.net"], :root a[href^="http://us.marketgid.com"], :root a[href^="http://imads.integral-marketing.com/"], :root a[href^="http://freesoftwarelive.com/"], :root a[href^="http://adtrackone.eu/"], :root a[href^="http://finaljuyu.com/"], :root a[href^="http://tour.affbuzzads.com/"], :root a[href^="http://fileupnow.rocks/"], :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"], :root a[href^="http://www.roboform.com/php/land.php"], :root a[href^="http://fileloadr.com/"], :root a[href^="http://elitefuckbook.com/"], :root div[id^="ads300_600-widget"], :root a[href^="http://web.adblade.com/"], :root a[href^="http://elite-sex-finder.com/?"], :root a[href^="http://eclkmpsa.com/"], :root a[href^="http://www.menaon.com/installs/"], :root a[href^="http://duckcash.eu/AF_"], :root a[href^="http://dethao.com/"], :root a[href^="http://www.linkbucks.com/referral/"], :root a[href^="http://ddownload39.club/"], :root a[href^="http://www.moneyducks.com/"], :root a[href^="http://data.linoleictanzaniatitanic.com/"], :root a[href^="http://data.committeemenencyclopedicrepertory.info/"], :root a[href^="https://understandsolar.com/signup/?lead_source="][href*="&tracking_code="], :root a[href^="http://hdplugin.flashplayer-updates.com/"], :root a[href^="http://data.ad.yieldmanager.net/"], :root a[href^="http://www.babylon.com/welcome/index?affID"], :root a[href^="http://www.richducks.com/"], :root a[href^="http://campaign.bharatmatrimony.com/track/"], :root #content > #center > .dose > .dosesingle, :root a[href^="http://d2.zedo.com/"], :root a[href^="http://cdn.adsrvmedia.net/"], :root a[href^="http://cpaway.afftrack.com/"], :root a[href^="http://contractallsticker.net/"], :root a[href^="http://codec.codecm.com/"], :root div[id^="ads120_600-widget"], :root a[href^="http://clk.directrev.com/"], :root a[href^="http://refer.webhostingbuzz.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root a[href^="http://clickserv.sitescout.com/"], :root a[href^="http://clicks.guamwnvgashbkashawhgkhahshmashcas.pw/"], :root a[href^="https://dediseedbox.com/clients/aff.php?"], :root a[href^="http://www.wantstraffic.com/"], :root .lads[width="100%"][style="background:#FFF8DD"], :root a[href^="http://databass.info/"], :root a[href^="http://www.urmediazone.com/signup"], :root a[href^="http://ads.pheedo.com/"], :root a[href^="http://click.plista.com/pets"], :root a[href^="http://download-performance.com/"], :root .__ywvr .__y_item, :root a[href^="http://track.incognitovpn.com/"], :root a[href^="http://click.guamwnvgashbkashawhgkhahshmashcas.pw/"], :root a[href^="http://rekoverr.com/"], :root [lazy-ad="lefttop_banner"], :root a[href^="http://servicegetbook.net/"], :root a[href^="http://cinema.friendscout24.de?"], :root a[href^="http://360ads.go2cloud.org/"], :root a[href^="http://dftrck.com/"], :root a[href^="http://casino-x.com/?partner"], :root a[href^="http://www.clkads.com/adServe/"], :root a[href^="http://ads.expekt.com/affiliates/"], :root a[href^="http://callville.xyz/"], :root a[href^="http://serve.williamhill.com/promoRedirect?"], :root a[href^="http://feedads.g.doubleclick.net/"], :root a[href^="http://bs.serving-sys.com/"], :root a[href^="https://trklvs.com/"], :root a[href^="http://bestorican.com/"], :root a[href^="http://www.getyourguide.com/?partner_id="], :root a[href^="http://bcp.crwdcntrl.net/"], :root a[href^="http://install.securewebsiteaccess.com/"], :root .inlineNewsletterSubscription + .inlineNewsletterSubscription div[class$="_item"], :root a[href^="http://clkmon.com/adServe/"], :root a[href^="http://www.torntvdl.com/"], :root a[href^="http://at.atwola.com/"], :root ADS-RIGHT, :root a[href^="http://affiliates.score-affiliates.com/"], :root #rhs_block .mod > .luhb-div > div[data-async-type="updateHotelBookingModule"], :root a[href^="http://affiliate.glbtracker.com/"], :root a[href^="http://www.fducks.com/"], :root .icons-rss-feed + .icons-rss-feed div[class$="_item"], :root a[href^="http://aflrm.com/"], :root a[href^="http://partner.sbaffiliates.com/"], :root a[href^="http://affiliate.coral.co.uk/processing/"], :root a[href^="http://api.content.ad/"], :root a[href^="http://zevera.com/afi.html"], :root a[href^="http://adsrv.keycaptcha.com"], :root a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://www.mobileandinternetadvertising.com/"], :root a[href^="http://adserving.unibet.com/"], :root a[href^="http://chaturbate.com/affiliates/"], :root a[href^="http://adserving.liveuniversenetwork.com/"], :root a[href^="http://adserver.adtechus.com/"], :root a[href^="http://buysellads.com/"], :root a[href^="http://down1oads.com/"], :root #\5f _mom_ad_12, :root a[href^="http://ads.integral-marketing.com/"], :root a[href^="http://adserver.adtech.de/"], :root a[href^="http://ads.betfair.com/redirect.aspx?"], :root a[href^="http://ads.affbuzzads.com/"], :root a[href^="http://online.ladbrokes.com/promoRedirect?"], :root a[href^="http://ads.ad-center.com/"], :root a[href^="http://adrunnr.com/"], :root a[href^="https://www.dsct1.com/"], :root a[href^="http://amzn.to/"] > img[src^="data"], :root a[href^="http://www.liversely.net/"], :root a[href^="http://admingame.info/"], :root div[id^="q1-adset-"], :root a[href^="http://adfarm.mediaplex.com/"], :root #center_col > #taw > #tvcap > .rscontainer, :root a[href^="http://adf.ly/?id="], :root a[href^="http://goldmoney.com/?gmrefcode="], :root a[href^="http://adexprt.me/"], :root a[href^="http://www.flashx.tv/downloadthis"], :root a[href^="http://affiliates.pinnaclesports.com/processing/"], :root a[href^="http://ad.yieldmanager.com/"], :root a[href^="http://ad.doubleclick.net/"], :root #resultspanel > #topads, :root a[href^="http://www.drowle.com/"], :root a[href^="http://abc2.mobile-10.com/"], :root input[onclick^="window.open('http://www.friendlyduck.com/AF_"], :root a[href^="http://srvpub.com/"], :root a[href^="http://a.adquantix.com/"], :root a[href^="http://NowDownloadAll.com"], :root a[href^="http://www.ducksnetwork.com/"], :root a[href^="http://3wr110.net/"], :root a[href^="//ads.ad-center.com/"], :root a[href^="http://1phads.com/"], :root #center_col > #resultStats + div[style="border:1px solid #dedede;margin-bottom:11px;padding:5px 7px 5px 6px"], :root a[href^="https://www.secureupload.eu/suprerefid="], :root a[href^="http://yads.zedo.com/"], :root #mbEnd[cellspacing="0"][cellpadding="0"], :root a[href^="http://adclick.g.doubleclick.net/"], :root a[href^="//t.MtagMonetizationA.com/"], :root #\5f _mom_ad_2, :root a[href^="http://ads.activtrades.com/"], :root a[href^="//api.ad-goi.com/"], :root a[href^="http://www.clickansave.net/"], :root a[href^="http://get.slickvpn.com/"], :root [onclick*="content.ad/"], :root a[href^="http://galleries.securewebsiteaccess.com/"], :root a[href^=" http://n47adshostnet.com/"], :root a[href^="http://linksnappy.com/?ref="], :root #main_col > #center_col div[style="font-size:14px;margin:0 4px;padding:1px 5px;background:#fff7ed"], :root a[href^="http://adtrack123.pl/"], :root .section-result[data-result-ad-type], :root script[src^="http://free-shoutbox.net/app/webroot/shoutbox/sb.php?shoutbox="] + #freeshoutbox_content, :root a[href^=" http://ads.ad-center.com/"], :root .GPMV2XEDA2 > .GPMV2XEDP1 > .GPMV2XEDJBB, :root a[href*="onclkds."], :root a[href^="http://www.idownloadplay.com/"], :root a[href^="//srv.buysellads.com/"], :root a[href^="http://www.xmediaserve.com/"], :root a[href^="http://www.sex.com/videos/?utm_"], :root div[itemtype="http://www.schema.org/WPAdBlock"], :root .__zinit .__y_item, :root .ch[onclick="ga(this,event)"], :root a[href^="https://ad.doubleclick.net/"], :root a[href*="letsadvertisetogether.com"], :root a[href^="http://fsoft4down.com/"], :root a[href*="ad2upapp.com/"], :root .ob_container a[data-redirect^="http://paid.outbrain.com/network/redir?"], :root #mn #center_col > div > h2.spon:first-child, :root a[href*="=Adtracker"], :root a[href^="https://www.popads.net/users/"], :root a[href^="http://tracking.crazylead.com/"], :root a[href*="/cmd.php?ad="], :root a[href^="http://www.myfreepaysite.com/sfw_int.php?aid"], :root a[href^="http://galleries.pinballpublishernetwork.com/"], :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root a[href*=".adk2x.com/"], :root a[href^="http://api.ringtonematcher.com/"], :root a[data-url^="http://paid.outbrain.com/network/redir?"] + .author, :root a[href^="http://www.twinplan.com/AF_"], :root a[href^="http://n.admagnet.net/"], :root a[href^="http://connectlinking6.com/"], :root a[data-obtrack^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://www.duckcash.eu/AF_"], :root a[href^="http://bc.vc/?r="], :root a[href^="//www.mgid.com/"], :root a[href^="http://www.pinkvisualgames.com/?revid="], :root .__y_inner > .__y_item, :root .jobs-information-call-to-action + .jobs-information-call-to-action div[class$="_item"], :root AMP-AD, :root .widget-pane-section-result[data-result-ad-type], :root #center_col > #main > .dfrd > .mnr-c > .c._oc._zs, :root .trc_rbox_div .syndicatedItemUB, :root .ob_container .item-container-obpd, :root a[href^="http://centertrust.xyz/"], :root .trc_rbox_div .syndicatedItem, :root a[target="_blank"][onmousedown="this.href^='http://paid.outbrain.com/network/redir?"], :root #tads + div + .c, :root a[href^="http://www.accuserveadsystem.com/accuserve-go.php?"], :root a[href^="http://c.ketads.com/"], :root .trc_rbox .syndicatedItem, :root a[href^="http://pwrads.net/"], :root a[href*="friendlyduck.com"], :root #mn div[style="position:relative"] > #center_col > div > ._dPg, :root .rhsvw[style="background-color:#fff;margin:0 0 14px;padding-bottom:1px;padding-top:1px;"], :root a[data-url^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://www.fbooksluts.com/"], :root a[href^="http://c.actiondesk.com/"], :root .ra[align="right"][width="30%"], :root a[href^="https://trackjs.com/?utm_source"], :root AFS-AD, :root .ra[align="left"][width="30%"], :root .plista_widget_belowArticleRelaunch_item[data-type="pet"], :root #main-content > [style="padding:10px 0 0 0 !important;"], :root a[href^="http://www.webtrackerplus.com/"], :root .GJJKPX2N1 > .GJJKPX2M1 > .GJJKPX2P4, :root a[href^="http://ad.au.doubleclick.net/"], :root a[href^="http://record.sportsbetaffiliates.com.au/"], :root #topstuff > #tads, :root a[href^="http://www.1clickmoviedownloader.info/"], :root .mw > #rcnt > #center_col > #taw > #tvcap > .c, :root a[href^="http://affiliate.godaddy.com/"], :root a[href^="http://www.sex.com/?utm_"], :root #mn #center_col > div > h2.spon:first-child + ol:last-child, :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"], :root a[href^="http://www.downloadweb.org/"], :root .plistaList > .plista_widget_underArticle_item[data-type="pet"], :root #center_col > #res > #topstuff + #search > div > #ires > #rso > #flun, :root a[href^="http://adultfriendfinder.com/p/register.cgi?pid="], :root a[href^="http://www.yourfuckbook.com/?"], :root a[href^="http://ads.sprintrade.com/"], :root .GHOFUQ5BG2 > .GHOFUQ5BF2 > .GHOFUQ5BG5, :root a[href^="http://ad-apac.doubleclick.net/"], :root .gbfwa > div[class$="_item"], :root a[href^="http://prochina.space/"], :root a[href^="http://www.uniblue.com/cm/"], :root a[data-redirect^="http://click.plista.com/pets"], :root #rhs_block > script + .c._oc._Ve.rhsvw, :root .rscontainer > .ellip, :root #MAIN.ShowTopic > .ad, :root a[href^="http://findersocket.com/"], :root a[href^="http://cdn3.adexprts.com/"], :root a[data-redirect^="this.href='http://paid.outbrain.com/network/redir?"], :root a[href^="http://stateresolver.link/"], :root .__ywl .__y_item, :root a[href^="http://www.myfreepaysite.com/sfw.php?aid"], :root a[href^="http://www.ireel.com/signup?ref"], :root #center_col > #resultStats + #tads, :root .__yinit .__y_item, :root [ad-id^="googlead"], :root a[href^="http://adlev.neodatagroup.com/"], :root a[href^="http://server.cpmstar.com/click.aspx?poolid="], :root #cnt #center_col > #res > #topstuff > .ts, :root iframe[id^="google_ads_frame"], :root a[href^="http://www.dealcent.com/register.php?affid="], :root #cnt #center_col > #taw > #tvcap > .c._oc._Lp, :root .trc_rbox_div a[target="_blank"][href^="http://tab"], :root .GKJYXHBF2 > .GKJYXHBE2 > .GKJYXHBH5, :root #rhs_block .mod > .gws-local-hotels__booking-module, :root a[href^="http://banners.victor.com/processing/"], :root a[href*="googleme.eu"], :root .mod > ._jH + .rscontainer, :root .GFYY1SVD2 > .GFYY1SVC2 > .GFYY1SVF5, :root #rhswrapper > #rhssection[border="0"][bgcolor="#ffffff"], :root .Mpopup + #Mad > #MadZone, :root a[href^="http://www.TwinPlan.com/AF_"], :root a[href^="http://landingpagegenius.com/"], :root a[href^="http://www.streamtunerhd.com/signup?"], :root #ssmiwdiv[jsdisplay], :root #center_col > div[style="font-size:14px;margin-right:0;min-height:5px"] > div[style="font-size:14px;margin:0 4px;padding:1px 5px;background:#fff8e7"], :root a[href^="http://paid.outbrain.com/network/redir?"], :root #ads > .dose > .dosesingle, :root a[href^="http://easydownload4you.com/"], :root #rhs_block > #mbEnd, :root #center_col > #\5f Emc, :root a[href^="http://papi.mynativeplatform.com:80/pub2/"], :root div[id^="dfp-ad-"], :root .GB3L-QEDGY .GB3L-QEDF- > .GB3L-QEDE-, :root .rc-cta[data-target], :root a[href^="http://hd-plugins.com/download/"], :root #rhs_block > .ts[cellspacing="0"][cellpadding="0"][style="padding:0"], :root .GFYY1SVE2 > .GFYY1SVD2 > .GFYY1SVG5, :root #flowplayer > div[style="position: absolute; width: 300px; height: 275px; left: 222.5px; top: 85px; z-index: 999;"], :root a[href^="http://www.pinkvisualpad.com/?revid="], :root a[href^="http://www.greenmangaming.com/?tap_a="], :root a[href^="http://www.bet365.com/home/?affiliate"], :root #center_col > #resultStats + div + #res + #tads, :root .nrelate .nr_partner, :root a[href^="http://bonusfapturbo.nmvsite.com/"], :root a[href^="http://www.sexgangsters.com/?pid="], :root a[href^="http://www.amazon.co.uk/exec/obidos/external-search?"], :root #mn div[style="position:relative"] > #center_col > ._Ak, :root a[href^="http://www.adxpansion.com"], :root div[id^="dfp-slot-"], :root .l-container > #fishtank, :root a[href*="/adrotate-out.php?"], :root a[href^="http://wgpartner.com/"], :root #center_col > #resultStats + #tads + #res + #tads, :root a[href^="http://campaign.bharatmatrimony.com/cbstrack/"], :root .trc_related_container div[data-item-syndicated="true"], :root a[href^="http://t.mdn2015x1.com/"], :root .trc_rbox_border_elm .syndicatedItem, :root a[href^="http://dwn.pushtraffic.net/"], :root a[href$="/vghd.shtml"], :root #rhs_block > ol > .rhsvw > .kp-blk > .xpdopen > ._OKe > ol > ._DJe > .luhb-div, :root a[href^="http://ad-emea.doubleclick.net/"], :root a[href^="http://www.cash-duck.com/AF_"], :root p[id^="div-gpt-ad-"], :root #assetsListings[style="display: block;"], :root #content > #right > .dose > .dosesingle, :root #header + #content > #left > #rlblock_left, :root a[href*="emprestimo.eu"] { display: none !important; }</style><script src="./fermat_little_aops_files/load(3).php"></script></head>
+		<body class="production mediawiki ltr sitedir-ltr ns-0 ns-subject page-Fermat_s_Little_Theorem rootpage-Fermat_s_Little_Theorem skin-aops action-view resources" data-twttr-rendered="true">
+		<div id="page-wrapper">
+			<!-- search:off -->
+
+			<div id="header-wrapper" class="no-select">
+				<div id="header">
+				
+					<!-- The blue bar at top -->
+					<div id="top-bar" class="bluebar-wrapper">
+						<div class="bluebar">
+							<div id="header-popin" style="opacity: 0;">
+								<a href="https://artofproblemsolving.com/company/staff">About</a>
+								<a href="https://artofproblemsolving.com/company/careers">Careers</a>
+								<a href="https://artofproblemsolving.com/contact">Contact</a>
+							</div>
+							<a href="https://artofproblemsolving.com/" class="mobile-title"></a>
+														<div class="item no-select" style="margin-right:6px;color:white">
+								<a style="color:white" href="https://artofproblemsolving.com/user/login?redirect=/wiki/index.php?title=Fermat%27s_Little_Theorem">Log In / Join</a>
+							</div>
+
+							
+							
+														
+
+						</div>
+
+					</div>
+
+
+					<div id="mobile-menu-items" class="clearfix">
+						<a href="https://artofproblemsolving.com/school" class="menu-item school-background-color">School</a>
+						<a href="https://artofproblemsolving.com/store" class="menu-item store-background-color">Store</a>
+						<a data-cmty="" href="https://artofproblemsolving.com/community" class="menu-item community-background-color">Community</a>
+						<a href="https://artofproblemsolving.com/resources" class="menu-item resources-background-color">Resources</a>
+					</div>
+
+
+					<!-- The white area where main menu options appear -->
+					<div class="menubar-wrapper">
+						<div class="menubar">
+							<a id="main-logo" class="banner" href="http://aops.com/"></a>
+
+							<div style="margin-left:230px;vertical-align:bottom;">
+
+								<div class="header-menu school"><span><a href="https://artofproblemsolving.com/school"></a></span><div class="label school-background-color"></div>
+									<div class="pointer"></div>
+									<div id="school-dropdown" class="dropdown-menu">
+																														<a href="https://artofproblemsolving.com/school/how-school-works">How Classes Work</a>
+										<a href="https://artofproblemsolving.com/school/catalog">Course Catalog</a>
+										<a href="https://artofproblemsolving.com/school/schedule">Class Schedule</a>
+										<a href="https://artofproblemsolving.com/school/recommendations">Recommendations</a>
+										<a href="https://artofproblemsolving.com/school/woot">WOOT Courses</a>
+										<a href="https://artofproblemsolving.com/school/mathjams">Math Jams</a>
+																														
+									</div>
+								</div>
+
+								<div class="header-menu store"><span><a href="https://artofproblemsolving.com/store"></a></span><div class="label store-background-color"></div>
+									<div class="pointer"></div>
+									<div id="store-dropdown" class="dropdown-menu">
+																				<a href="https://artofproblemsolving.com/store/list/aops-curriculum">AoPS Curriculum</a>
+										<a href="https://artofproblemsolving.com/store/list/beast-academy">Beast Academy</a>
+										<a href="https://artofproblemsolving.com/store/online">Online Books</a>
+										<a href="https://artofproblemsolving.com/store/recommendations">Recommendations</a>
+										<a href="https://artofproblemsolving.com/store/list/other-products">Other Books &amp; Gear</a>
+										<a href="https://artofproblemsolving.com/store/list/all-products">All Products</a>
+										<a href="https://artofproblemsolving.com/store/gift-certificates">Gift Certificates</a>
+																			</div>
+								</div>
+
+								<div class="header-menu community"><span><a data-cmty="" href="https://artofproblemsolving.com/community"></a></span><div class="label community-background-color"></div>
+									<div class="pointer"></div>
+									<div id="community-dropdown" class="dropdown-menu">
+																				<a data-cmty="" href="https://artofproblemsolving.com/community">Forums</a>
+										<a data-cmty="" href="https://artofproblemsolving.com/community/c13_contests">Contests</a>
+										<a data-cmty="" href="https://artofproblemsolving.com/community/search">Search</a>
+										<a data-cmty="" href="https://artofproblemsolving.com/community/faq">Help</a>
+																													</div>
+								</div>
+
+								<div class="header-menu resources"><span><a href="https://artofproblemsolving.com/resources"></a></span><div class="label resources-background-color"></div>
+									<div class="pointer"></div>
+									<div id="resources-dropdown" class="dropdown-menu">
+										<a href="https://artofproblemsolving.com/alcumus">Alcumus</a>
+										<a href="https://artofproblemsolving.com/polymath/mitprimes2016">MIT PRIMES/AoPS CrowdMath</a>
+										<a href="https://artofproblemsolving.com/videos">Videos</a>
+										<a href="https://artofproblemsolving.com/ftw">For the Win!</a>
+										<a href="https://artofproblemsolving.com/mathcounts_trainer">MATHCOUNTS Trainer</a>
+										<a href="https://artofproblemsolving.com/reaper">Reaper</a>
+										<a href="https://artofproblemsolving.com/greedcontrol">Greed Control</a>
+										<a href="https://artofproblemsolving.com/articles">Articles</a>
+										<a href="https://artofproblemsolving.com/wiki">AoPS Wiki</a>
+										<a href="https://artofproblemsolving.com/texer">TeXeR</a>
+																			</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="extra">
+						<div style="height:5px;background-color:#e2e2e2"></div>
+						<div class="extra-bottom"></div>
+					</div>
+				</div> 
+
+				<noscript>&lt;div class="infobar"&gt;JavaScript is not enabled. JavaScript is required to fully utilize the site.&lt;/div&gt;</noscript>
+
+
+				<div id="breadcrumbs-wrapper">
+					<div id="submenu-icon"><i class="aops-font bars"></i></div>
+					<div id="breadcrumbs">
+												<div class="title-wrapper"><div class="title"><a href="https://artofproblemsolving.com/wiki">AoPS Wiki</a></div></div>
+												<div class="crumb-wrapper">
+																							<span class="crumb crumb-1">
+																	<a href="https://artofproblemsolving.com/resources">Resources</a>
+																</span>
+																								<i class="aops-font aops-angle-double-right"></i>
+																<span class="crumb crumb-2">
+																	<a href="https://artofproblemsolving.com/wiki">Aops Wiki</a>
+																</span>
+																								<i class="aops-font aops-angle-double-right"></i>
+																<span class="crumb crumb-3">
+																	Fermat's Little Theorem																</span>
+													</div>
+					</div>
+				</div>
+			</div>
+			<!-- /search:off -->
+
+<div id="main-content" class="left-navigation" style="min-height: 460px;">
+	<div id="side-column-wrapper" style="min-height: 460px;">
+		<div id="side-column">
+						<div id="content-actions" class="menu open">
+				<div class="submenu">
+					<h1>Page</h1>
+					<div class="submenu-wrapper">
+						<span id="ca-nstab-main" class="selected"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem" title="View the content page " accesskey="c">Article</a></span><span id="ca-talk" class="new"><a href="https://artofproblemsolving.com/wiki/index.php?title=Talk:Fermat%27s_Little_Theorem&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page " accesskey="t">Discussion</a></span><span id="ca-viewsource"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem&amp;action=edit" title="This page is protected.
+You can view its source " accesskey="e">View source</a></span><span id="ca-history"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem&amp;action=history" title="Past revisions of this page " accesskey="h">History</a></span>					</div>
+				</div>
+			</div>
+			<div id="toolbox" class="menu open">
+				<div class="submenu">
+					<h1>Toolbox</h1>
+					<div class="submenu-wrapper">
+						<span id="n-recentchanges"><a href="https://artofproblemsolving.com/wiki/index.php?title=Special:RecentChanges" title="A list of recent changes in the wiki " accesskey="r">Recent changes</a></span><span id="n-randompage"><a href="https://artofproblemsolving.com/wiki/index.php?title=Special:Random" title="Load a random page " accesskey="x">Random page</a></span><span id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></span><span id="t-whatlinkshere"><a href="https://artofproblemsolving.com/wiki/index.php?title=Special:WhatLinksHere/Fermat%27s_Little_Theorem" title="A list of all wiki pages that link here " accesskey="j">What links here</a></span><span id="t-specialpages"><a href="https://artofproblemsolving.com/wiki/index.php?title=Special:SpecialPages" title="A list of all special pages " accesskey="q">Special pages</a></span>					</div>
+				</div>
+			</div>
+						
+			<div id="search" class="menu open">
+				<h1>Search</h1>
+				<div class="submenu-wrapper" style="margin-bottom:5px;">
+					<form action="https://artofproblemsolving.com/wiki/index.php" id="searchform" class="mw-search">
+						<input type="hidden" name="title" value="Special:Search">
+						<input type="search" name="search" placeholder="Search" value="" accesskey="f" id="searchInput">
+						<div style="margin:0 5px 5px 5px;text-align:right;"><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="btn btn-primary searchButton"></div>
+					</form>
+				</div>
+			</div>
+
+			<!--
+			<div class="menu open">
+				<h1>Note</h1>
+				<div class="submenu-wrapper" style="padding:10px;color:#444;">
+					Please do not discuss the 2015 AMC 8 Competition on any website until November 25th.
+				</div>
+			</div>
+			-->
+		</div>
+	</div>
+
+	<div id="main-column" style="margin-top:10px">
+				<div id="mw-js-message" style="display:none;"></div>
+		<h1 id="firstHeading" class="firstHeading">Fermat's Little Theorem</h1>
+		
+						
+		<div class="mw-body">
+													
+			<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>Fermat's Little Theorem</b> is highly useful in <a href="https://artofproblemsolving.com/wiki/index.php?title=Number_theory" title="Number theory">number theory</a> for simplifying the computation of exponents in <a href="https://artofproblemsolving.com/wiki/index.php?title=Modular_arithmetic" title="Modular arithmetic">modular arithmetic</a> (which students should study more at the introductory level if they have a hard time following the rest of this article). This theorem is credited to <a href="https://artofproblemsolving.com/wiki/index.php?title=Pierre_de_Fermat" title="Pierre de Fermat">Pierre de Fermat</a>.
+</p><p><br>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem#Statement"><span class="tocnumber">1</span> <span class="toctext">Statement</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem#Proof"><span class="tocnumber">2</span> <span class="toctext">Proof</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem#Proof_1_.28Induction.29"><span class="tocnumber">2.1</span> <span class="toctext">Proof 1 (Induction)</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem#Proof_2_.28Inverses.29"><span class="tocnumber">2.2</span> <span class="toctext">Proof 2 (Inverses)</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem#Proof_3_.28Combinatorics.29"><span class="tocnumber">2.3</span> <span class="toctext">Proof 3 (Combinatorics)</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem#Proof_4_.28Geometry.29"><span class="tocnumber">2.4</span> <span class="toctext">Proof 4 (Geometry)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem#Problems"><span class="tocnumber">3</span> <span class="toctext">Problems</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem#Introductory"><span class="tocnumber">3.1</span> <span class="toctext">Introductory</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem#Intermediate"><span class="tocnumber">3.2</span> <span class="toctext">Intermediate</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem#Advanced"><span class="tocnumber">3.3</span> <span class="toctext">Advanced</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem#Hints.2FSolutions"><span class="tocnumber">4</span> <span class="toctext">Hints/Solutions</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="https://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Statement">Statement</span></h2>
+<p>If <img src="./fermat_little_aops_files/a0d99bcaeae618f28e7a8897b808e8616ec179dc.png" class="latex" alt="${a}$" width="9" height="8"> is an <a href="https://artofproblemsolving.com/wiki/index.php?title=Integer" title="Integer">integer</a>, <img src="./fermat_little_aops_files/b2714be477337f34f5ca1fb9ec98dc161a4f6ea4.png" class="latex" alt="${p}$" style="vertical-align: -3px" width="10" height="11"> is a <a href="https://artofproblemsolving.com/wiki/index.php?title=Prime_number" title="Prime number">prime number</a> and <img src="./fermat_little_aops_files/a0d99bcaeae618f28e7a8897b808e8616ec179dc.png" class="latex" alt="${a}$" width="9" height="8"> is not <a href="https://artofproblemsolving.com/wiki/index.php?title=Divisibility" title="Divisibility">divisible</a> by <img src="./fermat_little_aops_files/b2714be477337f34f5ca1fb9ec98dc161a4f6ea4.png" class="latex" alt="${p}$" style="vertical-align: -3px" width="10" height="11">, then <img src="./fermat_little_aops_files/c5c55c656c05577bcfd02b95500cc063c61568e1.png" class="latex" alt="$a^{p-1}\equiv 1 \pmod {p}$" style="vertical-align: -4px" width="138" height="19">.
+</p><p>A frequently used corollary of Fermat's Little Theorem is <img src="./fermat_little_aops_files/1d2cd71a47621d5fb3327142217c86a67cad332f.png" class="latex" alt="$a^p \equiv a \pmod {p}$" style="vertical-align: -4px" width="121" height="18">. As you can see, it is derived by multipling both sides of the theorem by <img src="./fermat_little_aops_files/c7d457e388298246adb06c587bccd419ea67f7e8.png" class="latex" alt="$a$" width="9" height="8">.  The restated form is nice because we no longer need to restrict ourselves to integers <img src="./fermat_little_aops_files/a0d99bcaeae618f28e7a8897b808e8616ec179dc.png" class="latex" alt="${a}$" width="9" height="8"> not divisible by <img src="./fermat_little_aops_files/b2714be477337f34f5ca1fb9ec98dc161a4f6ea4.png" class="latex" alt="${p}$" style="vertical-align: -3px" width="10" height="11">.
+</p><p>This theorem is a special case of <a href="https://artofproblemsolving.com/wiki/index.php?title=Euler%27s_Totient_Theorem" title="Euler&#39;s Totient Theorem">Euler's Totient Theorem</a>, which states that if <img src="./fermat_little_aops_files/c7d457e388298246adb06c587bccd419ea67f7e8.png" class="latex" alt="$a$" width="9" height="8"> and <img src="./fermat_little_aops_files/174fadd07fd54c9afe288e96558c92e0c1da733a.png" class="latex" alt="$n$" width="10" height="8"> are integers, then <img src="./fermat_little_aops_files/39d26246d45afa9062d1a13ff162282874bdde1e.png" class="latex" alt="$a^{\phi(n)} \equiv 1 \pmod{n}$" style="vertical-align: -4px" width="143" height="20">, where <img src="./fermat_little_aops_files/edae70ddedf89e790936ed4035c5ca1480212e0f.png" class="latex" alt="$\phi(n)$" style="vertical-align: -4px" width="34" height="18"> denotes <a href="https://artofproblemsolving.com/wiki/index.php?title=Euler%27s_totient_function" title="Euler&#39;s totient function">Euler's totient function</a>. In particular, <img src="./fermat_little_aops_files/726faea6615cb1ed84c86f6ccdcb08e7562954e7.png" class="latex" alt="$\phi(p) = p-1$" style="vertical-align: -4px" width="97" height="18"> for prime numbers <img src="./fermat_little_aops_files/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" class="latex" alt="$p$" style="vertical-align: -3px" width="10" height="11">. In turn, this is a special case of <a href="https://artofproblemsolving.com/wiki/index.php?title=Lagrange%27s_Theorem" title="Lagrange&#39;s Theorem">Lagrange's Theorem</a>.
+</p><p>In contest problems, Fermat's Little Theorem is often used in conjunction with the <a href="https://artofproblemsolving.com/wiki/index.php?title=Chinese_Remainder_Theorem" title="Chinese Remainder Theorem">Chinese Remainder Theorem</a> to simplify tedious calculations.
+</p>
+<h2><span class="mw-headline" id="Proof">Proof</span></h2>
+<p>We offer several proofs using different techniques to prove the statement <img src="./fermat_little_aops_files/6c12472593b6cc1b30f5c8c5d1e80fe879ade24f.png" class="latex" alt="$a^p \equiv a \pmod{p}$" style="vertical-align: -4px" width="121" height="18">. If <img src="./fermat_little_aops_files/561c9f9faf75df54db2b037f7253a07e16424159.png" class="latex" alt="$\text{gcd}\,(a,p) = 1$" style="vertical-align: -4px" width="101" height="18">, then we can cancel a factor of <img src="./fermat_little_aops_files/c7d457e388298246adb06c587bccd419ea67f7e8.png" class="latex" alt="$a$" width="9" height="8"> from both sides and retrieve the first version of the theorem.  
+</p>
+<h3><span class="mw-headline" id="Proof_1_.28Induction.29">Proof 1 (Induction)</span></h3>
+<p>The most straightforward way to prove this theorem is by by applying the <a href="https://artofproblemsolving.com/wiki/index.php?title=Induction" title="Induction">induction</a> principle. We fix <img src="./fermat_little_aops_files/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" class="latex" alt="$p$" style="vertical-align: -3px" width="10" height="11"> as a prime number. The base case, <img src="./fermat_little_aops_files/448adec2b77809913054de01cdbdf8ce684c3099.png" class="latex" alt="$1^p \equiv 1 \pmod{p}$" style="vertical-align: -4px" width="120" height="18">, is obviously true. Suppose the statement <img src="./fermat_little_aops_files/6c12472593b6cc1b30f5c8c5d1e80fe879ade24f.png" class="latex" alt="$a^p \equiv a \pmod{p}$" style="vertical-align: -4px" width="121" height="18"> is true. Then, by the <a href="https://artofproblemsolving.com/wiki/index.php?title=Binomial_theorem" title="Binomial theorem" class="mw-redirect">binomial theorem</a>, 
+</p>
+<center><img src="./fermat_little_aops_files/7d97ae60aed64884958e9041c88f92b0b3e188d5.png" class="latexcenter" alt="\[(a+1)^p = a^p + {p \choose 1} a^{p-1} + {p \choose 2} a^{p-2} + \cdots + {p \choose p-1} a + 1.\]" width="469" height="53"></center>
+<p>Note that <img src="./fermat_little_aops_files/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" class="latex" alt="$p$" style="vertical-align: -3px" width="10" height="11"> divides into any binomial coefficient of the form <img src="./fermat_little_aops_files/cead9c1f61341e74ef319952039d0b9fbae038a4.png" class="latex" alt="${p \choose k}$" style="vertical-align: -22px" width="34" height="53"> for <img src="./fermat_little_aops_files/bf5c6b5cf0a1c13595b7734a04d4898f3662d34e.png" class="latex" alt="$1 \le k \le p-1$" style="vertical-align: -3px" width="107" height="16">. This follows by the definition of the binomial coefficient as <img src="./fermat_little_aops_files/f02c04229b6e489f5cd17e9d81ceceedee42f967.png" class="latex" alt="${p \choose k} = \frac{p!}{k! (p-k)!}$" style="vertical-align: -22px" width="140" height="53">; since <img src="./fermat_little_aops_files/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" class="latex" alt="$p$" style="vertical-align: -3px" width="10" height="11"> is prime, then <img src="./fermat_little_aops_files/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" class="latex" alt="$p$" style="vertical-align: -3px" width="10" height="11"> divides the numerator, but not the denominator. 
+</p><p>Taken <img src="./fermat_little_aops_files/0f965eb9407014fe0e4fc671eed0acbfd84eddb2.png" class="latex" alt="$\mod p$" style="vertical-align: -3px" width="62" height="16">, all of the middle terms disappear, and we end up with <img src="./fermat_little_aops_files/8e8da028157a717384fcac1f902645d27f819e7d.png" class="latex" alt="$(a+1)^p \equiv a^p + 1 \pmod{p}$" style="vertical-align: -4px" width="206" height="18">. Since we also know that <img src="./fermat_little_aops_files/fa3fe3cf6a1396bb2999e490fbbf8bf62c0ba0bb.png" class="latex" alt="$a^p \equiv a\pmod{p}$" style="vertical-align: -4px" width="121" height="18">, then <img src="./fermat_little_aops_files/d3874f1e1c7dfb34417ea9afb0bfa157787a1ca8.png" class="latex" alt="$(a+1)^p \equiv a+1 \pmod{p}$" style="vertical-align: -4px" width="198" height="18">, as desired.  
+</p>
+<h3><span class="mw-headline" id="Proof_2_.28Inverses.29">Proof 2 (Inverses)</span></h3>
+<p>Let <img src="./fermat_little_aops_files/c4aeb5c73cdcde45df7910457f63285f954bd02b.png" class="latex" alt="$S = \{1,2,3,\cdots, p-1\}$" style="vertical-align: -4px" width="181" height="18">. Then, we claim that the set <img src="./fermat_little_aops_files/a910277384842153c2942152513a89a460cd49ac.png" class="latex" alt="$a \cdot S$" width="34" height="12">, consisting of the product of the elements of <img src="./fermat_little_aops_files/ad28c83c99a8fd0dd2e2e594c9d02ee532765a0a.png" class="latex" alt="$S$" width="12" height="12"> with <img src="./fermat_little_aops_files/c7d457e388298246adb06c587bccd419ea67f7e8.png" class="latex" alt="$a$" width="9" height="8">, taken modulo <img src="./fermat_little_aops_files/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" class="latex" alt="$p$" style="vertical-align: -3px" width="10" height="11">, is simply a permutation of <img src="./fermat_little_aops_files/ad28c83c99a8fd0dd2e2e594c9d02ee532765a0a.png" class="latex" alt="$S$" width="12" height="12">. In other words, 
+</p>
+<center><img src="./fermat_little_aops_files/9e3fcc9c2595bb1f400d5eeda2f8b487a50c4d5c.png" class="latexcenter" alt="\[S \equiv \{1a, 2a, \cdots, (p-1)a\} \pmod{p}.\]" width="293" height="18"></center><br>
+<p>Clearly none of the <img src="./fermat_little_aops_files/6175a5bfc3dc02992e5cf93776fdddf8bfdb4cb1.png" class="latex" alt="$ia$" width="16" height="12"> for <img src="./fermat_little_aops_files/b50ca730efda7b934b53b275738594d2bdc4b82d.png" class="latex" alt="$1 \le i \le p-1$" style="vertical-align: -3px" width="103" height="16"> are divisible by <img src="./fermat_little_aops_files/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" class="latex" alt="$p$" style="vertical-align: -3px" width="10" height="11">, so it suffices to show that all of the elements in <img src="./fermat_little_aops_files/a910277384842153c2942152513a89a460cd49ac.png" class="latex" alt="$a \cdot S$" width="34" height="12"> are distinct. Suppose that <img src="./fermat_little_aops_files/7d7e82fee6fbd266462a5c2c83dd860d0346ac67.png" class="latex" alt="$ai \equiv aj \pmod{p}$" style="vertical-align: -4px" width="129" height="18"> for <img src="./fermat_little_aops_files/743293b410b7d3bdf6a048265134ab7aa60b38b0.png" class="latex" alt="$i \neq j$" style="vertical-align: -4px" width="38" height="17">. Since <img src="./fermat_little_aops_files/71305231c1f9adbf289aefb39a9641933230d44d.png" class="latex" alt="$\text{gcd}\, (a,p) = 1$" style="vertical-align: -4px" width="101" height="18">, by the cancellation rule, that reduces to <img src="./fermat_little_aops_files/b3415619253a061aafded1bc7b741e34d1d10d7e.png" class="latex" alt="$i \equiv j \pmod{p}$" style="vertical-align: -4px" width="109" height="18">, which is a contradiction. 
+</p><p>Thus, <img src="./fermat_little_aops_files/b8b71b5ba176db91f6a4683474cd53aa9912f64f.png" class="latex" alt="$\mod{p}$" style="vertical-align: -3px" width="62" height="16">, we have that the product of the elements of <img src="./fermat_little_aops_files/ad28c83c99a8fd0dd2e2e594c9d02ee532765a0a.png" class="latex" alt="$S$" width="12" height="12"> is 
+</p>
+<center><img src="./fermat_little_aops_files/d43fce7dba53ee905ecec7abd530b71a0c3e9a2c.png" class="latexcenter" alt="\[1a \cdot 2a \cdots (p-1)a \equiv 1 \cdot 2 \cdots (p-1) \pmod{p}.\]" width="363" height="18"></center> <br>
+<p>Cancelling the factors <img src="./fermat_little_aops_files/50e6f87bd18a7fefac1da1421248e5d2b11ded8f.png" class="latex" alt="$1, 2, 3, \ldots, p-1$" style="vertical-align: -3px" width="123" height="16"> from both sides, we are left with the statement <img src="./fermat_little_aops_files/04460b192d2ba7c38f661277b8c88d7e05a68d60.png" class="latex" alt="$a^{p-1} \equiv 1 \pmod{p}$" style="vertical-align: -4px" width="138" height="19">.<br>
+</p><p>A similar version can be used to prove <a href="https://artofproblemsolving.com/wiki/index.php?title=Euler%27s_Totient_Theorem" title="Euler&#39;s Totient Theorem">Euler's Totient Theorem</a>, if we let <img src="./fermat_little_aops_files/f5ea09f108628d8f5846f1a781357805cd347278.png" class="latex" alt="$S = \{\text{natural numbers relatively prime to and less than}\ n\}$" style="vertical-align: -4px" width="431" height="18">.
+</p>
+<h3><span class="mw-headline" id="Proof_3_.28Combinatorics.29">Proof 3 (Combinatorics)</span></h3>
+<center><img src="./fermat_little_aops_files/8e1177baf35c15de796acc40c870b683f2eb3a90.png" class="latexcenter" alt="[asy]  real r = 0.3, row1 = 3.5, row2 = 0, row3 = -3.5; void necklace(pair k, pen colors[]){  draw(shift(k)*unitcircle);   for(int i = 0; i &lt; colors.length; ++i){   pair p = k+expi(pi/2+2*pi*i/colors.length);   fill(Circle(p,r),colors[i]);   draw(Circle(p,r));  } }  pen BEADS1[] = {red,red,red},BEADS2[] = {blue,blue,blue},BEADS3[] = {red,red,blue},BEADS4[] = {blue,red,red},BEADS5[] = {red,blue,red},BEADS6[] = {blue,blue,red},BEADS7[] = {red,blue,blue},BEADS8[] = {blue,red,blue}; necklace((-1.5,row1),BEADS1);necklace((1.5,row1),BEADS2);necklace((-2.5,row2),BEADS3);necklace((0,row2),BEADS4);necklace((2.5,row2),BEADS5);necklace((-2.5,row3),BEADS6);necklace((0,row3),BEADS7);necklace((2.5,row3),BEADS8); [/asy]" width="198" height="252"><br> An illustration of the case <img src="./fermat_little_aops_files/395bf1abf4a50667434f990a011179ca36a1d049.png" class="latex" alt="$p=3,a=2$" style="vertical-align: -3px" width="94" height="16">.<br></center>
+<p>Consider a necklace with <img src="./fermat_little_aops_files/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" class="latex" alt="$p$" style="vertical-align: -3px" width="10" height="11"> beads, each bead of which can be colored in <img src="./fermat_little_aops_files/c7d457e388298246adb06c587bccd419ea67f7e8.png" class="latex" alt="$a$" width="9" height="8"> different ways. There are <img src="./fermat_little_aops_files/62fc51ae72c68e36e98b0b1a75de792aabe10754.png" class="latex" alt="$a^p$" width="16" height="12"> ways to pick the colors of the beads. <img src="./fermat_little_aops_files/c7d457e388298246adb06c587bccd419ea67f7e8.png" class="latex" alt="$a$" width="9" height="8"> of these are necklaces that consists of beads of the same color. Of the remaining necklaces, for each necklace, there are exactly <img src="./fermat_little_aops_files/ab0727c08c4aaa6fa119bd3fafe17851e431fd70.png" class="latex" alt="$p-1$" style="vertical-align: -3px" width="40" height="15"> more necklaces that are rotationally equivalent to this necklace. It follows that <img src="./fermat_little_aops_files/aa90dc949346c80fab483a0cdd4cab22c7855299.png" class="latex" alt="$a^p-a$" width="49" height="12"> must be divisible by <img src="./fermat_little_aops_files/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" class="latex" alt="$p$" style="vertical-align: -3px" width="10" height="11">. Written in another way, <img src="./fermat_little_aops_files/6c12472593b6cc1b30f5c8c5d1e80fe879ade24f.png" class="latex" alt="$a^p \equiv a \pmod{p}$" style="vertical-align: -4px" width="121" height="18">.
+</p>
+<h3><span class="mw-headline" id="Proof_4_.28Geometry.29">Proof 4 (Geometry)</span></h3>
+<center><img src="./fermat_little_aops_files/7af624ebb7c7a4068b48928bb16dd155b06fc2a0.png" class="latexcenter" alt="[asy] void match(int i, int j){    draw(shift((i,j))*unitsquare,linewidth(1));  draw(shift((j,i))*unitsquare,linewidth(1));  draw((i+0.5,j+0.5)--(j+0.5,i+0.5),linewidth(2)); } int n = 6; for(int i = 0; i &lt; n; ++i){  for(int j = 0; j &lt; n; ++j)   draw(shift((i,j))*unitsquare, linewidth(0.5)); } draw((0,0)--(n,n),red+linewidth(2)); match(2,4); match(0,3); [/asy]" width="252" height="252">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./fermat_little_aops_files/f79365d1a474b71898d433201404aec2f95b862a.png" class="latexcenter" alt="[asy] import three; currentprojection = perspective(3,-2,4); void match(int i, int j, int k){    draw(shift((i,j,k))*box((0,0,0),(1,1,1)),linewidth(1));  draw(shift((k,i,j))*box((0,0,0),(1,1,1)),linewidth(1));  draw(shift((j,k,i))*box((0,0,0),(1,1,1)),linewidth(1));  draw((i+0.5,j+0.5,k+0.5)--(j+0.5,k+0.5,i+0.5)--(k+0.5,i+0.5,j+0.5)--cycle,linewidth(2)); } int n = 4; for(int i = 0; i &lt; n; ++i){  for(int j = 0; j &lt; n; ++j)   for(int k = 0; k &lt; n; ++k)    draw(shift((i,j,k))*box((0,0,0),(1,1,1)), linewidth(0.5)); } draw((0,0,0)--(n,n,n),red+linewidth(2));match(2,3,1); [/asy]" width="248" height="252">For <img src="./fermat_little_aops_files/bd70692c242910d2ed6a7fd7630cee3e320c6967.png" class="latex" alt="$p=2,3$" style="vertical-align: -3px" width="60" height="16"> and <img src="./fermat_little_aops_files/cd64f2455a41d0aaaa01f29c0341a1b57afc9f8e.png" class="latex" alt="$a=6,4$" style="vertical-align: -3px" width="60" height="16">, respectively.</center>
+<p>We imbed a <a href="https://artofproblemsolving.com/wiki/index.php?title=Hypercube" title="Hypercube">hypercube</a> of side length <img src="./fermat_little_aops_files/c7d457e388298246adb06c587bccd419ea67f7e8.png" class="latex" alt="$a$" width="9" height="8"> in <img src="./fermat_little_aops_files/57c59c321ebcccbaeb3c28e98aab82ccd6031107.png" class="latex" alt="$\mathbb{R}^p$" width="19" height="12"> (the <img src="./fermat_little_aops_files/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" class="latex" alt="$p$" style="vertical-align: -3px" width="10" height="11">-th dimensional <a href="https://artofproblemsolving.com/wiki/index.php?title=Euclidean_space" title="Euclidean space">Euclidean space</a>), such that the vertices of the hypercube are at <img src="./fermat_little_aops_files/8a98c0749b7a6853c205336ad0c3984f2c3e27bb.png" class="latex" alt="$(\pm a/2,\pm a/2, \ldots, \pm a/2)$" style="vertical-align: -4px" width="186" height="18">. A hypercube is essentially a cube, generalized to higher dimensions. This hypercube consists of <img src="./fermat_little_aops_files/62fc51ae72c68e36e98b0b1a75de792aabe10754.png" class="latex" alt="$a^p$" width="16" height="12"> separate unit hypercubes, with centers consisting of the points 
+</p>
+<center><img src="./fermat_little_aops_files/d5b02f8a513bb4a777ca2d9eb69e6a3826478cc0.png" class="latexcenter" alt="\[P(x_1, x_2, \ldots, x_n) = \left(a + \frac 12 - x_1, a + \frac 12 - x_2, \ldots, a + \frac 12 - x_p\right),\]" width="492" height="43"></center><br>
+<p>where each <img src="./fermat_little_aops_files/67bc6daa9d6b964201d6cef60cbeb1ac5fd26ead.png" class="latex" alt="$x_i$" style="vertical-align: -2px" width="15" height="10"> is an integer from <img src="./fermat_little_aops_files/dce34f4dfb2406144304ad0d6106c5382ddd1446.png" class="latex" alt="$1$" style="vertical-align: 0px" width="8" height="12"> to <img src="./fermat_little_aops_files/c7d457e388298246adb06c587bccd419ea67f7e8.png" class="latex" alt="$a$" width="9" height="8">. Besides the <img src="./fermat_little_aops_files/c7d457e388298246adb06c587bccd419ea67f7e8.png" class="latex" alt="$a$" width="9" height="8"> centers of the unit hypercubes in the main diagonal (from <img src="./fermat_little_aops_files/ba6d4c928b5e7445afe84ba6c3efe963b8cf341b.png" class="latex" alt="$(-a/2, -a/2, \ldots, -a/2)$" style="vertical-align: -4px" width="186" height="18"> to <img src="./fermat_little_aops_files/e433dfd430b36df5ae5b6857666fb169fe545197.png" class="latex" alt="$(a/2, a/2, \ldots, a/2)$" style="vertical-align: -4px" width="144" height="18">), the transformation carrying 
+</p><p><img src="./fermat_little_aops_files/6f095a9d0ee4ecfe66804d2643b68e67acb41c38.png" class="latexcenter" alt="\[P(x_1, x_2, \ldots, x_n) \mapsto P(x_2, x_3, \ldots, x_n, x_1)\]" width="316" height="18"><br>
+</p><p>maps one unit hypercube to a distinct hypercube. Much like the combinatorial proof, this splits the non-main diagonal unit hypercubes into groups of size <img src="./fermat_little_aops_files/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" class="latex" alt="$p$" style="vertical-align: -3px" width="10" height="11">, from which it follows that <img src="./fermat_little_aops_files/6c12472593b6cc1b30f5c8c5d1e80fe879ade24f.png" class="latex" alt="$a^p \equiv a \pmod{p}$" style="vertical-align: -4px" width="121" height="18">. Thus, we have another way to visualize the above combinatorial proof, by imagining the described transformation to be, in a sense, a rotation about the main diagonal of the hyp
+</p>
+<h2><span class="mw-headline" id="Problems">Problems</span></h2>
+<h3><span class="mw-headline" id="Introductory">Introductory</span></h3>
+<ul><li> Compute some examples, for example find <img src="./fermat_little_aops_files/5d7efaff6b14664215cc28c16d9ff35d4d5a9cf9.png" class="latex" alt="$3^{31} \pmod{7}, 29^{25} \pmod{11}$" style="vertical-align: -4px" width="215" height="19">, and <img src="./fermat_little_aops_files/43641d9798fce1e125c90a549fef4dfe6505b905.png" class="latex" alt="$128^{129} \pmod{17}$" style="vertical-align: -4px" width="127" height="19">, and check your answers by calculator where possible.</li></ul>
+<ul><li> Let <img src="./fermat_little_aops_files/a1b87e24bdad7a1b284215055909d27c5fedfc53.png" class="latex" alt="$k = 2008^2 + 2^{2008}$" style="vertical-align: -1px" width="135" height="16">. What is the units digit of <img src="./fermat_little_aops_files/65b586c8d0221297768cad3e514f0056e23ce19a.png" class="latex" alt="$k^2 + 2^k$" style="vertical-align: -1px" width="55" height="17">? (<a href="https://artofproblemsolving.com/wiki/index.php?title=2008_AMC_12A_Problems/Problem_15" title="2008 AMC 12A Problems/Problem 15">2008 AMC 12A Problems/Problem 15</a>)</li></ul>
+<ul><li> Find <img src="./fermat_little_aops_files/84377729dc96e03be96c47402dd00378303698f7.png" class="latex" alt="$2^{20} + 3^{30} + 4^{40} + 5^{50} + 6^{60}$" style="vertical-align: -1px" width="203" height="16"> mod <img src="./fermat_little_aops_files/e0a0db32027a732ac57d37ef2ae9bb150f65b108.png" class="latex" alt="$7$" width="9" height="12">. (<a rel="nofollow" class="external text" href="http://www.artofproblemsolving.com/Forum/viewtopic.php?search_id=207352162&amp;t=304326">Discussion</a>).</li></ul>
+<h3><span class="mw-headline" id="Intermediate">Intermediate</span></h3>
+<ul><li> One of Euler's conjectures was disproved in the 1960s by three American mathematicians when they showed there was a positive integer such that <img src="./fermat_little_aops_files/6dd292778c179c49f71790738f3c07f9abc79385.png" class="latex" alt="$133^5+110^5+84^5+27^5=n^5$" style="vertical-align: -1px" width="228" height="16">. Find the value of <img src="./fermat_little_aops_files/8699f115fbc8616c5efb2a4907484724e8cddcb8.png" class="latex" alt="${n}$" width="10" height="8">. (<a href="https://artofproblemsolving.com/wiki/index.php?title=1989_AIME_Problems/Problem_9" title="1989 AIME Problems/Problem 9">1989 AIME, #9</a>)<br><br></li></ul>
+<ul><li>If <img src="./fermat_little_aops_files/596ec1242415b92885f1ef11729fd8d9dc6f2d38.png" class="latex" alt="$f(x) = x^{x^{x^x}}$" style="vertical-align: -4px" width="90" height="24">, find the last two digits of <img src="./fermat_little_aops_files/aa0b22c2e0e4c2feaa248dab2ababa3a5f7c9175.png" class="latex" alt="$f(17) + f(18) + f(19) + f(20)$" style="vertical-align: -4px" width="237" height="18">. (<a rel="nofollow" class="external text" href="https://pumac.princeton.edu/info/archives/pumac-2008/">2008 PuMAC, NT A#4</a>)</li></ul>
+<h3><span class="mw-headline" id="Advanced">Advanced</span></h3>
+<ul><li>Is it true that if <img src="./fermat_little_aops_files/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" class="latex" alt="$p$" style="vertical-align: -3px" width="10" height="11"> is a prime number, and <img src="./fermat_little_aops_files/8c325612684d41304b9751c175df7bcc0f61f64f.png" class="latex" alt="$k$" width="9" height="12"> is an integer <img src="./fermat_little_aops_files/d8ef74ce654385e1315d1b4acb5870c8e8f6c84e.png" class="latex" alt="$2 \le k \le p$" style="vertical-align: -3px" width="76" height="16">, then the sum of the products of each <img src="./fermat_little_aops_files/8c325612684d41304b9751c175df7bcc0f61f64f.png" class="latex" alt="$k$" width="9" height="12">-element subset of <img src="./fermat_little_aops_files/b70bb2df245b763c18d77e20a41eee6f6302d5ed.png" class="latex" alt="$\{1, 2, \ldots, p\}$" style="vertical-align: -4px" width="93" height="18"> will be divisible by <img src="./fermat_little_aops_files/36f73fc1312ee0349b3f3a0f3bd9eb5504339011.png" class="latex" alt="$p$" style="vertical-align: -3px" width="10" height="11">?  <br><br></li></ul>
+<h2><span class="mw-headline" id="Hints.2FSolutions">Hints/Solutions</span></h2>
+<p>Introductory: 
+</p>
+<ul><li> Hint: For the first example, we have <img src="./fermat_little_aops_files/9fc7e41c4956bdac00f11480f7060dbf83612805.png" class="latex" alt="$3^6 \equiv 1 \pmod{7}$" style="vertical-align: -4px" width="120" height="19"> by FLT (Fermat's Little Theorem). It follows that <img src="./fermat_little_aops_files/68bd1199e522a0f76aae1606452b6a2563acbdbf.png" class="latex" alt="$3^{31} = 3 \cdot 3^{30} = 3 \cdot \left(3^{6}\right)^5 \equiv 3 \cdot 1^5 \equiv 3 \pmod{7}$" style="vertical-align: -6px" width="346" height="25">.</li></ul>
+<p>Intermediate:
+</p>
+<ul><li> Solution (1989 AIME, 9) To solve this problem, it would be nice to know some information about the remainders <img src="./fermat_little_aops_files/174fadd07fd54c9afe288e96558c92e0c1da733a.png" class="latex" alt="$n$" width="10" height="8"> can have after division by certain numbers. By Fermat's Little Theorem, we know <img src="./fermat_little_aops_files/7ee524cc97a891d70d495807e5d67f8e2427219d.png" class="latex" alt="${n^{5}}$" width="17" height="15"> is congruent to <img src="./fermat_little_aops_files/174fadd07fd54c9afe288e96558c92e0c1da733a.png" class="latex" alt="$n$" width="10" height="8"> <a href="https://artofproblemsolving.com/wiki/index.php?title=Modulo" title="Modulo" class="mw-redirect">modulo</a> 5.  Hence,<br></li></ul>
+<center><img src="./fermat_little_aops_files/9ae6c19669910fdcb79f9ce3947ec835f29f0733.png" class="latex" alt="$3 + 0 + 4 + 7 \equiv n\pmod{5}$" style="vertical-align: -4px" width="208" height="18"></center>
+<center><img src="./fermat_little_aops_files/01340d89f298149cc82f56f121d194fd13476f30.png" class="latex" alt="$4 \equiv n\pmod{5}$" style="vertical-align: -4px" width="115" height="18"></center>
+<p><br><br>
+</p>
+<dl><dd>Continuing, we examine the equation modulo 3,</dd></dl>
+<center><img src="./fermat_little_aops_files/c4ce449e7b124ba4e09da16e3c97742a85d3ad9c.png" class="latex" alt="$-1 + 1 + 0 + 0 \equiv n\pmod{3}$" style="vertical-align: -4px" width="223" height="18"></center>
+<center><img src="./fermat_little_aops_files/12dfbd3baa056d0fc22f91f6486c78285ec22d0b.png" class="latex" alt="$0 \equiv n\pmod{3}$" style="vertical-align: -4px" width="115" height="18"></center>
+<p><br><br><br>
+</p>
+<dl><dd>Thus, <img src="./fermat_little_aops_files/174fadd07fd54c9afe288e96558c92e0c1da733a.png" class="latex" alt="$n$" width="10" height="8"> is divisible by three and leaves a remainder of four when divided by 5.  It's obvious that <img src="./fermat_little_aops_files/9564367c41fa3e4fbd58324a5341370a2d5cbcfe.png" class="latex" alt="$n&gt;133$" style="vertical-align: 0px" width="61" height="13">, so the only possibilities are <img src="./fermat_little_aops_files/fdaff0fd3a4cf5c4fd55293d82c8216d24a28b5f.png" class="latex" alt="$n = 144$" style="vertical-align: 0px" width="62" height="12"> or <img src="./fermat_little_aops_files/eb4e4be250d8f9c61ffb90c093b9a09e428bea97.png" class="latex" alt="$n = 174$" style="vertical-align: 0px" width="62" height="12">.  It quickly becomes apparent that 174 is much too large, so <img src="./fermat_little_aops_files/174fadd07fd54c9afe288e96558c92e0c1da733a.png" class="latex" alt="$n$" width="10" height="8"> must be 144.</dd></dl>
+<p>Advanced:
+</p>
+<ul><li> Hint: try to establish the identity <img src="./fermat_little_aops_files/5bb6413fecf0be2ae0f3902902eac1659d836166.png" class="latex" alt="$x^{p} - x \equiv x(x-1)(x-2) \cdots (x-(p-1)) \pmod{p}$" style="vertical-align: -4px" width="396" height="18">, and then apply <a href="https://artofproblemsolving.com/wiki/index.php?title=Vieta%27s_formulas" title="Vieta&#39;s formulas" class="mw-redirect">Vieta's formulas</a>. </li></ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a href="https://artofproblemsolving.com/wiki/index.php?title=Number_theory" title="Number theory">Number theory</a></li>
+<li> <a href="https://artofproblemsolving.com/wiki/index.php?title=Modular_arithmetic" title="Modular arithmetic">Modular arithmetic</a></li>
+<li> <a href="https://artofproblemsolving.com/wiki/index.php?title=Euler%27s_Totient_Theorem" title="Euler&#39;s Totient Theorem">Euler's Totient Theorem</a></li>
+<li> <a href="https://artofproblemsolving.com/wiki/index.php?title=Order_(group_theory)" title="Order (group theory)">Order (group theory)</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20170724014643
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.080 seconds
+Real time usage: 0.084 seconds
+Preprocessor visited node count: 1064/1000000
+Preprocessor generated node count: 2312/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki-wiki_:pcache:idhash:1697-0!*!0!!en!*!* and timestamp 20170724014643 and revision id 85359
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem&amp;oldid=85359">http://artofproblemsolving.com/wiki/index.php?title=Fermat%27s_Little_Theorem&amp;oldid=85359</a>"</div>
+
+				
+							<div class="catlinks"><div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://artofproblemsolving.com/wiki/index.php?title=Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="https://artofproblemsolving.com/wiki/index.php?title=Category:Number_theory" title="Category:Number theory">Number theory</a></li><li><a href="https://artofproblemsolving.com/wiki/index.php?title=Category:Theorems" title="Category:Theorems">Theorems</a></li></ul></div></div></div>
+							
+				
+					</div>
+		
+		
+	</div>
+</div>
+<!-- search:off -->
+			<div class="clearfix"></div>
+
+
+			<div id="the-end-1" class="clearfix no-print">
+				<div class="container clearfix">
+					<div class="col-wasc">
+						<div></div>
+						ACS WASC<br>ACCREDITED<br>SCHOOL
+					</div>
+
+					<div class="col-about">
+						<h2>About</h2>
+						<a class="link" href="https://artofproblemsolving.com/company/staff">Our Team</a>
+						<a class="link" href="https://artofproblemsolving.com/company/history">Our History</a>
+						<a class="link" href="https://artofproblemsolving.com/company/careers">Jobs</a>
+					</div>
+
+					<div class="col-info">
+						<h2 style="left:-1px;">Site Info</h2>
+						<a class="link" href="https://artofproblemsolving.com/company/tos">Terms</a>
+						<a class="link" href="https://artofproblemsolving.com/company/privacy">Privacy</a>
+						<a class="link" href="https://artofproblemsolving.com/contact">Contact Us</a>
+					</div>
+
+					<div class="col-help">
+						<h2>Help</h2>
+						<a class="link" href="https://artofproblemsolving.com/school/recommendations">School</a>
+						<a class="link" href="https://artofproblemsolving.com/store/recommendations">Books</a>
+						<a class="link" href="https://artofproblemsolving.com/community/faq">Community</a>
+					</div>
+
+					<div class="stay-connected">
+
+						<a target="_blank" href="http://www.facebook.com/home.php?#/pages/Art-of-Problem-Solving/322689570276"><div class="social-icon facebook-icon"></div></a>
+						<a target="_blank" href="http://twitter.com/AoPSNews"><div class="social-icon twitter-icon"></div></a>
+
+						<h2>Stay Connected</h2>
+						<div class="copy">
+							<a href="https://artofproblemsolving.com/mailinglist">Subscribe</a> to get news and<br>
+							updates from AoPS, or <a href="https://artofproblemsolving.com/contact">Contact Us</a>.
+						</div>
+						<form method="post" action="https://artofproblemsolving.com/mailinglist">
+							<input type="email" class="email" placeholder="Enter e-mail address" name="subscribe-email">
+							<input type="hidden" name="new-books" value="on">
+							<input type="hidden" name="classes" value="on">
+							<input type="hidden" name="mathjams" value="on">
+							<input type="submit" class="btn" value="Subscribe">
+						</form>
+					</div>
+					<a class="beast" href="http://beastacademy.com/"></a>
+				</div>
+			</div>
+
+			<div id="the-end-2" class="no-print">
+				<div class="container clearfix">
+					<div class="copy">
+						<span>
+						© 2017<br>
+						AoPS Incorporated
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div id="small-footer-wrapper">
+				<div id="small-footer-panel">
+					<span class="copyright">
+						© 2017 Art of Problem Solving
+					</span>
+					<a href="https://artofproblemsolving.com/company/tos">Terms</a>
+					<a href="https://artofproblemsolving.com/company/privacy">Privacy</a>
+					<a href="https://artofproblemsolving.com/contact">Contact Us</a>
+					<a href="https://artofproblemsolving.com/company/staff">About Us</a>
+				</div>
+			</div>
+
+			<!--<div id="login-mask"></div>-->
+						<div id="login-form">
+
+				<div class="error">
+					Invalid username
+				</div>
+
+				<div class="info">
+					Login to AoPS
+				</div>
+				<form>
+					<div class="form-group">
+						<div>
+							<label>Username:</label>
+						</div>
+						<div>
+							<input name="username" class="form-control" id="login-username" type="text" placeholder="Enter username or email address" autocapitalize="off">
+						</div>
+					</div>
+					<div class="form-group">
+						<div>
+							<label>Password:</label>
+						</div>
+						<div>
+							<input name="password" class="form-control" id="login-password" type="hidden" placeholder="Enter password" autocomplete="off">
+						</div>
+					</div>
+				</form>
+				<div class="form-group">
+					<div>
+					</div>
+					<div>
+						<button class="btn btn-primary" id="login-button" href="#">Login</button>
+						<button class="btn" id="login-cancel-button" href="#">Cancel</button>
+						<span style="padding-left:20px;" id="login-message"></span>
+						<div style="margin-top:5px;">
+							<label style="display:block;float:left;padding-right:10px;white-space:nowrap;line-height:1em;font-weight:normal">
+								<input type="checkbox" name="stay-logged-in" id="login-stay-logged-in" style="vertical-align:middle;margin:0;">
+								<span style="vertical-align:middle">Stay logged in</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<!--
+				<div class="form-group">
+					<div>
+					</div>
+					<div>
+						<a id="login-facebook" href="#">Login with Facebook</a>
+					</div>
+				</div>
+				-->
+
+				<div id="login-form-links">
+					<p>
+						<a href="https://artofproblemsolving.com/user/register.php">Create a new account</a>
+					</p>
+					<p>
+						<a href="https://artofproblemsolving.com/user/resend-activation.php">Lost your activation email?</a>
+					</p>
+					<p>
+						<a href="https://artofproblemsolving.com/user/reset-pw.php">Forgot your password or username?</a>
+					</p>
+				</div>
+			</div>
+					</div>
+		<div id="print-footer" class="printer">Copyright © 2017 Art of Problem Solving</div>
+
+
+		<script src="./fermat_little_aops_files/common-combined.js"></script>
+		<script>_.mixin(_.str.exports());</script>
+
+
+
+				<script>
+			AoPS.bootstrap_data = [];
+			AoPS.bd = AoPS.bootstrap_data; // Alias!
+		</script>
+
+		<script src="./fermat_little_aops_files/aops.js"></script>
+				<script src="./fermat_little_aops_files/ui.js"></script>
+
+				
+				
+		
+		<!-- /search:off -->
+
+	
+
+</body></html>
