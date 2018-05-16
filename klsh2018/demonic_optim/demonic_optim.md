@@ -23,4 +23,4 @@
 Обмен конвертами
 Дележ доллара
 
-
+http://jdlm.info/articles/2018/03/18/markov-decision-process-2048.html
