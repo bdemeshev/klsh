@@ -89,3 +89,16 @@ klsh2014/kayles/kayles.synctex.gz
 klsh2014/platonic/120-cell.mp4
 klsh2014/platonic/polytopes.mov.mp4
 klsh2014/Visualization_of_Einstein_s_special_relativity.mp4
+
+
+
+klsh2018/quantum_computing/*.bbl
+klsh2018/quantum_computing/*.bcf
+klsh2018/quantum_computing/*.blg
+klsh2018/quantum_computing/*.fdb_latexmk
+klsh2018/quantum_computing/*.lfs
+klsh2018/quantum_computing/*.log
+klsh2018/quantum_computing/*.out
+klsh2018/quantum_computing/*.run.xml
+klsh2018/quantum_computing/*.toc
+klsh2018/quantum_computing/*.xdv
