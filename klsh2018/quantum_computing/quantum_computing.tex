@@ -13,6 +13,8 @@
 \allsectionsfont{\centering}
 
 \usepackage{amsmath} % куча стандартных математических плюшек
+\usepackage{amssymb} % символы
+\usepackage{amsthm} % теоремки
 
 \usepackage{comment} % добавление длинных комментариев
 
@@ -79,9 +81,10 @@
 
 %% эконометрические сокращения
 \DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Arg}{Arg}
 \DeclareMathOperator{\Corr}{Corr}
 \DeclareMathOperator{\Var}{Var}
-\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\E}{\mathbb{E}}
 \def \hb{\hat{\beta}}
 \def \hs{\hat{\sigma}}
 \def \htheta{\hat{\theta}}
@@ -96,6 +99,8 @@
 \def \hCorr{\widehat{\Corr}}
 \def \hCov{\widehat{\Cov}}
 \def \cN{\mathcal{N}}
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
 
 
 
@@ -148,6 +153,9 @@ style=alphabetic]{biblatex}
 
 
 
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+
 
 
 \begin{document}
@@ -173,7 +181,7 @@ style=alphabetic]{biblatex}
 В вазе пять неотличимых с виду конфет.
 Две без ореха и три — с орехом. Маша ест конфеты выбирая их наугад до тех пор,
 пока не съест первую конфету с орехом. Обозначим $X$ — число съеденных конфет.
-Найдите $\P(X=2)$, $\P(X>1)$, $\E(X)$
+Найди вероятности $\P(X=2)$, $\P(X>1)$ и ожидание $\E(X)$.
 
 
 \begin{sol}
@@ -198,7 +206,7 @@ style=alphabetic]{biblatex}
 если решкой — то ещё два раза. После этого Маша идёт в кино!
 Пусть $X$ — количество выпавших орлов.
 
-Найдите вероятности $\P(X=0)$, $\P(X=1)$, \ldots и ожидание $\E(X)$.
+Найди вероятности $\P(X=0)$, $\P(X=1)$ и ожидание $\E(X)$.
 
 \begin{sol}
 \end{sol}
@@ -211,7 +219,7 @@ style=alphabetic]{biblatex}
 
 Составьте табличку возможных значений $N$ с их вероятностями.
 
-Найдите $\P(N \text{ — чётное})$, $\E(N)$
+Найди вероятность $\P(N \text{ — чётное})$ и ожидание $\E(N)$.
 
 
 \begin{sol}
@@ -223,9 +231,62 @@ style=alphabetic]{biblatex}
 
 
 
+
+
 \section{К чёрту условности!}
 
+\begin{definition}
+Условная вероятность события $A$ при условии, что событие $B$ произошло,
+\[
+\P(A|B) = \frac{\P(A \cap B)}{\P(B)}
+\]
+\end{definition}
+
+
+
 \section{Не комплексуй без комплексных чисел}
+
+\begin{definition}
+Комплексное число — это вектор на плоскости.
+
+Страшные слова:
+\begin{enumerate}
+  \item Длина вектора — модуль комплексного числа, $|z|$.
+  \item Угол между вектором и горизонатльной осью — аргумента комплексного числа, $\Arg z$.
+  \item Горизонтальная составляющая вектора — действительная часть, $\Re z$.
+  \item Вертикальная составляющая вектора — мнимая часть, $\Im z$.
+\end{enumerate}
+
+Действия:
+\begin{enumerate}
+  \item Сложение комплексных чисел — сложение векторов.
+  \item Умножение комплексных чисел — длины векторов умножаются, аргументы складываются.
+\end{enumerate}
+\end{definition}
+
+\begin{problem}
+
+\begin{enumerate}
+  \item У комплексного числа $w = 3+4i$ найди $|w|$, $|w|^2$, $\Arg w$, $\Re w$.
+  \item Найди из геометрического определения $i^2$, $(1+i)^2$, $(1+i)/(1-i)$, $(3+5i) \cdot (3+3i)$;
+  \item Найди $(1+i)^{43}$, $(1-i)^{2018}$;
+\end{enumerate}
+
+\begin{sol}
+\end{sol}
+\end{problem}
+
+
+\begin{problem}
+Реши уравнения $z^2 + 6z + 10 = 0$, $z^6 = 64$, $(z-1) / (z + 1) = 1 + 3i$.
+\begin{sol}
+\end{sol}
+\end{problem}
+
+
+
+
+
 
 \section{У нас много комплексов}
 
