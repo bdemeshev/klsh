@@ -3,6 +3,8 @@
 \usepackage{hyperref} % гиперссылки
 
 \usepackage{tikz} % картинки в tikz
+\usetikzlibrary{arrows.meta} % tikz-прибамбас для рисовки стрелочек подлиннее
+
 \usepackage{microtype} % свешивание пунктуации
 
 \usepackage{array} % для столбцов фиксированной ширины
@@ -174,8 +176,15 @@ style=alphabetic]{biblatex}
   \item что делать с экспонентой $e$?
 \end{itemize}
 
+
 \newpage
 \section{Посади дерево!}
+
+\begin{definition}
+$A$ — событие, $\P(A)$ — вероятность события $A$.
+
+$X$ — случайная величина, $\E(X)$ — математическое ожидание величины $X$.
+\end{definition}
 
 \begin{problem}
 В вазе пять неотличимых с виду конфет.
@@ -328,8 +337,8 @@ style=alphabetic]{biblatex}
 \begin{problem}
 
 \begin{enumerate}
-  \item У комплексного числа $w = 3+4i$ найди $|w|$, $|w|^2$, $\Arg w$, $\Re w$.
-  \item Найди из геометрического определения $i^2$, $(1+i)^2$, $(1+i)/(1-i)$, $(3+5i) \cdot (3+3i)$;
+  \item У комплексного числа $w = 3+4i$ найди $|w|$, $|w|^2$, $\Arg w$, $\Re w$, $\Im w$.
+  \item Найди $i^2$, $(1+i)^2$, $(1+i)/(1-i)$, $(3+5i) \cdot (3+3i)$;
   \item Найди $(1+i)^{43}$, $(1-i)^{2018}$;
 \end{enumerate}
 
@@ -344,6 +353,33 @@ style=alphabetic]{biblatex}
 \end{sol}
 \end{problem}
 
+
+
+
+\begin{problem}
+  Найди сумму углов между векторами и горизонтальной осью.
+
+
+  \begin{minipage}{0.8\textwidth}
+  \begin{center}
+  \begin{tikzpicture}
+  \draw (0,0) -- (4,0);
+  \draw (0,1) -- (4,1);
+  \draw (0,2) -- (4,2);
+  \draw (0,0) -- (0,2);
+  \draw (1,0) -- (1,2);
+  \draw (2,0) -- (2,2);
+  \draw (3,0) -- (3,2);
+  \draw (4,0) -- (4,2);
+  \draw[-{Latex[length=5mm, width=2mm]}] (0,0) -- (4,2);
+  \draw[-{Latex[length=5mm, width=2mm]}] (0,0) -- (3,1);
+  \end{tikzpicture}
+  \end{center}
+  \end{minipage}
+\begin{sol}
+  $(4+2i)(3+i) = 10 + 10i$
+\end{sol}
+\end{problem}
 
 
 
@@ -449,6 +485,17 @@ H = \frac{1}{\sqrt{2}}\left( \ketbra{0}{0} + \ketbra{0}{1} + \ketbra{1}{0} - \ke
 \section{Алгоритм Саймона: 2 кубита}
 
 
+
+\section{Лог}
+
+\begin{enumerate}
+  \item Было 11 школьников, 8-10 класс. Умножение вероятностей на дереве и расчёт ожидания на примере 1.1, 1.2.
+  Задача про метание маркера в доску, школьники сами предлагают формулу $\P(A|B) = S(A\cap B) / S(B)$. Задача 2.1.
+  Школьники прочли и начали предлагать ответы на 2.2.
+\end{enumerate}
+
+
+
 \Closesolutionfile{solution_file}
 
 % для гиперссылок на условия
@@ -460,6 +507,7 @@ H = \frac{1}{\sqrt{2}}\left( \ketbra{0}{0} + \ketbra{0}{1} + \ketbra{1}{0} - \ke
 }%
 {%
 }%
+
 
 \section{Решения}
 \input{all_solutions}
