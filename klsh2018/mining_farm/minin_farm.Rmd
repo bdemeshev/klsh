@@ -1,0 +1,163 @@
+---
+title: "Крипто-Ферма"
+author: "Весёлый молочник"
+date: "Намайни Кефириум!"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    keep_tex: yes
+    number_sections: true
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+    highlight: tango
+    latex_engine: xelatex
+  word_document: default
+  html_document: default
+lang: ru-RU
+mainfont: Linux Libertine O
+fontsize: 11pt
+geometry: left=2cm, right=2cm, top=2cm, bottom=2cm
+documentclass: article
+linkcolor: blue
+urlcolor: blue
+citecolor: blue
+header-includes:
+- \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+- \newfontfamily{\cyrillicfont}{Linux Libertine O}
+- \newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include=FALSE}
+the_seed <- 7
+library(tidyverse) # манипуляции с данными и графики
+library(stringr) # работа со строками
+```
+
+# Раунд 1
+
+Рассчитай все дроби с точностью до одного знака после запятой. Сложи все первые знаки после запятой.
+
+```{r, results='asis', echo=FALSE}
+fraction_exercise <- function(n = 1, output = c("question", "answer")) {
+  output <- match.arg(output)
+  
+  nominator <- sample(1:999, size = n, replace = TRUE)
+  denominator <- sample(2:99, size = n, replace = TRUE)
+  fraction <- nominator / denominator
+  part <- fraction - floor(fraction)
+  digit <- floor(10 * part)
+  if (output == "question") {
+    text <- paste0("$", nominator, " / ", denominator, "$, ")
+    text <- paste0(c(text), collapse = "")
+    text <- str_sub(text, end = -3)
+        
+  } else {
+    text <- paste0("$", digit, "$, ")
+    text <- paste0(c(text), collapse = "")
+
+    text <- paste0(text, " и сумма равна $", sum(digit), "$")
+  }
+  
+  return(text)
+}
+
+set.seed(the_seed)
+fraction_exercise(20) %>% cat()
+```
+
+
+
+# Раунд 2
+
+В каждом произведении найди вторую цифру слева. Сложи все полученные цифры.
+
+```{r, results='asis', echo=FALSE}
+product_exercise <- function(n = 1, output = c("question", "answer")) {
+  output <- match.arg(output)
+  
+  term_1 <- sample(1:999, size = n, replace = TRUE)
+  term_2 <- sample(2:99, size = n, replace = TRUE)
+  product <- term_1 * term_2
+  digit <- as.numeric(str_sub(as.character(product), start = 2, end = 2))
+  if (output == "question") {
+    text <- paste0("$", term_1, " \\cdot ", term_2, "$, ")
+    text <- paste0(c(text), collapse = "")
+    text <- str_sub(text, end = -3)
+  } else {
+    text <- paste0("$", digit, "$, ")
+    text <- paste0(c(text), collapse = "")
+
+    text <- paste0(text, " и сумма равна $", sum(digit), "$")
+  }
+  
+  return(text)
+}
+
+set.seed(the_seed)
+product_exercise(20) %>% cat()
+
+```
+
+
+# Раунд 3
+
+Рассчитай все квадратные корни с точностью до одного знака после запятой. Сложи все первые знаки после запятой. 
+
+```{r, results='asis', echo=FALSE}
+root_exercise <- function(n = 1, output = c("question", "answer")) {
+  output <- match.arg(output)
+  
+  under_root <- sample(1:999, size = n, replace = TRUE)
+  root <- sqrt(under_root)
+  part <- root - floor(root)
+  digit <- floor(10 * part)
+  if (output == "question") {
+    text <- paste0("$\\sqrt{", under_root, "}$, ")
+    text <- paste0(c(text), collapse = "")
+    text <- str_sub(text, end = -3)
+        
+  } else {
+    text <- paste0("$", digit, "$, ")
+    text <- paste0(c(text), collapse = "")
+
+    text <- paste0(text, " и сумма равна $", sum(digit), "$")
+  }
+  
+  return(text)
+}
+
+set.seed(the_seed)
+root_exercise(20) %>% cat()
+```
+
+
+# Ответы
+
+## Раунд 1
+
+```{r, results='asis', echo=FALSE}
+set.seed(the_seed)
+fraction_exercise(20, output = "answer") %>% cat()
+```
+
+
+## Раунд 2
+
+```{r, results='asis', echo=FALSE}
+set.seed(the_seed)
+product_exercise(20, output = "answer") %>% cat()
+```
+
+
+## Раунд 3
+
+```{r, results='asis', echo=FALSE}
+set.seed(the_seed)
+root_exercise(20, output = "answer") %>% cat()
+```
+
+
