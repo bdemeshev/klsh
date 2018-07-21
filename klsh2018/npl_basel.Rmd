@@ -1,0 +1,46 @@
+---
+title: "Базельская задача"
+author: "Борис Демешев"
+date: "Научно непопулярная лекция"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    keep_tex: yes
+    number_sections: true
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+    highlight: tango
+    latex_engine: xelatex
+  word_document: default
+  html_document: default
+lang: ru-RU
+mainfont: Linux Libertine O
+fontsize: 11pt
+geometry: left=2cm, right=2cm, top=2cm, bottom=2cm
+documentclass: article
+linkcolor: blue
+urlcolor: blue
+citecolor: blue
+header-includes:
+- \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+- \newfontfamily{\cyrillicfont}{Linux Libertine O}
+- \newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include=FALSE}
+library(tidyverse) # манипуляции с данными и графики
+```
+
+
+Эту задачу не смогли решить ни Лейбниц, ни Стирлинг, ни Муавр, ни Якоб Бернулли, ни Иоганн Бернулли. Задача не поддавалась решению почти сотню лет. 
+Задачу смог решить только Леонард Эйлер в 28 лет и решение сделало его знаменитым на всю Европу. Попробуем решить задачу и мы :)
+
+
+\[
+\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \frac{1}{5^2} + \ldots = \; ?
+\]
+
