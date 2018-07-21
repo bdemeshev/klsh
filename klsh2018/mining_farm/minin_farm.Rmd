@@ -16,6 +16,8 @@ output:
   word_document: default
   html_document: default
 lang: ru-RU
+params:
+  the_seed: 7
 mainfont: Linux Libertine O
 fontsize: 11pt
 geometry: left=2cm, right=2cm, top=2cm, bottom=2cm
@@ -32,12 +34,12 @@ editor_options:
 ---
 
 ```{r, include=FALSE}
-the_seed <- 7
+the_seed <- params$the_seed
 library(tidyverse) # манипуляции с данными и графики
 library(stringr) # работа со строками
 ```
 
-# Раунд 1
+# Раунд `r the_seed`-1 
 
 Рассчитай все дроби с точностью до одного знака после запятой. Сложи все первые знаки после запятой.
 
@@ -66,12 +68,12 @@ fraction_exercise <- function(n = 1, output = c("question", "answer")) {
 }
 
 set.seed(the_seed)
-fraction_exercise(20) %>% cat()
+fraction_exercise(12) %>% cat()
 ```
 
 
 
-# Раунд 2
+# Раунд `r the_seed`-2
 
 В каждом произведении найди вторую цифру слева. Сложи все полученные цифры.
 
@@ -98,14 +100,15 @@ product_exercise <- function(n = 1, output = c("question", "answer")) {
 }
 
 set.seed(the_seed)
-product_exercise(20) %>% cat()
+product_exercise(12) %>% cat()
 
 ```
 
 
-# Раунд 3
+# Раунд `r the_seed`-3
 
-Рассчитай все квадратные корни с точностью до одного знака после запятой. Сложи все первые знаки после запятой. 
+Рассчитай все квадратные корни с точностью до целых с округлением вниз. 
+Сложи последние цифры от каждого числа. 
 
 ```{r, results='asis', echo=FALSE}
 root_exercise <- function(n = 1, output = c("question", "answer")) {
@@ -131,33 +134,33 @@ root_exercise <- function(n = 1, output = c("question", "answer")) {
 }
 
 set.seed(the_seed)
-root_exercise(20) %>% cat()
+root_exercise(12) %>% cat()
 ```
 
 
 # Ответы
 
-## Раунд 1
+## Раунд `r the_seed`-1
 
 ```{r, results='asis', echo=FALSE}
 set.seed(the_seed)
-fraction_exercise(20, output = "answer") %>% cat()
+fraction_exercise(12, output = "answer") %>% cat()
 ```
 
 
-## Раунд 2
+## Раунд `r the_seed`-2
 
 ```{r, results='asis', echo=FALSE}
 set.seed(the_seed)
-product_exercise(20, output = "answer") %>% cat()
+product_exercise(12, output = "answer") %>% cat()
 ```
 
 
-## Раунд 3
+## Раунд `r the_seed`-3
 
 ```{r, results='asis', echo=FALSE}
 set.seed(the_seed)
-root_exercise(20, output = "answer") %>% cat()
+root_exercise(12, output = "answer") %>% cat()
 ```
 
 
