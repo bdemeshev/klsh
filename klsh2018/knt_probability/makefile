@@ -1,13 +1,13 @@
 # makefile: tex -> pdf via xelatex
 # v 2.0
 # .tex extension is automatically added
-file_name = knt_probability 
+file_name = knt_probability
 
 $(file_name).pdf: $(file_name).tex
 	# protection against biber error
 	# http://tex.stackexchange.com/questions/140814/
 	rm -rf `biber --cache`
-
+	
 	# create pdf
 	# will automatically run pdflatex/biber if necessary
 	latexmk -xelatex $(file_name).tex
