@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML//EN">
+<!-- saved from url=(0058)https://www.classe.cornell.edu/spr/2004-04/msg0060395.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Deutch's algorithm with a pair of sunglasses and some mirrors</title>
+<link rev="made" href="mailto:staym@datawest.net">
+</head>
+<body>
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<hr>
+[<a href="https://www.classe.cornell.edu/spr/2004-04/msg0060394.html">Date Prev</a>][<a href="https://www.classe.cornell.edu/spr/2004-04/msg0060396.html">Date Next</a>][<a href="https://www.classe.cornell.edu/spr/2004-04/msg0060510.html">Thread Prev</a>][<a href="https://www.classe.cornell.edu/spr/2004-04/msg0060397.html">Thread Next</a>][<a href="https://www.classe.cornell.edu/spr/2004-04/index5.html#0060395">Date Index</a>][<a href="https://www.classe.cornell.edu/spr/2004-04/thrd6.html#0060395">Thread Index</a>]
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+<h1>Deutch's algorithm with a pair of sunglasses and some mirrors</h1>
+<hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>Subject</em>: Deutch's algorithm with a pair of sunglasses and some mirrors</li>
+<li><em>From</em>: staym@datawest.net (Mike Stay)</li>
+<li><em>Date</em>: Mon, 19 Apr 2004 07:19:24 +0000 (UTC)</li>
+<li><em>Approved</em>: helbig@astro.multiNOSPAMvax.de (sci.physics.research) X-Mod-No.: 07</li>
+<li><em>Message-ID</em>: &lt;<a href="https://www.classe.cornell.edu/spr/2004-04/msg0060395.html">d6255a14.0404181908.3eca55ad@posting.google.com</a>&gt;</li>
+<li><em>Newsgroups</em>: sci.physics.research</li>
+<li><em>Organization</em>: http://groups.google.com</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>Deutch's algorithm with a pair of sunglasses and some mirrors
+
+Mike Stay, 2004
+
+1.  Introduction
+
+The simplest quantum system is the quantum bit, or qubit.  It's also
+about the only quantum system that scales well enough that you can
+play with it in your living room; in fact, it's likely that you have
+the necessary materials strapped to your wrist right now.  I'm
+talking about polarised light, and every digital watch, calculator,
+or other LCD device has a polarising film coating it.  If you want
+to gain an intuition for the way quantum systems work, there is
+nothing better than playing with polarised light.  You can order
+large polarised sheets from most science catalogs like Edmund's
+Scientific, or you can go buy a pair of polarised sunglasses or some
+cheap digital watches and cannibalize them.
+
+Polarisers are to light like a picket fence is to a wave on a rope.
+You can make a wave on a rope take nearly any shape you want: the
+wave could wiggle sideways, or up and down, or diagonally, or even be
+shaped like a corkscrew as it travels down the rope.  The direction
+the wave wiggles with respect to the rope is called its polarisation.
+If you string the rope through a picket fence, only the part of the
+wave that wiggles in the same direction as the slot gets through to
+the other side.  The rest of the wave is absorbed by the fence and
+changed to heat.
+
+The thing that makes quantum computers more powerful than classical
+ones is the effect we just saw in this example.  Instead of having
+zero and one be opposites, like positive and negative, they are
+orthogonal.  They are at right angles to each other, like up-down
+versus left-right; the difference between absorbed and transmitted
+is 90 degrees.  It lets us take diagonal to mean "both zero and one
+at the same time" and do computations in parallel.
+
+2. Some trivial maths
+
+The very first quantum algorithm that showed quantum computers were
+more powerful than any classical computer is called Deutch's
+algorithm; it only uses one qubit, and one can implement it with two
+polarisers and some mirrors.  I'll explain how below, but first let
+me give some more background.
+
+The only maths we need to describe everything in quantum computing
+is complex numbers and linear algebra--matrices and vectors with
+complex elements.  In fact, for two of the most important quantum
+algorithms, Deutch's algorithm and Grover's algorithm, we don't even
+need complex numbers.  This amounts to ignoring right- and left-
+handed polarisations of light (the corkscrew-shaped waves).
+
+When we ignore these possibilities, we get what's called a "rebit".
+Formally, it's a pair of opposite points on the unit circle, a
+double-headed arrow at an angle w.  The angle w is from 0 up to
+(but not including) 180 degrees.  Physically, a rebit can be
+represented by polarised light of the kind mentioned above.  The
+angle is measured from the absorbing axis of the polariser in front
+of our eyes.  The point on the circle has two coordinates (a,t)
+[think "absorbed, transmitted"] given by
+
+        a = cos w    and    t = sin w.
+
+The amount of light that's absorbed is a^2; the amount that's
+transmitted is t^2.  ("x^y" means "x to the power of y".) Since
+
+    cos^2 w + sin^2 w = 100%,
+
+all the light is accounted for.
+
+For example, if we had light polarised at 120 degrees, we'd see that
+
+    t^2 = sin^2 120 = (sqrt(3)/2)2 = 3/4 = 75%
+
+of the light is transmitted, while
+
+    a^2 = cos^2 120 = (-1/2)2 = 1/4 = 25%
+
+is absorbed.
+
+3. Deutch's algorithm
+
+Deutch's problem was the following.  Given one of the functions
+f(x) from the sets {0,1} ("constant" functions) or {x,NOT x}
+("balanced" functions), figure out from which set it came by
+computing the value on one input.  One bit of information is enough
+to distinguish the two sets, but classically there's no way of
+calculating the bit we need, since it's the XOR of two function
+outputs.  With a quantum computer, we get qubits for input and
+output, and we can do better.
+
+Just as there are states "between" zero and one on a quantum
+computer, there are quantum gates that don't have classical
+counterparts.  One of these changes the sign of a or t.  In
+classical computing, the opposite of zero is one.  In
+quantum computing, the opposite of up is down, but that's
+still perpendicular to left-right!  In practice, it's a
+reflection in a mirror.
+
+Two reflections in a row are the same as a rotation, so we can
+replace reflections horizontally and vertically with an optional
+rotation followed by an optional reflection.  Rotation of 
+polarisation is done with cellophane.  Depending on what kind you
+get, you may see some pretty colors when you look at it between
+polarisers.  This is the polarisation equivalent of a prism--just
+as a prism spreads out colors in space, some kinds of cellophane
+spread out colors in polarisation.  So the first polariser fixes
+the polarisation of the light, then the cellophane rotates each
+color differently, and the second polariser picks out a single
+polarisation and therefore a single color.
+
+Sellotape brand adhesive tape gives (as far as I can tell) a perfect 
+90 degree twist for optical frequencies.  Two layers of it give 
+a 180 degree twist.  (Now, since all the rebit arrows are double-
+ended, a 180 degree rotation won't make any difference no matter 
+which way the rebit is pointing.  We can leave it out, and it won't 
+make any difference.)
+
+So in the quantum version, we have four boxes that do the following:
+
+    0: No rotation, even number of reflections
+    1: 180 degree rotation, even number of reflections
+    x: No rotation, odd number of reflections
+NOT x: 180 degree rotation, odd number of reflections
+
+If you're familiar with matrix notation, these are
+
+0 =&gt; | 1  0|   1 =&gt; |-1  0|   x =&gt; | 1  0|   NOT x =&gt; |-1  0|
+     | 0  1|        | 0 -1|        | 0 -1|            | 0  1|
+     
+or, most concisely
+
+f =&gt; |-1^f(0)         0|
+     |      0   -1^f(1)|
+     
+If we choose a horizontal or vertical double-ended arrow, we won't
+be able to tell if it was reflected: they're both symmetric
+horizontally and vertically.  These rebits correspond to the
+classical inputs zero and one, and as before, we gain no 
+information about which function it is.  However, if we choose a 
+diagonal arrow, then Bob's our uncle.
+
+Deutch's algorithm, then, goes like this:
+
+    1. Start with light polarised in the absorbing direction.
+    2. Turn the black box so the light goes in diagonally.
+    3. Shine the light that comes out of the black box through our
+    polariser into our eyes.  If we don't see any light, it's a
+    constant function; otherwise it's a balanced function.
+
+4. How to make it
+
+You can build a black box by making a device that lets you choose
+an even or odd number of reflections while keeping the input and
+output angles the same.  It takes three mirrors and some cardboard.
+
+The box should look like this:
+
++---------------------+
+|                    /
+|                   /
+|                  /
+|                     |
+|                     |
+|                     |
+|                     |
+|                     |
+|                     |
+|  /                 /|
+| /                 / |
+|/                 /  |
++   ------------------+
+
+The mirrors in the input and output corners should swivel between 45
+degrees and 67.5 degrees.  That gives two possibilities: at 45
+degrees, we get light entering one port, bouncing to the mirror in
+the near corner, then to the mirror in the far corner, and then out.
+So at 45 degrees, the light bounces an odd number of times--a
+balanced function.  At 67.5 degrees, the light takes a path shaped
+like three sides of a stop sign: it enters, bounces directly to the
+far mirror, and bounces out.  In this configuration, the light
+bounces twice--a constant function.
+
+If you want to use the phase rotation, make a little frame for the two 
+layers of sellotape that will fit over one of the ports.  
+
+Then with a torch and polarisers on the ports, you'll have yourself a 
+tabletop quantum computer!
+
+--
+Mike Stay
+<a href="http://www.cs.auckland.ac.nz/~msta039">http://www.cs.auckland.ac.nz/~msta039</a>
+
+</pre>
+
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href="https://www.classe.cornell.edu/spr/2004-04/msg0060394.html">Re: How to Field Theorize AND 3-Dimensional Conformal Invariance</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href="https://www.classe.cornell.edu/spr/2004-04/msg0060396.html">Re: particles of opposite mass</a></strong>
+</li>
+<li>Prev by thread:
+<strong><a href="https://www.classe.cornell.edu/spr/2004-04/msg0060510.html">Re: Automation of QED perturbation expansions</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href="https://www.classe.cornell.edu/spr/2004-04/msg0060397.html">[ODCAD] Schottky Effect: Junction with Organic Semiconductor</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href="https://www.classe.cornell.edu/spr/2004-04/index5.html#0060395"><strong>Date</strong></a></li>
+<li><a href="https://www.classe.cornell.edu/spr/2004-04/thrd6.html#0060395"><strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+
+
+</body></html>
