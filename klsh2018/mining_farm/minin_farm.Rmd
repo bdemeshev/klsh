@@ -116,7 +116,7 @@ root_exercise <- function(n = 1, output = c("question", "answer")) {
   
   under_root <- sample(1:999, size = n, replace = TRUE)
   root <- sqrt(under_root)
-  part <- root - floor(root)
+  part <- root / 10 - floor(root / 10)
   digit <- floor(10 * part)
   if (output == "question") {
     text <- paste0("$\\sqrt{", under_root, "}$, ")
