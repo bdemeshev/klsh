@@ -1,0 +1,474 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt]{article}
+
+%\newcommand{\LastChange}{Time-stamp: "2014-07-09 15:59:43 aga SeminarProblems.tex"}
+
+
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%\usepackage{euler}
+%\usepackage{xltxtra} % loads: fixltx2e, metalogo, xunicode, fontspec
+
+\usepackage{multicol} % many columns
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{bm}
+
+%\usepackage{enumerate}
+\usepackage{textcomp} % text in formulas
+
+%\usepackage{paralist}
+\usepackage{enumitem} % more options for lists
+
+\usepackage{fontspec} % что-то про шрифты?
+\usepackage{polyglossia} % русификация xelatex
+
+\usepackage{tikz} % картинки
+\usetikzlibrary{arrows.meta} % tikz-прибамбас для рисовки стрелочек подлиннее
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\defaultfontfeatures{Mapping=tex-text}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%\setmainfont{Times New Roman}
+%\setmainfont{Arial}
+%\setmainfont{PT Sans}
+
+
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.5in}
+\setlength{\evensidemargin}{-0.5in}
+\setlength{\textwidth}{7.5in}
+\setlength{\textheight}{9.0in}
+
+
+\newcounter{prn}
+\newcommand{\prn}[1]{\refstepcounter{prn}\label{#1}}
+
+% \newcommand{\staritem}{\refstepcounter{enumi}\item[\bf *\theenumi.]}
+
+% \newcommand{\bsym}{\boldsymbol}
+
+
+\newcommand{\FigWidth}{0.3\columnwidth}
+
+
+
+\newtheoremstyle{break}% name
+  {}%         Space above, empty = `usual value'
+  {20pt}%         Space below
+  {}% Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  {\newline}% Space after thm head: \newline = linebreak
+  {}%         Thm head spec
+
+\theoremstyle{break}
+\newtheorem{problem}{Задача}[subsection]
+\renewcommand{\theproblem}{\arabic{problem}}% Remove subsection from the counter representation
+
+
+\begin{document}
+
+\title{Задачи для ФМТ-2018}
+\author{Винни Пух и все все все}
+
+\maketitle
+
+
+
+\begin{abstract}
+Подборка задач для использования в ФМТ-2018
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ФМТ туры}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Демо Тур}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\begin{problem}
+Вычисли без калькулятора до трёх знаков после запятой
+\[
+	\frac{{3^{3}}^{3}}{9^{9}\cdot \left(3^{3}\right)^{2}}\,.
+\]
+\end{problem}
+
+\begin{problem}
+Три одинаковых бруска толкают с силой $F$. Бруски касаются друг друга и
+скользят по плоскости без трения.
+С какой силой второй брусок действует на первый?
+
+\begin{minipage}{0.8\textwidth}
+\begin{center}
+\begin{tikzpicture}
+\draw (-5,0) -- (5,0);
+\draw[->] (-5,1) -- (-3,1) node[midway, above]{$F$};
+\draw (-3,0) -- (-3,2) -- (-1,2) node[midway, below=0.8cm]{} node[midway, above]{1} -- (-1,0);
+\draw (-1,0) -- (-1,2) -- (1,2) node[midway, below=0.8cm]{} node[midway, above]{2} -- (1,0);
+\draw (1,0) -- (1,2) -- (3,2) node[midway, below=0.8cm]{} node[midway, above]{3} -- (3,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\end{problem}
+
+\begin{problem}
+На сторонах квадрата $ABCD$ выбраны точки $EFGH$ так,
+что они делят стороны первого квадрата в отношении $4:1$ и сами образуют квадрат.
+Найди отношение площади квадрата $EFGH$ к квадрату $ABCD$.
+\end{problem}
+
+\begin{problem}
+Два шарика  бросают одновременно с одинаковой скоростью $V$,
+один — вертикально вверх, а другой — вниз.
+Насколько отличаются времена их падения?
+
+Ускорение свободного падения $g$, сопротивлением воздуха пренебречь.
+\end{problem}
+
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Первый Тур}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+%SchoolNova
+Реши уравнение:
+\[
+2018 − 2(2018 − 2(2018 − 2x)) = x
+\]
+\end{problem}
+
+\begin{problem}
+Три бруска массами $m$, $3m$ и $2m$, соответственно, толкают с силой $F$.
+Бруски касаются друг друга и скользят по плоскости без трения.
+Найди величину силы, с которой второй брусок действует на первый.
+
+\begin{minipage}{0.8\textwidth}
+\begin{center}
+\resizebox{8.0cm}{1.6cm}{
+\begin{tikzpicture}
+\draw (-5,0) -- (5,0);
+\draw[-{Latex[length=5mm, width=2mm]}] (-5,1) -- (-3,1) node[midway, above]{$F$};
+\draw (-3,0) -- (-3,2) -- (-1,2) node[midway, below=0.8cm]{$m$} node[midway, above]{1} -- (-1,0);
+\draw (-1,0) -- (-1,2) -- (1,2) node[midway, below=0.8cm]{$3m$} node[midway, above]{2} -- (1,0);
+\draw (1,0) -- (1,2) -- (3,2) node[midway, below=0.8cm]{$2m$} node[midway, above]{3} -- (3,0);
+\end{tikzpicture}
+}
+\end{center}
+\end{minipage}
+\end{problem}
+
+
+\begin{problem}
+% задачка от Ламзина
+В треугольнике $ABC$ угол между биссектрисами, исходящими из углов $A$ и $B$,
+равен $43^{\circ}$. Найди угол $C$ треугольника $ABC$.
+\end{problem}
+
+
+\begin{problem}
+Три одинаковых шарика надувают гелием так, что их диаметры относятся как 1:2:3.
+Известно, что первый шарик может поднять груз максимальной массой $m$,
+а второй — максимальной массой $15m$. Считать плотность гелия во всех шариках одинаковой.
+
+Какой максимальный груз может поднять третий шарик?
+\end{problem}
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Второй Тур}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{problem}
+Диагонали ромба равны $24$ и $10$ сантиметров. Найди радиус вписанной в ромб окружности.
+\end{problem}
+
+\begin{problem}
+Дзюба становится на край скамейки массы $M$ и длины $L$.
+Расстояние между ножками скамейки равно $0.6L$,
+ножки расположены симметрично:
+
+\begin{minipage}{0.8\textwidth}
+\begin{center}
+\resizebox{8.0cm}{1.6cm}{
+\begin{tikzpicture}
+\draw (-6,0) -- (6,0);
+\draw[line width = 2] (-4,2) -- (4,2) node[above]{\fontsize{40}{48} \selectfont \Gentsroom};
+\draw[line width = 2] (-3,0.1) -- (-3,2);
+\draw[line width = 2] (3,0.1) -- (3,2);
+\draw[<->] (-2.8,1) -- (2.8,1) node[midway, above]{$0.6L$};
+\end{tikzpicture}
+}
+\end{center}
+\end{minipage}
+
+
+
+При какой массе Дзюбы $m$ скамейка перевернётся?
+\end{problem}
+
+
+
+\begin{problem}
+Реши уравнение $f(f(f(f(f(f(x)))))) = x$, где $f(x) = 2018 - 2x$.
+\end{problem}
+
+
+
+\begin{problem}
+Первая космическая скорость на планете Плюк
+в 4 раза выше, чем на планете Ханук, а отношение плотностей планет равно единице.
+
+Найди отношение периода обращения искусственных спутников
+на низкой орбите планеты Плюк к периоду спутников планеты Ханук.
+\end{problem}
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Третий Тур}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Математика}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Простые и очень простые задачи}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{problem}
+%SchoolNova
+Найди остаток от деления на 99 следующих чисел: (a) 100 (b) 1000...0 (98 нулей) (c)11. . . 11 (99 единиц).
+\end{problem}
+
+
+\begin{problem}
+%SchoolNova
+100 students participated in a math olympiad which had 4 problems. First problem was solved correctly by 90 students, the second by 80 students, the third by 70 and the fourth by 60. No student solved correctly all four problems.
+Every student who solved problems 2 and 3 got an award. How many students got an award?
+\end{problem}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Средние по сложности задачи}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{problem}
+%SchoolNova
+A treasure is buried under a square of the 8 × 8 board. Under each other square a message is placed, indicating the minimal number of steps needed to reach the square with the treasure. (To move from a square to any adjacent square (by side), one step is required). What is the minimal number of squares one needs to dig up in order to get to the treasure for sure?
+\end{problem}
+
+
+\begin{problem}
+%SchoolNova
+In how many zeros does the number $11^{100} - 1$ end?
+\end{problem}
+
+
+\begin{problem}
+%SchoolNova
+Jane has baked a cake and wants to cut it into pieces (not necessarily equal) so that it can be evenly divided among 8 people or among 10 people. What is the smallest possible number of pieces?
+\end{problem}
+
+
+\begin{problem}
+%SchoolNova
+We have 4 numbers. If we consider all possible ways to choose two of these numbers and for each such choice, compute the sum of the two chosen numbers, we get the following collection:
+
+2; 5; 9; 9; 13; 16
+
+\noindent
+What are the 4 original numbers?
+\end{problem}
+
+
+\begin{problem}
+%SchoolNova
+In a wrestling tournament, there are 100 participants, all of different strengths. The stronger wrestler always wins over the weaker opponent. Each wrestler fights twice and those who win both of their fights are given awards. What is the least possible number of awardees?
+\end{problem}
+
+
+\begin{problem}
+%SchoolNova
+Реши:
+\[
+	x=\sqrt{20}+\frac{13}{\sqrt{20}+\frac{13}{\sqrt{20}+\frac{13}{\sqrt{20}+\frac{13}{\sqrt{20}+\frac{13}{x}}}}}
+\]
+\end{problem}
+
+
+\begin{problem}
+%SchoolNova
+Let $n = 10^{20} − 2^{20}$. Without using a calculator, find how many 2’s will there be in the prime factorization of $n$?
+\end{problem}
+
+
+\begin{problem}
+%SchoolNova
+Each of 64 friends has some hot news she wants to share with her friends, so they start calling each other. Each phone call lasts one hour (they love to talk. . . ). Find for them a way to call each other so that each friend learns all the news in the shortest possible time. (During one phone call, you can tell as many news as you like.)
+\end{problem}
+
+
+\begin{problem}
+%SchoolNova
+A 179 × 57 rectangle is divided into 1 × 1 squares. If we draw a diagonal in this rectangle, how many squares will it intersect?
+\end{problem}
+
+
+\begin{problem}
+%SchoolNova
+A 5-digit number is called “complicated” if it can not be written as a product of two three-digit numbers. What is the maximal possible number of “complicated” 5-digit numbers in a row (i.e., such that n,n+1,n+2,... are all “complicated”)?
+\end{problem}
+
+
+\begin{problem}
+%SchoolNova
+We have a 10cm × 10cm × 10cm cube, formed by 1000 small (1 × 1 × 1) cubes. At the center of lower left front small cube there is a wood-boring worm. Every day he moves from one small cube to an adjacent one, always going in a straight line, boring 1 cm up (or to the right, or towards the back). In how many ways can he reach the center of the top right back small cube?
+\end{problem}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Физика}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Простые и очень простые задачи}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{problem}
+С высоты падает упругий шарик. При отскоке его скорость уменьшается на дельта процентов (скажем меньше 10\%). Сколько времени пройдет до 5-6-7 удара.
+\end{problem}
+
+
+\begin{problem}
+На экваторе вес тела на $n$\% меньше веса на полюсе, а период обращения планеты $T$. Найти плотность планеты.
+\end{problem}
+
+
+\begin{problem}
+Есть две планеты с равной плотностью, а первые космические скорости отличаются в 4 раза.
+Найти отношения периодов обращения искусственных спутников этих планет на низких орбитах.
+\end{problem}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Средние по сложности задачи}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Задачи не для ФМТ}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{problem}
+Какой высоты нужно построить вышку, чтобы человек шагнув с нее не упал на землю
+\end{problem}
+
+
+\begin{problem}
+К валу радиусом с $R$ и моментом инерции $J$ прижимают колодку силой $F$. через какое время вал остановится, если коэффициент трения между валом и колодкой $k$.
+\end{problem}
+
+
+\begin{problem}
+Вокруг планеты с плотностью и радиусом запущен по эллиптической орбите спутник, так что наименьшая высота в $n$ раз меньше радиуса. найти отношение наибольшей высоты спутника над поверхностью планеты, если средняя частота обращения спутника $f$?
+\end{problem}
+
+
+\begin{problem}
+Стеклянная выпуклая/вогнутая линза в сероводороде (n=1,62). на неё падает луч параллельный главной оси. нарисовать дальнейший ход лучей. В альтернативу среда - стекло, а в нём линза воздуха.
+\end{problem}
+
+
+\begin{problem}
+лучи падают под углом к линзе. найти фокус
+\end{problem}
+
+
+\begin{problem}
+точечный источник света на главной оси. найти его изображение
+\end{problem}
+
+
+\begin{problem}
+Какую минимальную работу нужно затратить, чтобы полностью вытащить из воды куб массы $m$ и стороной $a$, который плавает в океане, наполовину погружённым в воду как показано на рисунке? Ускорение свободного падения равно $g$, плотность солёной воды равна $\rho$.
+\end{problem}
+
+
+
+
+
+%\bibliographystyle{alpha}
+%\bibliography{sample}
+
+\end{document}

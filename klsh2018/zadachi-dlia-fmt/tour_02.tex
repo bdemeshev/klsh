@@ -1,0 +1,197 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper, 12pt]{article}
+
+%\newcommand{\LastChange}{Time-stamp: "2014-07-09 15:59:43 aga SeminarProblems.tex"}
+
+\usepackage[includehead, top=0.2cm, bottom=0.2cm, left=1cm, right=1cm]{geometry}
+
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%\usepackage{euler}
+%\usepackage{xltxtra} % loads: fixltx2e, metalogo, xunicode, fontspec
+
+\usepackage{multicol} % many columns
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{bm}
+
+\usepackage{marvosym} % значок мужского туалета
+
+%\usepackage{enumerate}
+\usepackage{textcomp} % text in formulas
+
+%\usepackage{paralist}
+\usepackage{enumitem} % more options for lists
+
+\usepackage{tikz} % картинки
+\usetikzlibrary{arrows.meta} % tikz-прибамбас для рисовки стрелочек подлиннее
+
+
+\usepackage{fontspec} % что-то про шрифты?
+\usepackage{polyglossia} % русификация xelatex
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\defaultfontfeatures{Mapping=tex-text}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%\setmainfont{Times New Roman}
+%\setmainfont{Arial}
+%\setmainfont{PT Sans}
+
+
+%\setlength{\topmargin}{0in}
+%\setlength{\headheight}{0cm}
+%\setlength{\headsep}{0in}
+%\setlength{\oddsidemargin}{-0.5in}
+%\setlength{\evensidemargin}{-0.5in}
+%\setlength{\textwidth}{7.5in}
+%\setlength{\textheight}{9.0in}
+
+
+% \newcommand{\staritem}{\refstepcounter{enumi}\item[\bf *\theenumi.]}
+
+% \newcommand{\bsym}{\boldsymbol}
+
+
+%\newcommand{\FigWidth}{0.3\columnwidth}
+
+
+
+\newtheoremstyle{break}% name
+  {}%         Space above, empty = `usual value'
+  {14pt}%         Space below
+  {}% Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  {\newline}% Space after thm head: \newline = linebreak
+  {}%         Thm head spec
+
+\theoremstyle{break}
+\newtheorem{problem}{Задача}[subsection]
+\renewcommand{\theproblem}{\arabic{problem}}% Remove subsection from the counter representation
+
+
+\begin{document}
+
+\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Второй Тур}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+Диагонали ромба равны $24$ и $10$ сантиметров. Найди радиус вписанной в ромб окружности.
+\end{problem}
+
+\begin{problem}
+Дзюба становится на край скамейки массы $M$ и длины $L$.
+Расстояние между ножками скамейки равно $0.6L$,
+ножки расположены симметрично:
+
+\begin{minipage}{0.8\textwidth}
+\begin{center}
+\resizebox{8.0cm}{1.6cm}{
+\begin{tikzpicture}
+\draw (-6,0) -- (6,0);
+\draw[line width = 2] (-4,2) -- (4,2) node[above]{\fontsize{40}{48} \selectfont \Gentsroom};
+\draw[line width = 2] (-3,0.1) -- (-3,2);
+\draw[line width = 2] (3,0.1) -- (3,2);
+\draw[<->] (-2.8,1) -- (2.8,1) node[midway, above]{$0.6L$};
+\end{tikzpicture}
+}
+\end{center}
+\end{minipage}
+
+
+
+При какой массе Дзюбы $m$ скамейка перевернётся?
+\end{problem}
+
+
+
+\begin{problem}
+Реши уравнение $f(f(f(f(f(f(x)))))) = x$, где $f(x) = 2018 - 2x$.
+\end{problem}
+
+
+
+\begin{problem}
+Первая космическая скорость на планете Плюк
+в 4 раза выше, чем на планете Ханук, а отношение плотностей планет равно единице.
+
+Найди отношение периода обращения искусственных спутников
+на низкой орбите планеты Плюк к периоду спутников планеты Ханук.
+\end{problem}
+
+
+
+
+\subsection*{Второй Тур}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{problem}{0}
+
+
+\begin{problem}
+Диагонали ромба равны $24$ и $10$ сантиметров. Найди радиус вписанной в ромб окружности.
+\end{problem}
+
+\begin{problem}
+Дзюба становится на край скамейки массы $M$ и длины $L$.
+Расстояние между ножками скамейки равно $0.6L$,
+ножки расположены симметрично:
+
+\begin{minipage}{0.8\textwidth}
+\begin{center}
+\resizebox{8.0cm}{1.6cm}{
+\begin{tikzpicture}
+\draw (-6,0) -- (6,0);
+\draw[line width = 2] (-4,2) -- (4,2) node[above]{\fontsize{40}{48} \selectfont \Gentsroom};
+\draw[line width = 2] (-3,0.1) -- (-3,2);
+\draw[line width = 2] (3,0.1) -- (3,2);
+\draw[<->] (-2.8,1) -- (2.8,1) node[midway, above]{$0.6L$};
+\end{tikzpicture}
+}
+\end{center}
+\end{minipage}
+
+
+
+При какой массе Дзюбы $m$ скамейка перевернётся?
+\end{problem}
+
+
+
+\begin{problem}
+Реши уравнение $f(f(f(f(f(f(x)))))) = x$, где $f(x) = 2018 - 2x$.
+\end{problem}
+
+
+
+\begin{problem}
+Первая космическая скорость на планете Плюк
+в 4 раза выше, чем на планете Ханук, а отношение плотностей планет равно единице.
+
+Найди отношение периода обращения искусственных спутников
+на низкой орбите планеты Плюк к периоду спутников планеты Ханук.
+\end{problem}
+
+
+
+
+\end{document}
