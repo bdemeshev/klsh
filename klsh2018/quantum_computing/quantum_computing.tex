@@ -810,16 +810,213 @@ $\alpha_1 = \alpha_0 \cdot (\cos 60^{\circ} + i \sin 60^{\circ})$.
 
 
 \newpage
-\section{Вентиль Адамара}
+\section{Действия с кубитами}
 
-Вентиль Адамара.
+\begin{definition}
+Любое действие с кубитами можно записать с помощью кет-бра:
+\[
+U = \beta_{00} \ketbra{0}{0} + \beta_{01} \ketbra{0}{1} + \beta_{10} \ketbra{1}{0} + \beta_{11}\ketbra{1}{1}
+\]
 
+Умножаем кет-бра на кубит по принципу: $\ketbra{0}{1} \cdot \ket{1} = \ket{0} \cdot \braket{1}{1} = \ket{0}$.
+
+Не все действия возможны.
+\end{definition}
+
+
+\begin{definition}
+Стандартные обозначения действий:
+\[
+I = \ketbra{0}{0} + \ketbra{1}{1}
+\]
+\[
+X = \ketbra{0}{1} + \ketbra{1}{0}
+\]
+\[
+Y = -i \ketbra{0}{1} + i\ketbra{1}{0}
+\]
+\[
+Z = \ketbra{0}{0} - \ketbra{1}{1}
+\]
+Вентиль Адамара:
 \[
 H = \frac{1}{\sqrt{2}}\left( \ketbra{0}{0} + \ketbra{0}{1} + \ketbra{1}{0} - \ketbra{1}{1} \right)
 \]
+\end{definition}
 
-\section{Возможные действия}
+\begin{problem}
+Рассмотрим кубит $\ket{q} = \frac{\sqrt{3}}{2} \ket{0} + \frac{i}{2}\ket{1}$.
 
+\begin{enumerate}
+  \item Найди $I \cdot \ket{0}$, $I \cdot \ket{+}$, $I\cdot \ket{q}$. Что делает действие $I$?
+  \item Найди $X \cdot \ket{0}$, $X \cdot \ket{+}$, $X\cdot \ket{q}$. Что делает действие $X$?
+  \item Найди $H \cdot \ket{0}$, $H \cdot \ket{+}$, $H^2 \cdot \ket{1}$. Что делает действие $H^2$?
+  \item Найди $Y \cdot \ket{1}$, $XZ \cdot \ket{1}$, $Y\cdot \ket{q}$. В чём разница между $XZ$ и $Y$?
+  \item Найдит $Z\cdot \ket{+}$, $Z \cdot \ket{-}$, $Z \cdot \ket{0}$.
+  \item Правда ли, что $XZ = ZX$?
+\end{enumerate}
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+\begin{definition}
+У любого действия $A$ есть сопряжённое $A^{\dag}$. Сопряжение выполняется по принципу:
+\[
+(\beta \cdot \ketbra{a}{b})^{\dag} = \beta^{\dag} \ketbra{b}{a}
+\]
+
+Действие $A$ является разрёшенным, если $A^{\dag} A = I$.
+\end{definition}
+
+\begin{problem}
+Является разрешённым действие $\frac{1}{\sqrt{2}}\ketbra{0}{1} + \frac{1}{\sqrt{2}}\ketbra{0}{0}$?
+
+Являются разрешёнными действия $I$, $X$, $Y$, $Z$, $H$?
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+\begin{problem}
+Является разрешённым домножение кубита на поворот $r_{\gamma}$?
+Как записать поворот с помощью $\ketbra{\cdot}{\cdot}$?
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+\begin{problem}
+\begin{enumerate}
+  \item Как записать действия $I$, $X$, $Y$, $Z$, $H$ в базисе $\ket{+}$, $\ket{-}$?
+  \item Что делают действия $I$, $X$, $Y$, $Z$ на сфере Блоха?
+  \item Как записать действие $\ketbra{+}{+} - \ketbra{-}{-}$ в базисе $\ket{0}$, $\ket{1}$?
+\end{enumerate}
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+\begin{problem}
+\begin{enumerate}
+  \item Как выглядит действие, отменяющее действие $Z$?
+  \item У любого ли разрешённого действия есть обратное?
+\end{enumerate}
+
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+\newpage
+\setcounter{section}{6}
+\section{Действия с кубитами}
+
+\begin{definition}
+Любое действие с кубитами можно записать с помощью кет-бра:
+\[
+U = \beta_{00} \ketbra{0}{0} + \beta_{01} \ketbra{0}{1} + \beta_{10} \ketbra{1}{0} + \beta_{11}\ketbra{1}{1}
+\]
+
+Умножаем кет-бра на кубит по принципу: $\ketbra{0}{1} \cdot \ket{1} = \ket{0} \cdot \braket{1}{1} = \ket{0}$.
+
+Не все действия возможны.
+\end{definition}
+
+
+\begin{definition}
+Стандартные обозначения действий:
+\[
+I = \ketbra{0}{0} + \ketbra{1}{1}
+\]
+\[
+X = \ketbra{0}{1} + \ketbra{1}{0}
+\]
+\[
+Y = -i \ketbra{0}{1} + i\ketbra{1}{0}
+\]
+\[
+Z = \ketbra{0}{0} - \ketbra{1}{1}
+\]
+Вентиль Адамара:
+\[
+H = \frac{1}{\sqrt{2}}\left( \ketbra{0}{0} + \ketbra{0}{1} + \ketbra{1}{0} - \ketbra{1}{1} \right)
+\]
+\end{definition}
+
+\begin{problem}
+Рассмотрим кубит $\ket{q} = \frac{\sqrt{3}}{2} \ket{0} + \frac{i}{2}\ket{1}$.
+
+\begin{enumerate}
+  \item Найди $I \cdot \ket{0}$, $I \cdot \ket{+}$, $I\cdot \ket{q}$. Что делает действие $I$?
+  \item Найди $X \cdot \ket{0}$, $X \cdot \ket{+}$, $X\cdot \ket{q}$. Что делает действие $X$?
+  \item Найди $H \cdot \ket{0}$, $H \cdot \ket{+}$, $H^2 \cdot \ket{1}$. Что делает действие $H^2$?
+  \item Найди $Y \cdot \ket{1}$, $XZ \cdot \ket{1}$, $Y\cdot \ket{q}$. В чём разница между $XZ$ и $Y$?
+  \item Найдит $Z\cdot \ket{+}$, $Z \cdot \ket{-}$, $Z \cdot \ket{0}$.
+  \item Правда ли, что $XZ = ZX$?
+\end{enumerate}
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+\begin{definition}
+У любого действия $A$ есть сопряжённое $A^{\dag}$. Сопряжение выполняется по принципу:
+\[
+(\beta \cdot \ketbra{a}{b})^{\dag} = \beta^{\dag} \ketbra{b}{a}
+\]
+
+Действие $A$ является разрёшенным, если $A^{\dag} A = I$.
+\end{definition}
+
+\begin{problem}
+Является разрешённым действие $\frac{1}{\sqrt{2}}\ketbra{0}{1} + \frac{1}{\sqrt{2}}\ketbra{0}{0}$?
+
+Являются разрешёнными действия $I$, $X$, $Y$, $Z$, $H$?
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+\begin{problem}
+Является разрешённым домножение кубита на поворот $r_{\gamma}$?
+Как записать поворот с помощью $\ketbra{\cdot}{\cdot}$?
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+\begin{problem}
+\begin{enumerate}
+  \item Как записать действия $I$, $X$, $Y$, $Z$, $H$ в базисе $\ket{+}$, $\ket{-}$?
+  \item Что делают действия $I$, $X$, $Y$, $Z$ на сфере Блоха?
+  \item Как записать действие $\ketbra{+}{+} - \ketbra{-}{-}$ в базисе $\ket{0}$, $\ket{1}$?
+\end{enumerate}
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+\begin{problem}
+\begin{enumerate}
+  \item Как выглядит действие, отменяющее действие $Z$?
+  \item У любого ли разрешённого действия есть обратное?
+\end{enumerate}
+
+\begin{sol}
+
+\end{sol}
+\end{problem}
+
+
+
+\newpage
 \section{Алгоритм Дойча}
 
 
