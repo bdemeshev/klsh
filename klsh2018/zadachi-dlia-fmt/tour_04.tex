@@ -1,7 +1,7 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 11pt]{article}
 
 %\newcommand{\LastChange}{Time-stamp: "2014-07-09 15:59:43 aga SeminarProblems.tex"}
 
@@ -17,6 +17,7 @@
 \usepackage{fullpage}
 \usepackage{graphicx}
 \usepackage{bm}
+\usepackage{multicol} % текст в несколько колонок
 
 \usepackage{marvosym} % значок мужского туалета
 
@@ -27,9 +28,9 @@
 \usepackage{enumitem} % more options for lists
 
 \usepackage{tikz} % картинки
-\usetikzlibrary{arrows.meta} % tikz-прибамбас для рисовки стрелочек подлиннее
+\usetikzlibrary{arrows.meta, quotes, angles} % tikz-прибамбас для рисовки стрелочек подлиннее
 
-\usepackage[includehead, top=1cm, bottom=1cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage[includehead, top=0.5cm, bottom=0.5cm, left=1cm, right=1cm]{geometry}
 
 
 \usepackage{fontspec} % что-то про шрифты?
@@ -75,7 +76,7 @@
 
 \newtheoremstyle{break}% name
   {}%         Space above, empty = `usual value'
-  {9pt}%         Space below
+  {1pt}%         Space below
   {}% Body font
   {}%         Indent amount (empty = no indent, \parindent = para indent)
   {\bfseries}% Thm head font
@@ -97,32 +98,148 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}
-\end{problem}
-
-\begin{problem}
-
-\end{problem}
-
-
-
-\begin{problem}
 Основания трапеции равны $2$ и $10$. Построены вписанная и описанная окружности.
-Чему равно расстояние между центрами вписанной и описанной окружностей?
+Чему равен радиус вписанной окружности?
+\end{problem}
+
+\begin{problem}
+% \begin{multicols}{2}
+Брусок массы $3m$ налетает со скоростью $v$ на два неподвижных бруска массами $m$, $2m$
+и стену, расположенных как показано на рисунке. Бруски с массами $m$ и $2m$
+сторонами обращёнными друг к другу смазаны клеем, остальные столкновения абсолютно
+упругие.
+
+\begin{minipage}{0.8\textwidth}
+\begin{center}
+\resizebox{8.0cm}{2cm}{
+\begin{tikzpicture}
+\draw (-8,0) -- (8,0);
+\draw[line width = 2] (-6,0) -- (-6,2) -- (-4,2) node[midway, above]{\fontsize{40}{48} \selectfont $3m$} -- (-4,0) -- (-6,0);
+\draw[line width = 2] (-2,0) -- (-2,2) -- (0,2) node[midway, above]{\fontsize{40}{48} \selectfont $m$} -- (0,0) -- (-2,0);
+\draw[line width = 2] (2,0) -- (2,2) -- (4,2) node[midway, above]{\fontsize{40}{48} \selectfont $2m$} -- (4,0) -- (2,0);
+\draw[line width = 7] (6,0) -- (6,5);
+\draw[line width = 1, -{Latex[length=5mm, width=2mm]}] (-5,1) -- (-3,1) node[above]{\fontsize{40}{48} \selectfont $v$};
+\draw[line width = 5, dashed] (0,2) -- (0,0);
+\draw[line width = 5, dashed] (2,0) -- (2,2);
+\end{tikzpicture}
+}
+\end{center}
+\end{minipage}
+
+
+Чему равна скорость бруска массы $3m$ после всех столкновений брусков друг с другом?
+
+Дорогой друг, трением разрешаю тебе пренебречь! Твой главный судья $\heartsuit$.
+% \end{multicols}
+\end{problem}
+
+
+\begin{problem}
+Два числа назовём соседними, если они различаются только одной цифрой
+в каком-то из разрядов. Например, 123 и 153 — соседние. Какое наибольшее количество
+трёхзначных чисел можно выписать так, чтобы среди них не было соседних?
 \end{problem}
 
 
 
 \begin{problem}
+\begin{multicols}{2}
+Зондера Щукин и Лебедев тянут воз со скоростью $v$,
+каждый в своём направлении. Верёвки от зондеров до воза нерастяжимые и имеют одинаковую длину.
+Чему равна величина скорости воза в момент, когда угол между Щукиным,
+возом и Лебедевым равен $\alpha$?
+
+\begin{minipage}{0.4\textwidth}
+\begin{center}
+\begin{tikzpicture}
+  \coordinate (A) at (-3,0);
+  \coordinate (B) at (2,1);
+  \coordinate (C) at (2,-1);
+\filldraw (-3,0) circle (2pt) node[above]{Воз} -- (2, 1) circle (2pt) node[above]{Лебедев};
+\draw[line width = 1, -{Latex[length=5mm, width=2mm]}] (2,1) -- (3,1.2) node[below]{$v$};
+\filldraw  (-3,0)  -- (2, -1) circle (2pt) node[below]{Щукин};
+\draw[line width = 1, -{Latex[length=5mm, width=2mm]}] (2,-1) -- (3,-1.2) node[above]{$v$};
+\draw (-2, -0.2) arc (-30:19:0.5) node[right = 7, below]{$\alpha$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{multicols}
 
 \end{problem}
-
-
-
 
 \subsection*{Четвёртый Тур}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{problem}{0}
 
+\begin{problem}
+Основания трапеции равны $2$ и $10$. Построены вписанная и описанная окружности.
+Чему равен радиус вписанной окружности?
+\end{problem}
+
+\begin{problem}
+% \begin{multicols}{2}
+Брусок массы $3m$ налетает со скоростью $v$ на два неподвижных бруска массами $m$, $2m$
+и стену, расположенных как показано на рисунке. Бруски с массами $m$ и $2m$
+сторонами обращёнными друг к другу смазаны клеем, остальные столкновения абсолютно
+упругие.
+
+\begin{minipage}{0.8\textwidth}
+\begin{center}
+\resizebox{8.0cm}{2cm}{
+\begin{tikzpicture}
+\draw (-8,0) -- (8,0);
+\draw[line width = 2] (-6,0) -- (-6,2) -- (-4,2) node[midway, above]{\fontsize{40}{48} \selectfont $3m$} -- (-4,0) -- (-6,0);
+\draw[line width = 2] (-2,0) -- (-2,2) -- (0,2) node[midway, above]{\fontsize{40}{48} \selectfont $m$} -- (0,0) -- (-2,0);
+\draw[line width = 2] (2,0) -- (2,2) -- (4,2) node[midway, above]{\fontsize{40}{48} \selectfont $2m$} -- (4,0) -- (2,0);
+\draw[line width = 7] (6,0) -- (6,5);
+\draw[line width = 1, -{Latex[length=5mm, width=2mm]}] (-5,1) -- (-3,1) node[above]{\fontsize{40}{48} \selectfont $v$};
+\draw[line width = 5, dashed] (0,2) -- (0,0);
+\draw[line width = 5, dashed] (2,0) -- (2,2);
+\end{tikzpicture}
+}
+\end{center}
+\end{minipage}
+
+
+Чему равна скорость бруска массы $3m$ после всех столкновений брусков друг с другом?
+
+Дорогой друг, трением разрешаю тебе пренебречь! Твой главный судья $\heartsuit$.
+% \end{multicols}
+\end{problem}
+
+
+\begin{problem}
+Два числа назовём соседними, если они различаются только одной цифрой
+в каком-то из разрядов. Например, 123 и 153 — соседние. Какое наибольшее количество
+трёхзначных чисел можно выписать так, чтобы среди них не было соседних?
+\end{problem}
+
+
+
+\begin{problem}
+\begin{multicols}{2}
+Зондера Щукин и Лебедев тянут воз со скоростью $v$,
+каждый в своём направлении. Верёвки от зондеров до воза нерастяжимые и имеют одинаковую длину.
+Чему равна величина скорости воза в момент, когда угол между Щукиным,
+возом и Лебедевым равен $\alpha$?
+
+\begin{minipage}{0.4\textwidth}
+\begin{center}
+\begin{tikzpicture}
+  \coordinate (A) at (-3,0);
+  \coordinate (B) at (2,1);
+  \coordinate (C) at (2,-1);
+\filldraw (-3,0) circle (2pt) node[above]{Воз} -- (2, 1) circle (2pt) node[above]{Лебедев};
+\draw[line width = 1, -{Latex[length=5mm, width=2mm]}] (2,1) -- (3,1.2) node[below]{$v$};
+\filldraw  (-3,0)  -- (2, -1) circle (2pt) node[below]{Щукин};
+\draw[line width = 1, -{Latex[length=5mm, width=2mm]}] (2,-1) -- (3,-1.2) node[above]{$v$};
+\draw (-2, -0.2) arc (-30:19:0.5) node[right = 7, below]{$\alpha$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{multicols}
+
+\end{problem}
 
 
 \end{document}
