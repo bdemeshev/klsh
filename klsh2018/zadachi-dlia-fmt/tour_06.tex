@@ -1,0 +1,175 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper, 11pt]{article}
+
+%\newcommand{\LastChange}{Time-stamp: "2014-07-09 15:59:43 aga SeminarProblems.tex"}
+
+
+% \usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%\usepackage{euler}
+%\usepackage{xltxtra} % loads: fixltx2e, metalogo, xunicode, fontspec
+
+% \usepackage{multicol} % many columns
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{multicol} % текст в несколько колонок
+
+\usepackage{marvosym} % значок мужского туалета
+
+%\usepackage{enumerate}
+\usepackage{textcomp} % text in formulas
+
+%\usepackage{paralist}
+\usepackage{enumitem} % more options for lists
+
+\usepackage{tikz} % картинки
+\usetikzlibrary{arrows.meta, quotes, angles} % tikz-прибамбас для рисовки стрелочек подлиннее
+
+\usepackage[includehead, top=0.5cm, bottom=0.5cm, left=1cm, right=1cm]{geometry}
+
+
+\usepackage{fontspec} % что-то про шрифты?
+\usepackage{polyglossia} % русификация xelatex
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\defaultfontfeatures{Mapping=tex-text}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%\setmainfont{Times New Roman}
+%\setmainfont{Arial}
+%\setmainfont{PT Sans}
+
+
+%\setlength{\topmargin}{0in}
+%\setlength{\headheight}{0cm}
+%\setlength{\headsep}{0in}
+%\setlength{\oddsidemargin}{-0.5in}
+%\setlength{\evensidemargin}{-0.5in}
+%\setlength{\textwidth}{7.5in}
+%\setlength{\textheight}{9.0in}
+
+
+% \newcommand{\staritem}{\refstepcounter{enumi}\item[\bf *\theenumi.]}
+
+% \newcommand{\bsym}{\boldsymbol}
+
+
+%\newcommand{\FigWidth}{0.3\columnwidth}
+
+
+
+\newtheoremstyle{break}% name
+  {}%         Space above, empty = `usual value'
+  {1pt}%         Space below
+  {}% Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  {\newline}% Space after thm head: \newline = linebreak
+  {}%         Thm head spec
+
+\theoremstyle{break}
+\newtheorem{problem}{Задача}[subsection]
+\renewcommand{\theproblem}{\arabic{problem}}% Remove subsection from the counter representation
+
+
+\begin{document}
+
+\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Шестой Тур}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+Основания трапеции равны $2$ и $10$. Построены вписанная и описанная окружности.
+Чему равен радиус описанной окружности?
+\end{problem}
+
+\begin{problem}
+% \begin{multicols}{2}
+Брусок массы $3m$ налетает со скоростью $v$ на два неподвижных бруска массами $m$, $2m$
+и стену, расположенных как показано на рисунке. Бруски с массами $m$ и $2m$
+сторонами обращёнными друг к другу смазаны клеем, остальные столкновения абсолютно
+упругие.
+
+\begin{minipage}{0.8\textwidth}
+\begin{center}
+\resizebox{8.0cm}{2cm}{
+\begin{tikzpicture}
+\draw (-8,0) -- (8,0);
+\draw[line width = 2] (-6,0) -- (-6,2) -- (-4,2) node[midway, above]{\fontsize{40}{48} \selectfont $3m$} -- (-4,0) -- (-6,0);
+\draw[line width = 2] (-2,0) -- (-2,2) -- (0,2) node[midway, above]{\fontsize{40}{48} \selectfont $m$} -- (0,0) -- (-2,0);
+\draw[line width = 2] (2,0) -- (2,2) -- (4,2) node[midway, above]{\fontsize{40}{48} \selectfont $2m$} -- (4,0) -- (2,0);
+\draw[line width = 7] (6,0) -- (6,5);
+\draw[line width = 1, -{Latex[length=5mm, width=2mm]}] (-5,1) -- (-3,1) node[above]{\fontsize{40}{48} \selectfont $v$};
+\draw[line width = 5, dashed] (0,2) -- (0,0);
+\draw[line width = 5, dashed] (2,0) -- (2,2);
+\end{tikzpicture}
+}
+\end{center}
+\end{minipage}
+
+
+Чему равна скорость бруска массы $3m$ после всех столкновений брусков друг с другом?
+
+Дорогой друг, трением разрешаю тебе пренебречь! Твой главный судья $\heartsuit$.
+% \end{multicols}
+\end{problem}
+
+
+\begin{problem}
+Два числа назовём соседними, если они различаются только одной цифрой
+в каком-то из разрядов. Например, 123 и 153 — соседние. Какое наибольшее количество
+трёхзначных чисел можно выписать так, чтобы среди них не было соседних?
+\end{problem}
+
+
+
+\begin{problem}
+\begin{multicols}{2}
+Зондера Щукин и Лебедев тянут воз со скоростью $v$,
+каждый в своём направлении. Верёвки от зондеров до воза нерастяжимые и имеют одинаковую длину.
+Чему равна величина скорости воза в момент, когда угол между Щукиным,
+возом и Лебедевым равен $\alpha$?
+
+\begin{minipage}{0.4\textwidth}
+\begin{center}
+\begin{tikzpicture}
+  \coordinate (A) at (-3,0);
+  \coordinate (B) at (2,1);
+  \coordinate (C) at (2,-1);
+\filldraw (-3,0) circle (2pt) node[above]{Воз} -- (2, 1) circle (2pt) node[above]{Лебедев};
+\draw[line width = 1, -{Latex[length=5mm, width=2mm]}] (2,1) -- (3,1.2) node[below]{$v$};
+\filldraw  (-3,0)  -- (2, -1) circle (2pt) node[below]{Щукин};
+\draw[line width = 1, -{Latex[length=5mm, width=2mm]}] (2,-1) -- (3,-1.2) node[above]{$v$};
+\draw (-2, -0.2) arc (-30:19:0.5) node[right = 7, below]{$\alpha$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{multicols}
+
+\end{problem}
+
+\subsection*{Шестой Тур}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{problem}{0}
+
+
+\end{document}
