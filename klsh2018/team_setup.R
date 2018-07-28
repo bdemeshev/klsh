@@ -1,12 +1,16 @@
-set.seed(777)
+set.seed(666)
 n_team <- 22 # число команд
-n_stage <- 11 # число слотов
+n_stage <- 10 # число слотов
 n_play <- 9 # число игр, которое нужно сыграть
+no_more <- 0
 
 # строка = кто
 # столбец = когда
 # внутри = с кем играет
 play_table <- matrix(NA, nrow = n_team, ncol = n_stage)
+
+# таблица сыгравших
+xy <- matrix(0, nrow = n_team, ncol = n_team)
 
 play_table[1, 1:n_play] <- 2:(n_play + 1)
 for (i in 1:n_play) {
@@ -14,20 +18,19 @@ for (i in 1:n_play) {
 }
 play_table
 
-# таблица сыгравших
-xy <- matrix(FALSE, nrow = n_team, ncol = n_team)
+
 for (i in 1:n_team) {
-  xy[i, i] <- TRUE
+  xy[i, i] <- 1
 }
-xy[1, 2:(n_play + 1)] <- TRUE
-xy[2:(n_play + 1), 1] <- TRUE
+xy[1, 2:(n_play + 1)] <- 1
+xy[2:(n_play + 1), 1] <- 1
 xy
 
 
-find_opponent <- function(team, stage, xy, play_table) {
+find_opponent <- function(team, stage, xy, play_table, no_more = 0) {
   possible_ops <- 1:n_team
 
-  already_played <- which(xy[team, ])
+  already_played <- which(xy[team, ] > no_more)
   possible_ops <- setdiff(possible_ops, already_played)
 
   games_played <- colSums(xy) - 1
@@ -39,8 +42,11 @@ find_opponent <- function(team, stage, xy, play_table) {
   
   if (length(possible_ops) == 0) {
     opponent <- NA
+  } else if (length(possible_ops) == 1) {
+    # это важно! если длина один, то sample сделает выборку от 1 до possible_ops
+    opponent <- possible_ops
   } else {
-    opponent <- sample(possible_ops, size = 1)
+    opponent <- sample(x = possible_ops, size = 1)
   }
   
   return(opponent)
@@ -49,16 +55,33 @@ find_opponent <- function(team, stage, xy, play_table) {
 
 for (team in 2:n_team) {
   played_games <- sum(!is.na(play_table[team, ]))
-  stage <- 1
+  
+  possible_stages <- which(is.na(play_table[team, ]))
+  # possible_stages <- sample(possible_stages)
+  
+  stage_no <- 1
   while (played_games < n_play) {
+    if (stage_no > length(possible_stages)) {
+      stop("Not possible!!!!")
+    }
+    stage <- possible_stages[stage_no]
+    
+    
     if (is.na(play_table[team, stage])) {
       cat("Team = ", team, "stage = ", stage, "\n")
-      opponent <- find_opponent(team, stage, xy, play_table)
+      
+      # if ((team == 17) & (stage == 2)) stop()
+      
+      
+      opponent <- find_opponent(team, stage, xy, play_table, no_more = no_more)
       cat("Opponent = ", opponent, "\n")
-      # if ((team == 16)) stop()
+      
+      print(colSums(xy) - 1)
+      
+      
       if (!is.na(opponent)) {
-        xy[team, opponent] <- TRUE
-        xy[opponent, team] <- TRUE
+        xy[team, opponent] <- xy[team, opponent] + 1
+        xy[opponent, team] <- xy[opponent, team] + 1
         play_table[team, stage] <- opponent
         play_table[opponent, stage] <- team
         played_games <- played_games + 1
@@ -66,7 +89,7 @@ for (team in 2:n_team) {
       print(play_table)
       cat("\n")
     } 
-    stage <- stage + 1
+    stage_no <- stage_no + 1
   }
 }
 
