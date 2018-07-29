@@ -1,0 +1,79 @@
+---
+title: ""
+author: ""
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    keep_tex: yes
+    number_sections: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+    highlight: tango
+    latex_engine: xelatex
+  word_document: default
+  html_document: default
+lang: ru-RU
+mainfont: Linux Libertine O
+fontsize: 11pt
+geometry: left=2cm, right=2cm, top=2cm, bottom=2cm
+documentclass: article
+linkcolor: blue
+urlcolor: blue
+citecolor: blue
+header-includes:
+- \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+- \newfontfamily{\cyrillicfont}{Linux Libertine O}
+- \newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+editor_options: 
+  chunk_output_type: console
+---
+
+# Подтягивания. КЛШ-2018
+
+Состав команд: три юноши + две девушки.
+
+Результат девушки учитывается с коэффициентом три.
+
+Хват: прямой.
+
+Засчитывается подтягивание:
+
+1. Без рывков.
+
+2. Подбородок заходит поверх перекладины. 
+
+3. Между подтягиваниями руки должны полностью распрямляться.
+
+# Подтягивания. КЛШ-2018
+
+Состав команд: три юноши + две девушки.
+
+Результат девушки учитывается с коэффициентом три.
+
+Хват: прямой.
+
+Засчитывается подтягивание:
+
+1. Без рывков.
+
+2. Подбородок заходит поверх перекладины. 
+
+3. Между подтягиваниями руки должны полностью распрямляться.
+
+# Подтягивания. КЛШ-2018
+
+Состав команд: три юноши + две девушки.
+
+Результат девушки учитывается с коэффициентом три.
+
+Хват: прямой.
+
+Засчитывается подтягивание:
+
+1. Без рывков.
+
+2. Подбородок заходит поверх перекладины. 
+
+3. Между подтягиваниями руки должны полностью распрямляться.
