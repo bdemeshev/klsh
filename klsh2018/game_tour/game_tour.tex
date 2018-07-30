@@ -1,0 +1,214 @@
+\documentclass[10pt,russian,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{Linux Libertine O}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{unicode=true,
+            pdftitle={Игровой тур},
+            pdfauthor={Памятка судьям},
+            colorlinks=true,
+            linkcolor=blue,
+            citecolor=blue,
+            urlcolor=blue,
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[shorthands=off,main=russian]{babel}
+\else
+  \usepackage{polyglossia}
+  \setmainlanguage[]{russian}
+\fi
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Игровой тур}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Памятка судьям}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{Тур 5}
+
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+\newfontfamily{\cyrillicfont}{Linux Libertine O}
+\newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+
+\begin{document}
+\maketitle
+
+\subsection{Регламент тура}\label{-}
+
+\subsubsection{Первый этап, индивидуальный}\label{--}
+
+\begin{itemize}
+\tightlist
+\item
+  10 минут первый этап.
+\item
+  Игроки играют пара на пару на поле \(1 \times 5\).
+\item
+  Сажаем игроков команды друг напротив друга.
+\item
+  В каждой паре играющих (четыре пары) одну игру начинает игрок команды
+  А, и одну игру --- команда Б.
+\item
+  Одна победа приносет команде 1 очко. Итого команда может получить от 0
+  до 8 очков.
+\item
+  Ограничение 30 секунд на ход. Один судья следит за двумя парами,
+  поэтому судейство здесь мягкое.
+\end{itemize}
+
+\subsubsection{Перерыв между этапами}\label{--}
+
+\begin{itemize}
+\tightlist
+\item
+  Перерыв на обсуждение стратегии 10 минут.
+\item
+  В течение первых 5 минут вольные стрелки могут передать письменно
+  команде свои соображения по оптимальной стратегии
+\end{itemize}
+
+\subsubsection{Второй этап, командный}\label{--}
+
+\begin{itemize}
+\tightlist
+\item
+  Каждая команда выбирает капитана
+\item
+  Команды играют на поле \(1 \times 9\).
+\item
+  Играем две партии, в одной начинает команда А, в другой первый ход у
+  команды Б
+\item
+  Ход делает только капитан
+\item
+  Ограничение 30 секунд на ход. Здесь следим строго.
+\item
+  Команда, набравшая больше баллов на первом этапе, получает право
+  выбора, будет ли она сначала ходить первой, а потом второй, или
+  наоборот
+\item
+  Одна победа приносит команде 4 очка
+\end{itemize}
+
+\subsection{Правила игры}\label{-}
+
+\begin{itemize}
+\tightlist
+\item
+  Игра ``Лужи на дороге'' или ``Домики-поддавки''
+\item
+  Поле состоит из полоски \(1 \times n\) клеточек
+\item
+  Игроки по очереди соединяют две соседние ещё не соединённые вершины.
+\item
+  Соединяем по горизонтали или вертикали, НЕ по диагонали.
+\item
+  Тот, кто закончил соединять ребра вокруг клетки считает клетку своей
+  лужей, и обязательно делает дополнительный ход. Для удобства занятую
+  клетку можно пометить буквой игрока.
+\item
+  Тот, кто собрал к концу игры больше всего луж проиграл.
+\end{itemize}
+
+\newpage
+
+\subsection{Выигрышная стратегия}\label{-}
+
+\begin{itemize}
+\item
+  Все ребра делятся на граничные (целиком лежит на границе) и
+  внутренние.
+\item
+  Выигрышная стратегия есть у первого игрока
+\item
+  Первый ход --- выбираем любое внутреннее ребро кроме ребер, касающихся
+  самого левого и самого правого квадратика.
+\item
+  Если все внутреннии ребра заняты, то делаем любой ход граничным
+  ребром, кроме замыкания лужи.
+\item
+  Если не все внутренние ребра заняты, то смотрим на предыдущий ход
+  второго игрока.
+\item
+  Если второй игрок только что выбрал внутренее ребро, то выбираем любое
+  внутреннее ребро.
+\item
+  Если второй игрок только что поставил граничное ребро, которое
+  касается РОВНО ОДНОГО внутреннего ребра, то ставим второе внутреннее
+  ребро, касающееся только что поставленного вторым игроком граничного
+  ребра. При этом может оказаться, что мы захватили лужу.
+\item
+  Иначе выбираем любое внутреннее ребро.
+\end{itemize}
+
+
+\end{document}
