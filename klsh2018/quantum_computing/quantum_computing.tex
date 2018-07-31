@@ -864,6 +864,32 @@ H = \frac{1}{\sqrt{2}}\left( \ketbra{0}{0} + \ketbra{0}{1} + \ketbra{1}{0} - \ke
   \end{sol}
 \end{problem}
 
+\begin{problem}
+  Рассмотрим действие на паре кубит $A = \ketbra{0}{0} \otimes I + \ketbra{1}{1} \otimes X$.
+  \begin{enumerate}
+    \item Найди $A \cdot \ket{00}$, $A \cdot \ket{10}$, $A\cdot \ket{++}$;
+    \item Что делает действие $A$?
+  \end{enumerate}
+\begin{sol}
+  $A \cdot \ket{00} = \ket{00}$, $A \cdot \ket{10} = \ket{11}$.
+\end{sol}
+\end{problem}
+
+
+
+
+\begin{problem}
+  Запиши:
+  \begin{enumerate}
+    \item пару кубит $\ket{++}$ в стандартном базисе;
+    \item пару кубит $\ket{+0}$ в стандартном базисе;
+    \item пару кубит $\ket{00}$ в базисе $\ket{++}$, $\ket{--}$, $\ket{+-}$, $\ket{-+}$
+  \end{enumerate}
+  \begin{sol}
+  \end{sol}
+\end{problem}
+
+
 
 \begin{problem}
 Приведи пример действия $A$ на паре кубит, которое невозможно представить в виде тензорного произведения действий.
@@ -872,6 +898,25 @@ H = \frac{1}{\sqrt{2}}\left( \ketbra{0}{0} + \ketbra{0}{1} + \ketbra{1}{0} - \ke
   Например, $CNOT = \ketbra{00}{00} + \ketbra{01}{01} + \ketbra{10}{11} + \ketbra{11}{10}$.
 \end{sol}
 \end{problem}
+
+\begin{problem}
+  Запиши действие $CNOT = \ketbra{00}{00} + \ketbra{01}{01} + \ketbra{10}{11} + \ketbra{11}{10}$
+  в базисе $\ket{++}$, $\ket{--}$, $\ket{+-}$, $\ket{-+}$.
+  \begin{sol}
+  \end{sol}
+\end{problem}
+
+
+\begin{problem}
+  Рассмотрим диффузию $D = 2\ketbra{++}{++} - I^{\otimes 2}$.
+  Найди $D\cdot \ket{00}$, $D\cdot \ket{10}$, $D\cdot \ket{++}$, $D^{-1}$.
+  \begin{sol}
+    $D\cdot \ket{00} = \frac{1}{2}(\ket{01} + \ket{10} + \ket{11} - \ket{00})$
+  \end{sol}
+\end{problem}
+
+
+
 
 
 
@@ -949,7 +994,9 @@ H = \frac{1}{\sqrt{2}}\left( \ketbra{0}{0} + \ketbra{0}{1} + \ketbra{1}{0} - \ke
   \item Реализовали табличку соответствия классической $f$ и
   аналогичного квантового оракула. Проверили работоспособность алгоритма Дойча
   ещё на одной функции. Далее начали про несколько кубитов. Разобрались с полным
-  и частичным измерением системы из нескольких кубитов. 
+  и частичным измерением системы из нескольких кубитов.
+  \item Немного несистемно разбирались с действиями на паре кубит. Тензорное произведение
+  кубит, тензорное произведение действий. 
 \end{enumerate}
 
 

@@ -58,7 +58,7 @@
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
+\setcounter{secnumdepth}{0}
 % Redefines (sub)paragraphs to behave more like sections
 \ifx\paragraph\undefined\else
 \let\oldparagraph\paragraph
@@ -148,13 +148,13 @@
   Играем две партии, в одной начинает команда А, в другой первый ход у
   команды Б
 \item
-  Ход делает только капитан
-\item
-  Ограничение 30 секунд на ход. Здесь следим строго.
-\item
   Команда, набравшая больше баллов на первом этапе, получает право
   выбора, будет ли она сначала ходить первой, а потом второй, или
   наоборот
+\item
+  Ход делает только капитан
+\item
+  Ограничение 30 секунд на ход. Здесь следим строго.
 \item
   Одна победа приносит команде 4 очка
 \end{itemize}
@@ -184,6 +184,7 @@
 \subsection{Выигрышная стратегия}\label{-}
 
 \begin{itemize}
+\tightlist
 \item
   Все ребра делятся на граничные (целиком лежит на границе) и
   внутренние.
@@ -208,6 +209,9 @@
   ребра. При этом может оказаться, что мы захватили лужу.
 \item
   Иначе выбираем любое внутреннее ребро.
+\item
+  Подробнее про стратегию можно прочитать в Games of No Chance 4, Narrow
+  misere Dots-and-Boxes.
 \end{itemize}
 
 
