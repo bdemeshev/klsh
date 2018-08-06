@@ -1,0 +1,135 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper, 12pt]{article}
+
+%\newcommand{\LastChange}{Time-stamp: "2014-07-09 15:59:43 aga SeminarProblems.tex"}
+
+
+% \usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%\usepackage{euler}
+%\usepackage{xltxtra} % loads: fixltx2e, metalogo, xunicode, fontspec
+
+% \usepackage{multicol} % many columns
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{multicol} % текст в несколько колонок
+
+\usepackage{marvosym} % значок мужского туалета
+
+%\usepackage{enumerate}
+\usepackage{textcomp} % text in formulas
+
+%\usepackage{paralist}
+\usepackage{enumitem} % more options for lists
+
+\usepackage{tikz} % картинки
+\usetikzlibrary{arrows.meta, quotes, angles} % tikz-прибамбас для рисовки стрелочек подлиннее
+
+\usepackage[includehead, top=0.5cm, bottom=0.5cm, left=1cm, right=1cm]{geometry}
+
+
+\usepackage{fontspec} % что-то про шрифты?
+\usepackage{polyglossia} % русификация xelatex
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+\defaultfontfeatures{Mapping=tex-text}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%\setmainfont{Times New Roman}
+%\setmainfont{Arial}
+%\setmainfont{PT Sans}
+
+
+%\setlength{\topmargin}{0in}
+%\setlength{\headheight}{0cm}
+%\setlength{\headsep}{0in}
+%\setlength{\oddsidemargin}{-0.5in}
+%\setlength{\evensidemargin}{-0.5in}
+%\setlength{\textwidth}{7.5in}
+%\setlength{\textheight}{9.0in}
+
+
+% \newcommand{\staritem}{\refstepcounter{enumi}\item[\bf *\theenumi.]}
+
+% \newcommand{\bsym}{\boldsymbol}
+
+
+%\newcommand{\FigWidth}{0.3\columnwidth}
+
+
+
+\newtheoremstyle{break}% name
+  {}%         Space above, empty = `usual value'
+  {1pt}%         Space below
+  {}% Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  {\newline}% Space after thm head: \newline = linebreak
+  {}%         Thm head spec
+
+\theoremstyle{break}
+\newtheorem{problem}{Задача}[subsection]
+\renewcommand{\theproblem}{\arabic{problem}}% Remove subsection from the counter representation
+
+
+\begin{document}
+
+\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Свалка}
+Свалка проходит в последний день КЛШ и напоминает основной этап регулярного тура ФМТ.
+Главное: команда борется не против одного соперника, а против {\bf хронометра}.
+Каждая команда получает 4 задачи. Команда решает задачи так, чтобы судья
+видел ход решения (а соперники не слышали!) и заявляет свой ответ на специальном бланке.
+Судья фиксирует время заявки и число очков за решение: ноль, один или два.
+Заявлять задачи на свалке можно в произвольном порядке.
+
+В процессе тура мы обрабатываем данные:
+\begin{enumerate}
+\item По каждой из четырёх задач мы выстраиваем команды в список (всего четыре списка).
+В вершине списка идут команды, которые решили задачу на два балла
+(выше стоит та команда, которая решила быстрее), далее те, кто решили на один балл,
+и затем команды, решившие на ноль баллов или не решившие. Лучше решить задачу
+на два балла за 20 минут, чем на один балл за 1 минуту.
+\item По каждому из четырёх списков команда получает число очков, равное числу команд,
+решивших данную задачу хуже неё (т.е. находящихся ниже в списке).
+\item Результаты команды по каждой задаче суммируются. Таким образом,
+по сумме баллов за четыре задачи команда может набрать от $0$ до $76$ очков.
+\item По этой сумме мы сортируем команды, и каждая команда получает столько {\bf финальных очков},
+сколько команд выступило хуже неё (от 0 до 19).
+\end{enumerate}
+
+\section*{Финал и суперфинал}
+Как вы помните, за основные туры и за свалку можно было набрать от $0$ до $19$ {\bf финальных очков}.
+Сложим эти очки за основные туры и за свалку. По этой сумме финальных очков
+мы определяем, какие команды сойдутся в финале и суперфинале: IV и III команды сразятся в финале,
+а II и I команды будут бороться в суперфинале.
+
+Суперфинал и финал похожи на обычные туры ФМТ за следующими исключениями:
+\begin{enumerate}
+\item Нет вольных стрелков.
+\item Сложные задачи.
+\item Судейская бригада {\bf случайным образом} определяет, кто из членов команды
+будет докладывать решение своей задачи на обмене ударами. Таким образом,
+решение обменной задачи должны знать {\bf все} участники.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,152 @@
+\documentclass[a4paper, 11pt]{article}
+
+%\newcommand{\LastChange}{Time-stamp: "2014-07-09 15:59:43 aga SeminarProblems.tex"}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% \usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%\usepackage{euler}
+%\usepackage{xltxtra} % loads: fixltx2e, metalogo, xunicode, fontspec
+
+% \usepackage{multicol} % many columns
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{multicol} % текст в несколько колонок
+
+\usepackage{marvosym} % значок мужского туалета
+
+%\usepackage{enumerate}
+\usepackage{textcomp} % text in formulas
+
+%\usepackage{paralist}
+\usepackage{enumitem} % more options for lists
+
+\usepackage{tikz} % картинки
+\usetikzlibrary{arrows.meta, quotes, angles} % tikz-прибамбас для рисовки стрелочек подлиннее
+
+\usepackage[includehead, top=0.5cm, bottom=0.5cm, left=1cm, right=1cm]{geometry}
+
+
+%\usepackage{fontspec} % что-то про шрифты?
+%\usepackage{polyglossia} % русификация xelatex
+
+%\setmainlanguage{russian}
+%\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+%\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+%\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+%\defaultfontfeatures{Mapping=tex-text}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%\setmainfont{Times New Roman}
+%\setmainfont{Arial}
+%\setmainfont{PT Sans}
+
+
+%\setlength{\topmargin}{0in}
+%\setlength{\headheight}{0cm}
+%\setlength{\headsep}{0in}
+%\setlength{\oddsidemargin}{-0.5in}
+%\setlength{\evensidemargin}{-0.5in}
+%\setlength{\textwidth}{7.5in}
+%\setlength{\textheight}{9.0in}
+
+
+% \newcommand{\staritem}{\refstepcounter{enumi}\item[\bf *\theenumi.]}
+
+% \newcommand{\bsym}{\boldsymbol}
+
+
+%\newcommand{\FigWidth}{0.3\columnwidth}
+
+
+
+\newtheoremstyle{break}% name
+  {}%         Space above, empty = `usual value'
+  {1pt}%         Space below
+  {}% Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  {\newline}% Space after thm head: \newline = linebreak
+  {}%         Thm head spec
+
+\theoremstyle{break}
+\newtheorem{problem}{Задача}[subsection]
+\renewcommand{\theproblem}{\arabic{problem}}% Remove subsection from the counter representation
+
+
+\begin{document}
+
+\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Финал}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+Найди положительный корень уравнения
+
+\[
+x = \sqrt{8} + \dfrac{2}{\sqrt{8} + \dfrac{2}{\sqrt{8} + \dfrac{2}{\sqrt{8} + \dfrac{2}{\sqrt{8} + \dfrac{2}{x}}}}}.
+\]
+
+% решение единственно, тк с ростом $x$ левая часть растёт, а правая — падает
+% решим более простое уравнение $x = \sqrt{8} + \frac{2}{x}$
+% получим два корня, $x = \sqrt{2} + 2$, корень $x=\sqrt{2} - 2$ не подходит
+%
+%
+
+\end{problem}
+
+\begin{problem}
+На горизонтальном шероховатом столе лежит кусок мела массой $m$. Ему
+придают скорость $v$ в горизонтальной плоскости.
+При движении по столу мелок истирается, теряя массу $\eta$ на каждом метре пути.
+Коэффициент трения мелка о стол равен $\mu$.
+
+Известно, что за время движения мелок полностью истёрся.
+
+Какой путь проехал мелок?
+\end{problem}
+
+
+\begin{problem}
+В треугольнике $ABC$ известны стороны: $AB=c$, $BC=a$, $AC=b$.
+Медианы $AA_1$, $BB_1$ и $CC_1$ пересекаются в точке $O$.
+Точка $A_2$ — середина $AO$, $B_2$ — середина $BO$, $C_2$ — середниа $CO$.
+
+Чему равна сумма квадратов сторон шестиугольника $C_1 B_2 A_1 C_2 B_1 A_2$?
+
+% ответ $(a^2 + b^2 + c^2) / 6$
+
+\end{problem}
+
+
+
+\begin{problem}
+Автомобиль с радиусом колеса $R$ едет со скоростью $v$. Частичка грязи прилипает
+к колесу, поворачивается на угол $150^{\circ}$ и отрывается.
+
+На каком расстоянии от своего изначального местоположения приземлится частичка?
+\end{problem}
+
+\subsection*{Финал}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{problem}{0}
+
+
+\end{document}

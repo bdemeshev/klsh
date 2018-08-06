@@ -1,0 +1,56 @@
+---
+title: "Квантовые вычисления"
+author: "Загоночная кр"
+date: ""
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    keep_tex: yes
+    number_sections: true
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+    highlight: tango
+    latex_engine: xelatex
+  word_document: default
+  html_document: default
+lang: ru-RU
+mainfont: Linux Libertine O
+fontsize: 11pt
+geometry: left=2cm, right=2cm, top=2cm, bottom=2cm
+documentclass: article
+linkcolor: blue
+urlcolor: blue
+citecolor: blue
+header-includes:
+- \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+- \newfontfamily{\cyrillicfont}{Linux Libertine O}
+- \newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+editor_options: 
+  chunk_output_type: console
+---
+
+## Задача раз
+
+Какой кубит получится, если применить вентиль Адамара $H$ к кубиту 
+$\frac{i}{\sqrt{2}}|0> - \frac{1}{\sqrt{2}}|1>$?
+
+Напоминалка: $H = \frac{1}{\sqrt{2}}(|0><0| + |0><1| + |1><0| - |1><1|)$.
+
+## Задача два
+
+Как можно упростить выражение $X\cdot H \cdot Z \cdot H\cdot |q>$?
+
+Напоминалка: $X = |0><1| + |1><0|$ и $Z = |0><0| - |1><1|$.
+
+## Задача три
+
+Пусть $A = H \otimes I$, а $CNOT = |0><0| \otimes I + |1><1| \otimes X$. 
+
+Чему равняется $CNOT \cdot A \cdot |00>$?
+
+
+
+
+

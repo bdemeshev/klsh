@@ -1,0 +1,62 @@
+---
+title: "Демоническая оптимизация"
+author: "Загоночная кр"
+date: ""
+output:
+  word_document: default
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    keep_tex: yes
+    number_sections: true
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+    highlight: tango
+    latex_engine: xelatex
+  html_document: default
+lang: ru-RU
+mainfont: Linux Libertine O
+fontsize: 11pt
+geometry: left=2cm, right=2cm, top=2cm, bottom=2cm
+documentclass: article
+linkcolor: blue
+urlcolor: blue
+citecolor: blue
+header-includes:
+- \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+- \newfontfamily{\cyrillicfont}{Linux Libertine O}
+- \newfontfamily{\cyrillicfontsf}{Linux Libertine O}
+editor_options: 
+  chunk_output_type: console
+---
+
+## Задача раз
+
+Две кучки камней. Маша и Саша ходят по очереди. Маша начинает.
+За один ход можно забрать либо произвольное число камней из одной кучки,
+либо одинаковое число камней из обеих. В одной кучке 7 камней, а в другой — 8 камней.
+
+Кто выигрывает при использовании оптимальных стратегий?
+
+Подсказка: нарисуй картинку на плоскости :)
+
+## Задача два
+
+Джон Сильвер и Билли Бонс подбрасывают монетку, пока не выпадет ООО или ОРО. 
+Если раньше выпадет ООО, то выигрывает Джон Сильвер, а если ОРО — то Билли Бонс.
+
+Какова вероятность того, что выиграет Джон Сильвер?
+
+## Задача три
+
+Вася подкидывает кубик до тех пор, пока на кубике не выпадет единица, или пока он сам не скажет «Стоп». 
+Вася получает столько рублей, сколько выпало на кубике при последнем броске. 
+За каждое подбрасывание Вася платит 30 копеек.
+
+Как выглядит оптимальная Васина стратегия?
+
+
+
+
+

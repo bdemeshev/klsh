@@ -1,0 +1,229 @@
+\documentclass[a4paper, 11pt]{article}
+
+%\newcommand{\LastChange}{Time-stamp: "2014-07-09 15:59:43 aga SeminarProblems.tex"}
+
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% \usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%\usepackage{euler}
+%\usepackage{xltxtra} % loads: fixltx2e, metalogo, xunicode, fontspec
+
+% \usepackage{multicol} % many columns
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{multicol} % текст в несколько колонок
+
+\usepackage{marvosym} % значок мужского туалета
+
+%\usepackage{enumerate}
+\usepackage{textcomp} % text in formulas
+
+%\usepackage{paralist}
+\usepackage{enumitem} % more options for lists
+
+\usepackage{tikz} % картинки
+\usetikzlibrary{arrows.meta, quotes, angles} % tikz-прибамбас для рисовки стрелочек подлиннее
+
+\usepackage[includehead, top=0.5cm, bottom=0.5cm, left=1cm, right=1cm]{geometry}
+
+
+% \usepackage{fontspec} % что-то про шрифты?
+% \usepackage{polyglossia} % русификация xelatex
+
+% \setmainlanguage{russian}
+% \setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+% \setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+% \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+% \defaultfontfeatures{Mapping=tex-text}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%\setmainfont{Times New Roman}
+%\setmainfont{Arial}
+%\setmainfont{PT Sans}
+
+
+%\setlength{\topmargin}{0in}
+%\setlength{\headheight}{0cm}
+%\setlength{\headsep}{0in}
+%\setlength{\oddsidemargin}{-0.5in}
+%\setlength{\evensidemargin}{-0.5in}
+%\setlength{\textwidth}{7.5in}
+%\setlength{\textheight}{9.0in}
+
+
+% \newcommand{\staritem}{\refstepcounter{enumi}\item[\bf *\theenumi.]}
+
+% \newcommand{\bsym}{\boldsymbol}
+
+
+%\newcommand{\FigWidth}{0.3\columnwidth}
+
+
+
+\newtheoremstyle{break}% name
+  {}%         Space above, empty = `usual value'
+  {1pt}%         Space below
+  {}% Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  {\newline}% Space after thm head: \newline = linebreak
+  {}%         Thm head spec
+
+\theoremstyle{break}
+\newtheorem{problem}{Задача}[subsection]
+\renewcommand{\theproblem}{\arabic{problem}}% Remove subsection from the counter representation
+
+
+\begin{document}
+
+\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Свалка}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+На расстоянии $L=100$ м от стены лежит футбольный мяч.
+Адо бежит к мячу с постоянной скоростью $u=10$ м/с в направлении перендикулярном плоскости стены.
+Добегая до мяча, Адо наносит удар и придаёт
+мячу горизонтальную скорость $v=30$ м/c относительно поверхности Земли, $v>u$.
+После удара Адо продолжает движение с прежней скоростью. Столкновение мяча со стеной абсолютно упругое.
+
+Через сколько секунд после удара Адо снова встретится с мячом?
+
+Дорогой друг, трением мяча о поверхность Земли разрешаю тебе пренебречь! Твой главный судья $\heartsuit$.
+\end{problem}
+
+\begin{problem}
+Какое наименьшее количество сомножителей нужно зачеркнуть
+в произведении $1\cdot 2\cdot 3\cdot \ldots \cdot 76\cdot 77$, чтобы
+оно не заканчивалось на ноль?
+
+%
+\end{problem}
+
+
+\begin{problem}
+В правильный треугольник со стороной $2$ вписаны две окружности равных радиусов, как показано на рисунке.
+
+Чему равно расстояние между центрами?
+
+
+\begin{minipage}{0.8\textwidth}
+\begin{center}
+\resizebox{3.0cm}{2cm}{
+\begin{tikzpicture}
+\draw (0,0) -- (2,0) -- (1,1.732) -- (0,0);
+\draw (0.634,0.366) circle (0.366cm);
+\draw (0.634,0.366) circle[radius=1pt];
+\fill (0.634,0.366)  circle[radius=1pt];
+\draw (1.366,0.366) circle[radius=1pt];
+\fill (1.366,0.366)  circle[radius=1pt];
+\draw (1.366,0.366) circle (0.366cm);
+\end{tikzpicture}
+}
+\end{center}
+\end{minipage}
+
+% $2r = \sqrt{3} - 1$
+
+\end{problem}
+
+
+
+\begin{problem}
+Пушка стреляет вертикально вверх снарядом массой $3m$.
+В верхней точке траектории снаряд разрывается на два осколка, массами $m$ и $2m$.
+Осколок массы $m$ сразу после взрыва вылетает горизонтально и падает на расстоянии
+$L$ от пушки.
+
+Чему равно расстояние между упавшими осколками?
+
+% $L + L/2 = 3L/2$
+\end{problem}
+
+\subsection*{Свалка}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{problem}{0}
+
+
+
+\begin{problem}
+На расстоянии $L=100$ м от стены лежит футбольный мяч.
+Адо бежит к мячу с постоянной скоростью $u=10$ м/с в направлении перендикулярном плоскости стены.
+Добегая до мяча, Адо наносит удар и придаёт
+мячу горизонтальную скорость $v=30$ м/c относительно поверхности Земли, $v>u$.
+После удара Адо продолжает движение с прежней скоростью. Столкновение мяча со стеной абсолютно упругое.
+
+Через сколько секунд после удара Адо снова встретится с мячом?
+
+Дорогой друг, трением мяча о поверхность Земли разрешаю тебе пренебречь! Твой главный судья $\heartsuit$.
+\end{problem}
+
+\begin{problem}
+Какое наименьшее количество сомножителей нужно зачеркнуть
+в произведении $1\cdot 2\cdot 3\cdot \ldots \cdot 76\cdot 77$, чтобы
+оно не заканчивалось на ноль?
+
+%
+\end{problem}
+
+
+\begin{problem}
+В правильный треугольник со стороной $2$ вписаны две окружности равных радиусов, как показано на рисунке.
+
+Чему равно расстояние между центрами?
+
+
+\begin{minipage}{0.8\textwidth}
+\begin{center}
+\resizebox{3.0cm}{2cm}{
+\begin{tikzpicture}
+\draw (0,0) -- (2,0) -- (1,1.732) -- (0,0);
+\draw (0.634,0.366) circle (0.366cm);
+\draw (0.634,0.366) circle[radius=1pt];
+\fill (0.634,0.366)  circle[radius=1pt];
+\draw (1.366,0.366) circle[radius=1pt];
+\fill (1.366,0.366)  circle[radius=1pt];
+\draw (1.366,0.366) circle (0.366cm);
+\end{tikzpicture}
+}
+\end{center}
+\end{minipage}
+
+% $2r = \sqrt{3} - 1$
+
+\end{problem}
+
+
+
+\begin{problem}
+Пушка стреляет вертикально вверх снарядом массой $3m$.
+В верхней точке траектории снаряд разрывается на два осколка, массами $m$ и $2m$.
+Осколок массы $m$ сразу после взрыва вылетает горизонтально и падает на расстоянии
+$L$ от пушки.
+
+Чему равно расстояние между упавшими осколками?
+
+% $L + L/2 = 3L/2$
+\end{problem}
+
+
+
+\end{document}

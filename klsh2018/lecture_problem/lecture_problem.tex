@@ -1,0 +1,138 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper, 20pt]{article}
+
+%\newcommand{\LastChange}{Time-stamp: "2014-07-09 15:59:43 aga SeminarProblems.tex"}
+
+
+% \usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%\usepackage{euler}
+%\usepackage{xltxtra} % loads: fixltx2e, metalogo, xunicode, fontspec
+
+% \usepackage{multicol} % many columns
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{multicol} % текст в несколько колонок
+
+\usepackage{marvosym} % значок мужского туалета
+
+%\usepackage{enumerate}
+\usepackage{textcomp} % text in formulas
+
+%\usepackage{paralist}
+\usepackage{enumitem} % more options for lists
+
+\usepackage{tikz} % картинки
+\usetikzlibrary{arrows.meta, quotes, angles} % tikz-прибамбас для рисовки стрелочек подлиннее
+
+\usepackage[includehead, top=0.5cm, bottom=0.5cm, left=1cm, right=1cm]{geometry}
+
+
+\usepackage{fontspec} % что-то про шрифты?
+\usepackage{polyglossia} % русификация xelatex
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont[Scale=1.8]{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}[Scale=2.0]{Linux Libertine O}
+
+\defaultfontfeatures{Mapping=tex-text}
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%\setmainfont{Times New Roman}
+%\setmainfont{Arial}
+%\setmainfont{PT Sans}
+
+
+%\setlength{\topmargin}{0in}
+%\setlength{\headheight}{0cm}
+%\setlength{\headsep}{0in}
+%\setlength{\oddsidemargin}{-0.5in}
+%\setlength{\evensidemargin}{-0.5in}
+%\setlength{\textwidth}{7.5in}
+%\setlength{\textheight}{9.0in}
+
+
+% \newcommand{\staritem}{\refstepcounter{enumi}\item[\bf *\theenumi.]}
+
+% \newcommand{\bsym}{\boldsymbol}
+
+
+%\newcommand{\FigWidth}{0.3\columnwidth}
+
+
+
+\newtheoremstyle{break}% name
+  {}%         Space above, empty = `usual value'
+  {10pt}%         Space below
+  {}% Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  {\newline}% Space after thm head: \newline = linebreak
+  {}%         Thm head spec
+
+\theoremstyle{break}
+\newtheorem{problem}{Задаченька}[subsection]
+\renewcommand{\theproblem}{\arabic{problem}}% Remove subsection from the counter representation
+
+
+\begin{document}
+
+\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Лекторские задаченьки :)
+
+\vspace{20pt}
+
+Борис Демешев
+
+\vspace{20pt}
+
+\begin{problem}
+Два лекарства испытывали на мужчинах и женщинах. Каждый
+человек принимал только одно лекарство. Общий процент людей,
+почувствовавших улучшение, больше среди принимавших лекарство А.
+Процент мужчин, почувствовавших улучшение, больше среди мужчин, принимавших лекарство В.
+Процент женщин, почувствовавших улучшение, больше среди женщин, принимавших лекарство В.
+
+Возможно ли такое? Если да, то как? Если нет, то почему?
+\end{problem}
+
+
+
+\begin{problem}
+Маша пишет на бумажках два любых различных натуральных числа по своему выбору.
+Одну бумажку она прячет в левую руку, а другую — в правую. Саша выбирает Машину
+равновероятно наугад.
+Маша показывает число, написанное на выбранной бумажке.
+Саша высказывает свою догадку о том, открыл ли он большее из двух чисел или меньшее.
+Если Саша угадал, то он получает тортик!
+
+Укажите стратегию Саши, гарантирующую ему выигрыш с вероятностью строго более 50\%,
+при любой стратегии Маши.
+\end{problem}
+
+
+
+
+
+
+
+
+
+\end{document}
