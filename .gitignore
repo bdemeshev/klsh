@@ -1,15 +1,23 @@
+*.aux
+*.log
+*.synctex.gz
+*.out
+*.bbl
+*.bcf
+*.blg
+*.fls
+*-cache.yaml
+*.fdb_latexmk
+*.run.xml
+*.toc
+*.xdv
+*.lfs
+
 
 klsh2014/data_analysis/klsh_14_datan.html
-
 klsh2014/data_analysis/datan_plan.md
-
 klsh2014/data_analysis/.#datan_plan.md
 
-klsh2014/igeometry/i_geometry.aux
-
-klsh2014/igeometry/i_geometry.log
-
-klsh2014/igeometry/i_geometry.synctex.gz
 
 klsh2014/igeometry/igeometry_log.txt
 
@@ -57,48 +65,17 @@ klsh2014/igeometry/Tristan_Needham_Visual_Complex_Analysis.djvu
 
 klsh2014/Backup of knt_logic.docx
 
-klsh2014/xeriki_oniki/xeriki_oniki.aux
-
-klsh2014/xeriki_oniki/xeriki_oniki.log
-
-klsh2014/xeriki_oniki/xeriki_oniki.out
-
-klsh2014/xeriki_oniki/xeriki_oniki.synctex.gz
-
-klsh2014/3poros_matboi/3poros_matboi.aux
-
-klsh2014/3poros_matboi/3poros_matboi.log
-
-klsh2014/3poros_matboi/3poros_matboi.synctex.gz
-
-klsh2014/sheme_matbabai/matbabai.aux
-
-klsh2014/sheme_matbabai/matbabai.log
-
-klsh2014/sheme_matbabai/matbabai.synctex.gz
-
 klsh2014/~$knt_sorted.xlsx
 
 klsh2014/~$rost_ves.xlsx
 klsh2014/BBC_This_World_Don_t_Panic_The_Truth_About_Population_H264_1.flv
-*.aux
-klsh2014/igeometry/zagon.log
-klsh2014/igeometry/zagon.synctex.gz
-klsh2014/kayles/kayles.log
-klsh2014/kayles/kayles.synctex.gz
 klsh2014/platonic/120-cell.mp4
 klsh2014/platonic/polytopes.mov.mp4
 klsh2014/Visualization_of_Einstein_s_special_relativity.mp4
 
-
 klsh2018/quantum_computing/all_solutions.tex
-klsh2018/quantum_computing/*.bbl
-klsh2018/quantum_computing/*.bcf
-klsh2018/quantum_computing/*.blg
-klsh2018/quantum_computing/*.fdb_latexmk
-klsh2018/quantum_computing/*.lfs
-klsh2018/quantum_computing/*.log
-klsh2018/quantum_computing/*.out
-klsh2018/quantum_computing/*.run.xml
-klsh2018/quantum_computing/*.toc
-klsh2018/quantum_computing/*.xdv
+
+
+klsh2019/fmt_rules_2019/
+klsh2019/svalka_script/
+zadachi-dlia-fmt/
