@@ -33,7 +33,7 @@
 \usepackage{physics} % бракеты
 
 \usepackage{answers} % разделение условий и ответов в упражнениях
-
+\usepackage{multicol}
 
 \usepackage{fancyhdr} % весёлые колонтитулы
 \pagestyle{fancy}
@@ -84,6 +84,8 @@
 %% эконометрические сокращения
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\Arg}{Arg}
+\let\arg\relax
+\DeclareMathOperator{\arg}{arg}
 \DeclareMathOperator{\Corr}{Corr}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\E}{\mathbb{E}}
@@ -97,6 +99,7 @@
 \def \e{\varepsilon}
 \def \he{\hat{\e}}
 \def \z{z}
+\def \RR{\mathbb{R}}
 \def \hVar{\widehat{\Var}}
 \def \hCorr{\widehat{\Corr}}
 \def \hCov{\widehat{\Cov}}
@@ -166,14 +169,10 @@ style=alphabetic]{biblatex}
 
 \section*{Цель}
 
-Рассказать про квантовые вычисления девятиклассникам.
-Дойти до алгоритма Гровера с нуля, включая рассказ про вероятности и комплексные числа.
-
-Спорные моменты:
+Рассказать про комплексный числа, преобразование Мёбиуса, кватернионы, вращения, роторы, октонионы, гиперболическую и проективную геометрию.
 
 \begin{itemize}
-  \item полный отказ от матриц, только обозначения Дирака;
-  \item что делать с экспонентой $e$?
+  \item ччч
 \end{itemize}
 
 
@@ -181,23 +180,562 @@ style=alphabetic]{biblatex}
 \section{Комплексные числа. Определение}
 
 \begin{definition}
-  Комплексное число — вектор на плоскости. 
+  Комплексное число — это вектор на плоскости.
 \end{definition}
+  
+  \begin{enumerate}
+    \item Длина вектора — модуль комплексного числа, $|z|$.
+    \item Угол между вектором и горизонатльной осью — аргумента комплексного числа, $\arg z$.
+    \item Горизонтальная составляющая вектора — действительная часть, $\Re z$.
+    \item Вертикальная составляющая вектора — мнимая часть, действительное число, $\Im z$.
+  \end{enumerate}
+  
+  \begin{problem}
+  Поехали.
+  \begin{enumerate}
+    \item Для комплексных чисел $1+i$ и $3+4i$ найди $|z|$, $\arg z$, $\Re z$, $\Im z$. 
+    \item Нарисуй числа $1+i$, $3+4i$, $3-i$, $-3i$.
+  \end{enumerate}
+  
+  \begin{sol}
+  \end{sol}
+  \end{problem}
+  
+  
+  Действия:
+  \begin{enumerate}
+    \item Сложение комплексных чисел — сложение векторов.
+    \item Умножение комплексных чисел — длины векторов умножаются, аргументы складываются.
+    \item Сопряжение $z^*$ комплексного числа — отражение относительно горизонтальной оси.
+  \end{enumerate}
+  
+  
+  \begin{problem}
+  Базируясь на геометрическом определении умножения, ответь на вопросы:
+  
+  \begin{enumerate}
+    \item Чему равняется $(1+i)^2$? $(1+i)^{43}$?
+    \item Почему $i^2=-1$?
+    \item Чему равняется произведение $z=6 + 3i$ на $i$?
+  \end{enumerate}
+  \begin{sol}
+  \end{sol}
+  \end{problem}
+ 
+  Наивное умножение комплексных чисел. Раскрываем скобки и упрощаем по принципу $i^2=-1$.
+
+  \begin{problem}
+  Нарисуй процесс умножение произвольного $z$ на $3+4i$. 
+  А именно, нарисуй $3z$, $4iz$, $(3+4i)z$ и по рисунку объясни, почему $(3+4i)z = 3z + 4iz$.
+  \begin{sol}
+  \end{sol}
+  \end{problem}
+  
+  
+  
+  \begin{problem}
+  
+  \begin{enumerate}
+    \item У комплексного числа $w = \sqrt{11} + 5i$ найди $|w|$, $|w|^2$, $\Arg w$, $\Re w$, $\Im w$, $w^*$, $ww^*$.
+    \item Найди $(3+5i) \cdot (3+3i)$, $(1+i)/(1-i)$,
+    \item Найди $(\sqrt{3}+i)^{43}$, $(1-i)^{2018}$;
+    \item Найди $(\cos (20^{\circ}) + i \sin (20^{\circ})) \cdot (\cos (10^{\circ}) + i \sin (10^{\circ}))$;
+    \item Найди $(\cos (20^{\circ}) + i \sin (20^{\circ})) / (\cos (10^{\circ}) + i \sin (10^{\circ}))$;
+  \end{enumerate}
+  
+  \begin{sol}
+  \end{sol}
+  \end{problem}
+  
+  
+  \begin{problem}
+  Реши уравнения $z^2 = -1$, $z^2 + 6z + 10 = 0$, $z^6 = 64$, $(z-1) / (z + 1) = 1 + 3i$.
+  \begin{sol}
+  \end{sol}
+  \end{problem}
+  
+  
+  \begin{problem}
+  Найди суммы $1 + i + i^2 + i^3 + i^4 + \ldots + i^{2019}$,
+  $(1+i) + (1+i)^2 + (1+i)^3 + (1+i)^4 + \ldots + (1+i)^{2020}$.
+  \begin{sol}
+  \end{sol}
+  \end{problem}
+  
+  
+  \begin{problem}
+    Бесконечно живущая черепаха за первый день проходит 10 км на север.
+    Затем каждый день она поворачивает на $90^{\circ}$ налево и
+    снижает скорость на 20\%. К какой точке она приближается?
+  
+    К какой точке стремится черепах, если она поворачивает на $60^{\circ}$?
+  \begin{sol}
+  \end{sol}
+  \end{problem}
+  
+  
+  
+  
+  \begin{problem}
+    Найди сумму углов между векторами и горизонтальной осью.
+  
+  
+    \begin{minipage}{0.8\textwidth}
+    \begin{center}
+    \begin{tikzpicture}
+    \draw (0,0) -- (4,0);
+    \draw (0,1) -- (4,1);
+    \draw (0,2) -- (4,2);
+    \draw (0,0) -- (0,2);
+    \draw (1,0) -- (1,2);
+    \draw (2,0) -- (2,2);
+    \draw (3,0) -- (3,2);
+    \draw (4,0) -- (4,2);
+    \draw[-{Latex[length=5mm, width=2mm]}] (0,0) -- (4,2);
+    \draw[-{Latex[length=5mm, width=2mm]}] (0,0) -- (3,1);
+    \end{tikzpicture}
+    \end{center}
+    \end{minipage}
+  \begin{sol}
+    $(4+2i)(3+i) = 10 + 10i$, $\pi/4$.
+  \end{sol}
+  \end{problem}
+  
+  
+  
+  \begin{problem}
+  На плоскости нарисована кошечка. Что прозойдет с кошечкой,
+  если каждую точку кошечки домножить на комплексное число $1/\sqrt{2} + i/\sqrt{2}$?
+  \begin{sol}
+    Кошка повернётся на $\pi/4$ против часовой стрелки относительно начала координат
+  \end{sol}
+  \end{problem}
+  
+
+\newpage
+\setcounter{section}{0}
+\section{Комплексные числа. Определение}
+
+\begin{definition}
+  Комплексное число — это вектор на плоскости.
+\end{definition}
+  
+\begin{enumerate}
+  \item Длина вектора — модуль комплексного числа, $|z|$.
+  \item Угол между вектором и горизонатльной осью — аргумента комплексного числа, $\arg z$.
+  \item Горизонтальная составляющая вектора — действительная часть, $\Re z$.
+  \item Вертикальная составляющая вектора — мнимая часть, действительное число, $\Im z$.
+\end{enumerate}
 
 \begin{problem}
-задачка
+Поехали.
+\begin{enumerate}
+  \item Для комплексных чисел $1+i$ и $3+4i$ найди $|z|$, $\arg z$, $\Re z$, $\Im z$. 
+  \item Нарисуй числа $1+i$, $3+4i$, $3-i$, $-3i$.
+\end{enumerate}
+
 \begin{sol}
 \end{sol}
 \end{problem}
 
 
+Действия:
+\begin{enumerate}
+  \item Сложение комплексных чисел — сложение векторов.
+  \item Умножение комплексных чисел — длины векторов умножаются, аргументы складываются.
+  \item Сопряжение $z^*$ комплексного числа — отражение относительно горизонтальной оси.
+\end{enumerate}
+
+
+\begin{problem}
+Базируясь на геометрическом определении умножения, ответь на вопросы:
+
+\begin{enumerate}
+  \item Чему равняется $(1+i)^2$? $(1+i)^{43}$?
+  \item Почему $i^2=-1$?
+  \item Чему равняется произведение $z=6 + 3i$ на $i$?
+\end{enumerate}
+\begin{sol}
+\end{sol}
+\end{problem}
+
+Наивное умножение комплексных чисел. Раскрываем скобки и упрощаем по принципу $i^2=-1$.
+
+\begin{problem}
+Нарисуй процесс умножение произвольного $z$ на $3+4i$. 
+А именно, нарисуй $3z$, $4iz$, $(3+4i)z$ и по рисунку объясни, почему $(3+4i)z = 3z + 4iz$.
+\begin{sol}
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+
+\begin{enumerate}
+  \item У комплексного числа $w = \sqrt{11} + 5i$ найди $|w|$, $|w|^2$, $\Arg w$, $\Re w$, $\Im w$, $w^*$, $ww^*$.
+  \item Найди $(3+5i) \cdot (3+3i)$, $(1+i)/(1-i)$,
+  \item Найди $(\sqrt{3}+i)^{43}$, $(1-i)^{2018}$;
+  \item Найди $(\cos (20^{\circ}) + i \sin (20^{\circ})) \cdot (\cos (10^{\circ}) + i \sin (10^{\circ}))$;
+  \item Найди $(\cos (20^{\circ}) + i \sin (20^{\circ})) / (\cos (10^{\circ}) + i \sin (10^{\circ}))$;
+\end{enumerate}
+
+\begin{sol}
+\end{sol}
+\end{problem}
+
+
+\begin{problem}
+Реши уравнения $z^2 = -1$, $z^2 + 6z + 10 = 0$, $z^6 = 64$, $(z-1) / (z + 1) = 1 + 3i$.
+\begin{sol}
+\end{sol}
+\end{problem}
+
+
+\begin{problem}
+Найди суммы $1 + i + i^2 + i^3 + i^4 + \ldots + i^{2019}$,
+$(1+i) + (1+i)^2 + (1+i)^3 + (1+i)^4 + \ldots + (1+i)^{2020}$.
+\begin{sol}
+\end{sol}
+\end{problem}
+
+
+\begin{problem}
+  Бесконечно живущая черепаха за первый день проходит 10 км на север.
+  Затем каждый день она поворачивает на $90^{\circ}$ налево и
+  снижает скорость на 20\%. К какой точке она приближается?
+
+  К какой точке стремится черепах, если она поворачивает на $60^{\circ}$?
+\begin{sol}
+\end{sol}
+\end{problem}
+
+
+
+
+\begin{problem}
+  Найди сумму углов между векторами и горизонтальной осью.
+
+
+  \begin{minipage}{0.8\textwidth}
+  \begin{center}
+  \begin{tikzpicture}
+  \draw (0,0) -- (4,0);
+  \draw (0,1) -- (4,1);
+  \draw (0,2) -- (4,2);
+  \draw (0,0) -- (0,2);
+  \draw (1,0) -- (1,2);
+  \draw (2,0) -- (2,2);
+  \draw (3,0) -- (3,2);
+  \draw (4,0) -- (4,2);
+  \draw[-{Latex[length=5mm, width=2mm]}] (0,0) -- (4,2);
+  \draw[-{Latex[length=5mm, width=2mm]}] (0,0) -- (3,1);
+  \end{tikzpicture}
+  \end{center}
+  \end{minipage}
+\begin{sol}
+  $(4+2i)(3+i) = 10 + 10i$, $\pi/4$.
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+На плоскости нарисована кошечка. Что прозойдет с кошечкой,
+если каждую точку кошечки домножить на комплексное число $1/\sqrt{2} + i/\sqrt{2}$?
+\begin{sol}
+  Кошка повернётся на $\pi/4$ против часовой стрелки относительно начала координат
+\end{sol}
+\end{problem}
+    
+
+\newpage
+\setcounter{section}{1}
+\section{Комплексные числа. Геометрия и картинки}
+
+
+\begin{problem}
+Рассмотрим произвольный четырёхугольник. Снаружи каждой стороны четырёхугольника построим квадрат.
+Назовём отрезки, соединяющие центры противоположных квадратов, $MN$ и $KL$. 
+
+\begin{enumerate}
+  \item Найди угол между $MN$ и $KL$.
+  \item Найди отношение длин $MN$ и $KL$.
+\end{enumerate}
+
+\begin{sol}
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+Нарисуй на комплексной плоскости множества
+
+\begin{enumerate}
+  \item $|z| = 4$;
+  \item $|z - 2 + 3i| > 5$;
+  \item $\Re z = 3$;
+  \item $\Im z < 6$;
+  \item $1 < |2z - 6| < 2$;
+  \item $|z - 1|^2 + |z + 1|^2 < 8$;
+  \item $|z - 1| + |z + 1| \leq 2$;
+  \item $|\Re z | < |z|$;
+  \item $|z - i| = |z - (3 + 2i)|$;
+  \item $\Re ((1+i)z) > 2$; 
+  \item $\Re \left( \frac{z - 1 - i}{z + 1 + i} \right) = 0$;
+  \item $\Im \left( \frac{z - 1 - i}{z + 1 + i} \right) = 0$;
+\end{enumerate}
+
+\begin{sol}
+\end{sol}
+\end{problem}
+  
+
+
+\begin{problem}
+Нарисуй на комплексной плоскости траектории, $t \to z(t)$, для $t \in \RR$, отметив стрелкой направление:
+
+\begin{enumerate}
+  \item $t \to 6 + it$;
+  \item $t \to t+2 + 7i$;
+  \item $t \to t+2 + it$;
+  \item $t \to t + it^2$;
+  \item $t \to \cos t + i \sin t$;
+  \item $t \to t \cdot (\cos t + i \sin t)$;
+  \item $t \to t \cdot (\cos t - i \sin t)$;
+\end{enumerate}
+
+\begin{sol}
+\end{sol}
+\end{problem}
+  
+
+\begin{problem}
+Нарисуй комплексные числа $z_1$ и $z_2$ с единичной длиной и аргументами $\pi/4$ и $\pi/2$. 
+\begin{enumerate}
+  \item   Запиши $z_1$, $z_2$ и $z_1 + z_2$ в виде $a + bi$. 
+  \item Найди $\tan 3\pi/8$;
+\end{enumerate}
+
+
+
+\begin{sol}
+\end{sol}
+\end{problem}
+
+\newpage
+\setcounter{section}{1}
+\section{Комплексные числа. Геометрия и картинки}
+
+
+\begin{problem}
+Рассмотрим произвольный четырёхугольник. Снаружи каждой стороны четырёхугольника построим квадрат.
+Назовём отрезки, соединяющие центры противоположных квадратов, $MN$ и $KL$. 
+
+\begin{enumerate}
+  \item Найди угол между $MN$ и $KL$.
+  \item Найди отношение длин $MN$ и $KL$.
+\end{enumerate}
+
+\begin{sol}
+\end{sol}
+\end{problem}
+
+
+
+\begin{problem}
+Нарисуй на комплексной плоскости множества
+
+\begin{enumerate}
+  \item $|z| = 4$;
+  \item $|z - 2 + 3i| > 5$;
+  \item $\Re z = 3$;
+  \item $\Im z < 6$;
+  \item $1 < |2z - 6| < 2$;
+  \item $|z - 1|^2 + |z + 1|^2 < 8$;
+  \item $|z - 1| + |z + 1| \leq 2$;
+  \item $|\Re z | < |z|$;
+  \item $|z - i| = |z - (3 + 2i)|$;
+  \item $\Re ((1+i)z) > 2$; 
+  \item $\Re \left( \frac{z - 1 - i}{z + 1 + i} \right) = 0$;
+  \item $\Im \left( \frac{z - 1 - i}{z + 1 + i} \right) = 0$;
+\end{enumerate}
+
+\begin{sol}
+\end{sol}
+\end{problem}
+  
+
+
+\begin{problem}
+Нарисуй на комплексной плоскости траектории, $t \to z(t)$, для $t \in \RR$, отметив стрелкой направление:
+
+\begin{enumerate}
+  \item $t \to 6 + it$;
+  \item $t \to t+2 + 7i$;
+  \item $t \to t+2 + it$;
+  \item $t \to t + it^2$;
+  \item $t \to \cos t + i \sin t$;
+  \item $t \to t \cdot (\cos t + i \sin t)$;
+  \item $t \to t \cdot (\cos t - i \sin t)$;
+\end{enumerate}
+
+\begin{sol}
+\end{sol}
+\end{problem}
+  
+
+\begin{problem}
+Нарисуй комплексные числа $z_1$ и $z_2$ с единичной длиной и аргументами $\pi/4$ и $\pi/2$. 
+\begin{enumerate}
+  \item   Запиши $z_1$, $z_2$ и $z_1 + z_2$ в виде $a + bi$. 
+  \item Найди $\tan 3\pi/8$;
+\end{enumerate}
+
+
+
+\begin{sol}
+\end{sol}
+\end{problem}
+  
+
+\newpage
+\setcounter{section}{2}
+\section{Поле направления и экспонента}
+
+
+\begin{definition}
+  Если $z(t)$ — положение точки в момент $t$, то $\dot z(t)$ или $z'(t)$ — мгновенная скорость точки (вектор).
+\end{definition}
+
+\begin{definition}
+  Поле направления — в каждой точки плоскости нарисован вектор скорости движения точки.
+\end{definition}
+
+
+\begin{problem}
+ Нарисуй поле направления для каждого случая:
+ \begin{multicols}{3}
+ \begin{enumerate}
+   \item $\dot z (t) = 1$;
+   \item $\dot z (t) = i$;
+   \item $\dot z (t) = z(t)$;
+   \item $\dot z (t) = -z(t)$;
+   \item $\dot z (t) = iz(t)$;
+   \item $\dot z (t) = -iz(t)$;
+   \item $\dot z (t) = 2 - z(t)$;
+   \item $\dot z (t) = 2 - iz(t)$;
+ \end{enumerate}
+\end{multicols}
+\begin{sol}
+\end{sol}
+\end{problem}
+  
+
+\begin{definition}
+  Экспонента $\exp(t)$ — функция $z(t)$ со свойствами $z(0) = 1$, $\dot z(t) = z(t)$.
+
+  Экспонента $\exp(it)$ — функция $z(t)$ со свойствами $z(0) = 1$, $\dot z(t) = i z(t)$.
+\end{definition}
+
+
+\begin{problem}
+Докажи, что 
+\begin{enumerate}
+  \item $\exp(1) \approx 1.01^{100}$;
+  \item $\exp(2) = \exp(1) \cdot \exp(1)$;
+  \item $\exp(3) = \exp(1) \cdot \exp(1) \cdot \exp(1)$;
+\end{enumerate}
+\begin{sol}
+\end{sol}
+\end{problem}
+
+\begin{problem}
+Найди
+\begin{multicols}{3}
+\begin{enumerate}
+  \item $\exp(i \pi/3)$;
+  \item $\exp(i \pi/2)$;
+  \item Формула Эйлера! $\exp(i \pi)$;
+  \item $\exp(i t)$;
+  \item $\exp(i \pi/3) \cdot \exp(i \pi /2)$;
+\end{enumerate}
+\end{multicols}
+\begin{sol}
+\end{sol}
+\end{problem}
+  
+\begin{problem}
+Запиши комплексные числа с помощью экспоненты
+\begin{enumerate}
+  \item $1 + i$;
+  \item $\sqrt{3} + i$;
+  \item $\sqrt{3} - i$;
+  \item $6i$;
+\end{enumerate}
+\begin{sol}
+\end{sol}
+\end{problem}
+  
+
+
+
+\begin{problem}
+Реши уравнения
+\begin{multicols}{3}
+\begin{enumerate}
+  \item $z^2 = 6$;
+  \item $z^2 = -9$;
+  \item $z^2 = 4i$;
+  \item $z^3 = -27$;
+  \item $z^2 = -4i$;
+  \item $z^2 + 4z + 13 = 0$;
+  \item $\frac{z + i + 2}{z - i - 3} = 4i$;
+  \item $z^3 + z^2 + z - 3 = 0$;
+  \item $z^5 = 32$;
+  \item $z^6 = i$;
+  \item $z^7 = 1 - i$;
+\end{enumerate}
+\end{multicols}
+\begin{sol}
+\end{sol}
+\end{problem}
+ 
+
+
+
+\newpage
 \section{Геометрия Фано}
+
+
+Количество точек и прямых на проективной плоскости порядка такого-то?
+
+
 
 
 \section{Лог. КЛШ-2019}
 
 \begin{enumerate}
-  \item Было ххх школьников, 
+  \item Было 29 школьников, от 8-го до 10-го класса и одна храбрая семиклассница. Комплексное число — вектор на плоскости.
+  Сложение и вычитание. Изобразите $3+4i$, $5i$, $-6 + i$, $-8$. Длина и аргумент. Многозначная функция. 
+  Геометрическое умножение. Находим $(1+i)^{44}$. Геометрически считаем $i \cdot i$, $(5 + 6i) \cdot i$. Наивное умножение.
+  Геометрически интерпретируем наивное умножение $z \cdot (3 + 4i)$.
+  Рисуем число $\cos 40^{\circ} + i \sin 40^{\circ}$. Делим через домножение на сопряжённое.
+  Делим геометрически. Находим сумму конечной геометрической прогрессии комплексных чисел. 
+  \item Повторили основные мысли. Два варианта записи чисел. Явно $z=a + bi$, через длину и угол с косинусом и синусом.
+  Решили задачу про сумму углов. Разобрал окружность с центром не в нуле. Далее школьники решали и сдавали номера.
+  \item Решили задачу про сумму квадратов через явное представление $z=a+bi$.
+  Дальше пообсуждали, что разумно сделать после решения задачи. 
+  Придумать более простой метод. Придумать более универсальный метод. 
+  Проверить, работает ли старый метод, если пошевилить задачу.
+  Пошевелили нашу задачу и пришли к выводу, что геометрическо множество точек $Z$ таких, что
+  $AZ^2 + BZ^2 = const$ — это окружность. 
+  Влад, решивший дома задачу по геометрии с произвольным четырёхугольником, начал излагать её. 
+  Чтобы ускорить процесс, я изложил за него. Затем кратко рассказал про кривые. 
+  И школьники рисовали кривые. 
+
+
 \end{enumerate}
 
 \subsection{Плакат}
@@ -233,7 +771,20 @@ style=alphabetic]{biblatex}
 \item How to build hyperbolic soccer ball, \url{http://theiff.org/images/IFF_HypSoccerBall.pdf}
 \item Chaim Goodman-Strauss, Compass and Straightedge in the Poincaré Disk
 \item Mann, DIY hyperbolic course, \url{https://math.berkeley.edu/~kpmann/DIY%20hyperbolic%20course.pdf}
-\item 
+\item 3blue1brown, Quaternions visualized, \url{https://www.youtube.com/watch?v=d4EgbgTm0Bg}
+\item Grant Sanderson, Visualizing quaternions, \url{https://eater.net/quaternions}
+\item \url{https://www.quantamagazine.org/the-octonion-math-that-could-underpin-physics-20180720/}, есть pdf-ка
+с картинками умножения на кватернионов и октонионов. 
+\item Hanson, Visualizing quaternions, примеры про ремень, мячик, Apollo
+\item \url{https://brilliant.org/wiki/complex-numbers-in-geometry/}
+\item Прасолов, Геометрия Лобачевского
+\item Slerp, wiki, \url{https://en.wikipedia.org/wiki/Slerp}
+\item Wiki, 3d rotation, \url{https://en.wikipedia.org/wiki/Rotation_formalisms_in_three_dimensions}
+\item Fano plane, \url{https://blogs.scientificamerican.com/roots-of-unity/a-few-of-my-favorite-spaces-the-fano-plane/}
+\item Lam, Search finite Fano plane of order 10, \url{https://www.maa.org/sites/default/files/pdf/upload_library/22/Ford/Lam305-318.pdf},
+связка с латинскими квадратами
+\item \url{http://kahrstrom.com/mathematics/documents/OnProjectivePlanes.pdf}, геометрия как точки и линии
+
 \end{enumerate}
 
 \printbibliography[heading=none]

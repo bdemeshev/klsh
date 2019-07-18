@@ -1,7 +1,7 @@
 # makefile: Rnw -> tex -> pdf
 # v 2.0
 # .Rnw extension is automatically added
-file_name = complex_geometry
+file_name = truth_liars
 
 $(file_name).pdf: $(file_name).tex 
 	# protection against biber error
