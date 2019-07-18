@@ -472,6 +472,7 @@ $(1+i) + (1+i)^2 + (1+i)^3 + (1+i)^4 + \ldots + (1+i)^{2020}$.
 \begin{problem}
 Нарисуй на комплексной плоскости множества
 
+\begin{multicols}{2}
 \begin{enumerate}
   \item $|z| = 4$;
   \item $|z - 2 + 3i| > 5$;
@@ -486,7 +487,7 @@ $(1+i) + (1+i)^2 + (1+i)^3 + (1+i)^4 + \ldots + (1+i)^{2020}$.
   \item $\Re \left( \frac{z - 1 - i}{z + 1 + i} \right) = 0$;
   \item $\Im \left( \frac{z - 1 - i}{z + 1 + i} \right) = 0$;
 \end{enumerate}
-
+\end{multicols}
 \begin{sol}
 \end{sol}
 \end{problem}
@@ -546,7 +547,7 @@ $(1+i) + (1+i)^2 + (1+i)^3 + (1+i)^4 + \ldots + (1+i)^{2020}$.
 
 \begin{problem}
 Нарисуй на комплексной плоскости множества
-
+\begin{multicols}{2}
 \begin{enumerate}
   \item $|z| = 4$;
   \item $|z - 2 + 3i| > 5$;
@@ -561,7 +562,7 @@ $(1+i) + (1+i)^2 + (1+i)^3 + (1+i)^4 + \ldots + (1+i)^{2020}$.
   \item $\Re \left( \frac{z - 1 - i}{z + 1 + i} \right) = 0$;
   \item $\Im \left( \frac{z - 1 - i}{z + 1 + i} \right) = 0$;
 \end{enumerate}
-
+\end{multicols}
 \begin{sol}
 \end{sol}
 \end{problem}
@@ -703,7 +704,108 @@ $(1+i) + (1+i)^2 + (1+i)^3 + (1+i)^4 + \ldots + (1+i)^{2020}$.
 \end{problem}
  
 
+\newpage
+\setcounter{section}{2}
+\section{Поле направления и экспонента}
 
+
+\begin{definition}
+  Если $z(t)$ — положение точки в момент $t$, то $\dot z(t)$ или $z'(t)$ — мгновенная скорость точки (вектор).
+\end{definition}
+
+\begin{definition}
+  Поле направления — в каждой точки плоскости нарисован вектор скорости движения точки.
+\end{definition}
+
+
+\begin{problem}
+ Нарисуй поле направления для каждого случая:
+ \begin{multicols}{3}
+ \begin{enumerate}
+   \item $\dot z (t) = 1$;
+   \item $\dot z (t) = i$;
+   \item $\dot z (t) = z(t)$;
+   \item $\dot z (t) = -z(t)$;
+   \item $\dot z (t) = iz(t)$;
+   \item $\dot z (t) = -iz(t)$;
+   \item $\dot z (t) = 2 - z(t)$;
+   \item $\dot z (t) = 2 - iz(t)$;
+ \end{enumerate}
+\end{multicols}
+\begin{sol}
+\end{sol}
+\end{problem}
+  
+
+\begin{definition}
+  Экспонента $\exp(t)$ — функция $z(t)$ со свойствами $z(0) = 1$, $\dot z(t) = z(t)$.
+
+  Экспонента $\exp(it)$ — функция $z(t)$ со свойствами $z(0) = 1$, $\dot z(t) = i z(t)$.
+\end{definition}
+
+
+\begin{problem}
+Докажи, что 
+\begin{enumerate}
+  \item $\exp(1) \approx 1.01^{100}$;
+  \item $\exp(2) = \exp(1) \cdot \exp(1)$;
+  \item $\exp(3) = \exp(1) \cdot \exp(1) \cdot \exp(1)$;
+\end{enumerate}
+\begin{sol}
+\end{sol}
+\end{problem}
+
+\begin{problem}
+Найди
+\begin{multicols}{3}
+\begin{enumerate}
+  \item $\exp(i \pi/3)$;
+  \item $\exp(i \pi/2)$;
+  \item Формула Эйлера! $\exp(i \pi)$;
+  \item $\exp(i t)$;
+  \item $\exp(i \pi/3) \cdot \exp(i \pi /2)$;
+\end{enumerate}
+\end{multicols}
+\begin{sol}
+\end{sol}
+\end{problem}
+  
+\begin{problem}
+Запиши комплексные числа с помощью экспоненты
+\begin{enumerate}
+  \item $1 + i$;
+  \item $\sqrt{3} + i$;
+  \item $\sqrt{3} - i$;
+  \item $6i$;
+\end{enumerate}
+\begin{sol}
+\end{sol}
+\end{problem}
+  
+
+
+
+\begin{problem}
+Реши уравнения
+\begin{multicols}{3}
+\begin{enumerate}
+  \item $z^2 = 6$;
+  \item $z^2 = -9$;
+  \item $z^2 = 4i$;
+  \item $z^3 = -27$;
+  \item $z^2 = -4i$;
+  \item $z^2 + 4z + 13 = 0$;
+  \item $\frac{z + i + 2}{z - i - 3} = 4i$;
+  \item $z^3 + z^2 + z - 3 = 0$;
+  \item $z^5 = 32$;
+  \item $z^6 = i$;
+  \item $z^7 = 1 - i$;
+\end{enumerate}
+\end{multicols}
+\begin{sol}
+\end{sol}
+\end{problem}
+ 
 
 \newpage
 \section{Геометрия Фано}
