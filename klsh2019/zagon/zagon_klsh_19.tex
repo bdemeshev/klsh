@@ -1,0 +1,186 @@
+\documentclass[12pt]{article} % размер шрифта
+
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{multicol} % текст в несколько колонок
+\usepackage{verbatim}
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering} % приказываем центрировать все sections
+
+\usepackage{amsmath, amssymb} % куча стандартных математических плюшек
+
+\usepackage[top=2cm, left=1.5cm, right=1.5cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption} % подписи к картинкам без плавающего окружения figure
+
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Загоночная по комплексным числам}
+\chead{НТН, сквозной, У1}
+\rhead{КЛШ-2019}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет картина Последний день Помпеи}
+% команда \listoftodos — печатает все поставленные \todo'шки
+
+\usepackage{booktabs} % красивые таблицы
+% заповеди из документации:
+% 1. Не используйте вертикальные линии
+% 2. Не используйте двойные линии
+% 3. Единицы измерения помещайте в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+\usepackage{fontspec} % поддержка разных шрифтов
+\usepackage{polyglossia} % поддержка разных языков
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+\setmainfont{Linux Libertine O} % выбираем шрифт
+% можно также попробовать Helvetica, Arial, Cambria и т.Д.
+
+% чтобы использовать шрифт Linux Libertine на личном компе,
+% его надо предварительно скачать по ссылке
+% http://www.linuxlibertine.org/
+
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+% пояснение зачем нужно шаманство с \newfontfamily
+% http://tex.stackexchange.com/questions/91507/
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*} % списки уровня 2 будут буквами а) б) ...
+
+%% эконометрические и вероятностные сокращения
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\def \hb{\hat{\beta}}
+\def \hs{\hat{\sigma}}
+\def \htheta{\hat{\theta}}
+\def \s{\sigma}
+\def \hy{\hat{y}}
+\def \hY{\hat{Y}}
+\def \v1{\vec{1}}
+\def \e{\varepsilon}
+\def \he{\hat{\e}}
+\def \z{z}
+\def \hVar{\widehat{\Var}}
+\def \hCorr{\widehat{\Corr}}
+\def \hCov{\widehat{\Cov}}
+\def \cN{\mathcal{N}}
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+\let\Re\relax
+\DeclareMathOperator{\Re}{Re}
+
+
+
+\begin{document}
+\begin{enumerate}
+    \item Подели и умножь комплексные числа и кватернионы: 
+    \begin{multicols}{2}
+    \begin{enumerate}
+        \item $(1+3i)(2-5i)$ 
+        \item $(3+5i)/(3+4i)$
+        \item $(1+2i+3j+4k)(4+3i+2j+k)$
+        \item $(2+5i+4k)/(-3+4j)$.
+    \end{enumerate}
+    \end{multicols}
+    \item Черепаха стартует в точке $0$. В первую минуту она движется со скоростью один километр в минуту.
+    Каждую последующую минуту она поворачивает на 60 градусов по часовой стрелке и увеличивает свою скорость в два раза. 
+    Где черепаха окажется через час?
+    \item Реши в комплексных числах уравнение $z^6 = -64$.
+    \item Нарисуй множество $A =\{ \Re z = 3 \}$ и его образ $f(A)$ для функции $f(z) = 1/\bar z$.
+    \item Рассмотри произвольный четырёхугольник $ABCD$. 
+    С помощью комплексных чисел (или иначе) найди отношение суммы квадратов диагоналей к сумме квадратов средних линий.
+
+\end{enumerate}
+
+\newpage
+\lhead{Загоночная по правдюкам и лжецам}
+\chead{НОН, модуль 1, У3}
+
+\begin{enumerate}
+    \item Все жители острова либо правдюки, либо лжецы. Путешественник встретил пятерых аборигенов. 
+    На его вопрос: «Сколько среди вас правдюков?» первый ответил: «Ни одного!», а двое других ответили: «Один». 
+    Что ответили остальные?
+
+    \item Альберт и Бернард только что познакомились с Шерил. Они хотят знать, когда у неё день рождения. 
+    Шерил предложила им десять возможных дат: 15 мая, 16 мая, 19 мая, 17 июня, 18 июня, 14 июля, 16 июля, 14 августа, 15 августа и 17 августа. 
+    Затем Шерил сказала Альберту месяц своего рождения, а Бернарду — день. После этого состоялся диалог.
+    
+    Альберт: Я не знаю, когда у Шерил день рождения, но я знаю, что Бернард тоже не знает.
+    
+    Бернард: Поначалу я не знал, когда у Шерил день рождения, но знаю теперь.
+    
+    Альберт: Теперь я тоже знаю, когда у Шерил день рождения. 
+    
+    Когда у Шерил день рождения?
+    
+  
+    %\item На острове живут три Ученика: зеленоглазые Андрей и Борис и кареглазый Владимир. А ещё на острове живёт Гуру.
+    %Ученики не общаются между собой и ни один из них не знает свой цвет глаз.
+    %Однажды Гуру собрала Учеников вместе и объявила им: «Хотя бы один из вас — зеленоглазый».
+    %Затем она спрашивает по очереди каждого из учеников (Андрея, Бориса, Вову, потом снова Андрея и так далее): 
+    %«Знаешь ли ты свой цвет глаз?».
+    
+    %Что будут отвечать Ученики?
+
+
+\end{enumerate}
+
+
+\newpage
+\lhead{Загоночная по прогнозированию}
+\chead{НОН, модуль 2, У3}
+
+Кот Матроскин записал надои коровы Мурки за последние четыре месяца: $20$, $30$, $30$, $40$. 
+Построй прогноз надоев на один и два шага вперёд с помощью:
+
+\begin{enumerate}
+    \item наивного алгоритма;
+    \item модели ETS(ANN) с параметрами $\alpha = 0.5$, $\ell_0 = 30$;
+    \item модели ETS(AAN) с параметрами $\alpha = 0.5$, $\ell_0 = 20$, $\beta = 0.1$, $b_0 = 6$.
+\end{enumerate}
+
+
+Полезные уравнения:
+
+\[
+\begin{cases}
+y_t = \ell_{t-1} + \varepsilon_t \\
+\ell_t = \ell_{t-1} + \alpha \varepsilon_t \\
+\hat y_{t+h} = \ell_t \\
+\end{cases} \quad
+\begin{cases}
+y_t = \ell_{t-1} + b_{t-1} + \varepsilon_t \\
+\ell_t = \ell_{t-1} + b_{t-1} + \alpha \varepsilon_t \\
+b_t = b_{t-1} + \beta \varepsilon_t \\
+\hat y_{t+h} = \ell_t + h b_t \\
+\end{cases}    
+\]
+
+Подсказка: из первого уравнения системы можно выразить $\varepsilon_t$ и подставить его в остальные :)
+
+\end{document}
