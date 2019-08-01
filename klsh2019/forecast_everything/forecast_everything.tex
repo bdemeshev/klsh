@@ -213,52 +213,35 @@ style=alphabetic]{biblatex}
 \end{multicols}
 
 
+\section{Загоночная работа}
 
-\setcounter{section}{0}
-\section{Простые алгоритмы и метрики качества}
+Кот Матроскин записал надои коровы Мурки за последние четыре месяца: $20$, $30$, $30$, $40$. 
+Построй прогноз надоев на один и два шага вперёд с помощью:
 
-\begin{multicols}{2}
-\begin{tabular}{rrr}
-  \toprule
-  месяц & 2017 & 2018 \\
-  \midrule
-  январь & - & 49 \\
-  февраль & - & 53 \\
-  март & - & 57 \\
-  апрель & - & 79 \\
-  май & 41 & 40 \\
-  июнь & 112 & 103 \\
-  июль & 150 & 114 \\
-  август  & 139 & 150 \\
-  сентябрь  & 126 & 113 \\
-  октябрь  & 80 & ? \\
-  ноябрь  & 71 & ? \\
-  декабрь  & 73 & - \\
-  \bottomrule
-\end{tabular}
+\begin{enumerate}
+    \item наивного алгоритма;
+    \item модели ETS(ANN) с параметрами $\alpha = 0.5$, $\ell_0 = 30$;
+    \item модели ETS(AAN) с параметрами $\alpha = 0.5$, $\ell_0 = 20$, $\beta = 0.1$, $b_0 = 6$.
+\end{enumerate}
 
 
-\begin{tabular}{rr}
-  \toprule
-  год & население  \\
-  \midrule
-  2010 & 143.0 \\
-  2011 & 142.9 \\
-  2012 & 143.1 \\
-  2013 & 143.4 \\
-  2014 & 143.7 \\
-  2015 & 146.3\\
-  2016 & 146.5 \\
-  2017 & 146.8 \\
-  2018 & ? \\
-  2019 & ? \\
-  \bottomrule
-\end{tabular}
+Полезные уравнения:
 
-\end{multicols}
+\[
+\begin{cases}
+y_t = \ell_{t-1} + \varepsilon_t \\
+\ell_t = \ell_{t-1} + \alpha \varepsilon_t \\
+\hat y_{t+h} = \ell_t \\
+\end{cases} \quad
+\begin{cases}
+y_t = \ell_{t-1} + b_{t-1} + \varepsilon_t \\
+\ell_t = \ell_{t-1} + b_{t-1} + \alpha \varepsilon_t \\
+b_t = b_{t-1} + \beta \varepsilon_t \\
+\hat y_{t+h} = \ell_t + h b_t \\
+\end{cases}    
+\]
 
-
-
+Подсказка: из первого уравнения системы можно выразить $\varepsilon_t$ и подставить его в остальные :)
 
 
 
